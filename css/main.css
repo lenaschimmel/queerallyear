@@ -191,14 +191,14 @@ textarea {
 }
 
 #mainlogo {
-  width:80%;
+  width:90%;
  }
 
 .screenbox {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
 }
 
@@ -207,6 +207,7 @@ textarea {
   max-width: 75%;
   background-color:#FFFFFF55;
   font-size: 115%;
+  margin-bottom: 4em;
 }
 
 .innerinnerbox {
