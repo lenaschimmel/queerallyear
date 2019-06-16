@@ -47,42 +47,49 @@ exports.prepareGradients = function(gradients) {
             composedRangesS[letter] = composeRanges(letterRanges);
         }
     }
-
-    console.log(util.inspect(originalColors));
 }
 
-exports.changeGradients = function(gradients, flag) {
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+ }
+
+exports.changeGradients = async function(gradients, flag) {
     for (let i = 0; i < gradients.children.length; i++) {
         const gradient = gradients.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-           
-            var targetColor = flag[letter];
-            var [th, ts, tl] = color(targetColor).hsl().color;
-            var stops = gradient.children;
-            var diffLightness = adaptRange(composedRangesL[letter], tl);
-            var diffSaturation = adaptRange(composedRangesS[letter], 75);
-            
-            for (let s = 0; s < stops.length; s++) {
-                var stop = stops.item(s);
-            
-                console.log("Get " + id  + " - " + s);
-                var stopcolor = originalColors[id][s];
-
-                var [sh, ss, sl] = stopcolor.hsl().color;
-
-                var nh = th;
-                var ns = (ss - diffSaturation) * ts / 100;
-                var nl = sl - diffLightness;
-
-                var newColor = color.hsl([nh, ns, nl]).hex()
-                stop.setAttribute("stop-color", newColor);
-            }
+            colorLetter(gradient, flag[letter]);
         }
+        await sleep(25);
     }
-    
 }
+
+async function colorLetter(gradient, targetColor) {
+    var id = gradient.id;
+    var letter = id.substring(0,2);
+    var [th, ts, tl] = color(targetColor).hsl().color;
+    var stops = gradient.children;
+    var diffLightness = adaptRange(composedRangesL[letter], tl);
+    var diffSaturation = adaptRange(composedRangesS[letter], 75);
+    
+    for (let s = 0; s < stops.length; s++) {
+        await sleep(45);
+        var stop = stops.item(s);
+        var stopcolor = originalColors[id][s];
+
+        var [sh, ss, sl] = stopcolor.hsl().color;
+
+        var nh = th;
+        var ns = (ss - diffSaturation) * ts / 100;
+        var nl = sl - diffLightness;
+
+        var newColor = color.hsl([nh, ns, nl]).hex()
+        stop.setAttribute("stop-color", newColor);
+    }
+}
+
+exports.colorLetter = colorLetter;
 
 function composeRanges(rangeArray) {
     var min, max;

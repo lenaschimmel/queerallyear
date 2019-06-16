@@ -59,6 +59,6 @@ Die aktuelle Website basiert ist eine einzelne html-Seite (`index.html`), die (q
 Es gibt einen NodeJS-Server, der beim Ausliefern die obige Zeile durch den Inhalt der SVG-Datei ersetzt. Nur bei dieser Art der Einbettung kann später clientseitig im JavaScript auf den Bildinhalt zugriffen werden, denn das SVG wird einfach teil des (HTML-)DOM.
 
 # Tool
-Es existiert auch ein NodeJS-Script, dass `logo.svg` einlesen kann, in ein JSON-Objekt umwandeln, und daran Modifikationen vornehmen. Anschießend kann es wieder in XML bzw. SVG zurück verwandelt werden und in eine neue Datei geschrieben werden.
+Es existiert ein Tool, das eine SVG mit der Struktur von `logo.svg` modifizieren kann. Es analysiert die vorhandenne Farverläufe und färbt diese um.
 
-Das Tool kann relativ fortschrittliche Berechnungen mit den Farbwerten machen, um die Verläufe neu zu färben.
+Das Modul `recolor` arbeitet auf dem DOM des SVG. Es kann im Browser oder in NodeJS eingesetzt werden. Damit es im Browser läuft, muss es durch [Browserify](https://www.npmjs.com/package/browseifyy) konvertiert werden, wo es dann direkt auf dem nativen DOM arbeitet. Innerhalb von NodeJS nutzt es [jsdom](https://www.npmjs.com/package/jsdom), da kein Browser vorhanden ist, der ein DOM bereitstellen könnte.

@@ -1,3 +1,60 @@
+function flag5(c1, c2, c3, c4, c5) {
+    return {
+        "Q0": c1,
+        "U0": c2,
+        "E0": c3,
+        "E1": c4,
+        "R0": c5,
+
+        "A0": c1,
+        "L0": c2,
+        "L1": c2,
+
+        "Y0": c3,
+        "E2": c3,
+        "A1": c4,
+        "R1": c5,
+    };
+}
+
+function flag3(c1, c2, c3) {
+    return {
+        "Q0": c1,
+        "U0": c1,
+        "E0": c2,
+        "E1": c2,
+        "R0": c3,
+
+        "A0": c1,
+        "L0": c1,
+        "L1": c1,
+
+        "Y0": c2,
+        "E2": c2,
+        "A1": c3,
+        "R1": c3,
+    };
+}
+
+function flag4(c1, c2, c3, c4) {
+    return {
+        "Q0": c1,
+        "U0": c2,
+        "E0": c2,
+        "E1": c3,
+        "R0": c4,
+
+        "A0": c1,
+        "L0": c2,
+        "L1": c2,
+
+        "Y0": c3,
+        "E2": c3,
+        "A1": c4,
+        "R1": c4,
+    };
+}
+
 const white = "#FFFFFF";
 const black = "#000000";
 const transBlue = "#6ad7fb";
@@ -14,73 +71,49 @@ const panPink = "#ff1a8d";
 const panYellow = "#ffc500";
 const panBlue = "#1ab3ff";
 
-exports.trans = {
-    "Q0" : transBlue,
-    "U0" : transRose,
-    "E0" : white,
-    "E1" : transRose,
-    "R0" : transBlue,
+const romanticDarkGreen = "#60AB58";
+const romanticLightGreen = "#B8D58E";
+const intersexYellow = "#FADE49";
+const nonbinaryYellow = "#FDF363";
+const nonbinaryViolet = "#A577D4";
+const genderqueerViolet = "#BC97DE";
+const genderqueerGreen = "#67903D";
+const phillyBrown = "#86632B";
+const genderfluidPink = "#F295B2";
+const genderfluidViolet = "#BC49D7";
+const genderfluidBlue = "#4656C2";
+const polysexualPink = "#E752C1";
+const polysexualGreen = "#5CD685";
+const polysexualBlue = "#4EA3F1";
+const lebsian1 = "#A83072";
+const lebsian2 = "#BB70A1";
+const lebsian3 = "#CF7EB3";
+const lebsian4 = "#F1F0EF";
+const lebsian5 = "#E4BED7";
+const lebsian6 = "#C66A68";
+const lebsian7 = "#933514";
+const polyamRed = "#ED4024";
+const polyamBlue = "#1432F5";
+const polyamYellow = "#FFFD52";
 
-    "A0" : transBlue,
-    "L0" : transRose,
-    "L1" : transRose,
+exports.aro = flag5(romanticDarkGreen, romanticLightGreen, white, aceGrey, black);
+exports.nonbinary = flag4(nonbinaryYellow, white, nonbinaryViolet, black);
+exports.genderqueer = flag3(genderqueerViolet, white, genderqueerGreen);
+exports.polysexual = flag4(polysexualPink, polysexualGreen, polysexualBlue);
+exports.trans = flag5(transBlue, transRose, white, transRose, transBlue);
+exports.bi = flag5(biPink, biPink, biViolet, biBlue, biBlue);
+exports.pan = flag3(panPink, panYellow, panBlue);
+exports.ace = flag4(black, aceGrey, white, aceViolet);
+exports.polyam = flag4(polyamBlue, polyamRed, polyamYellow, black);
 
-    "Y0" : white,
-    "E2" : white,
-    "A1" : transRose,
-    "R1" : transBlue,
-};
-
-
-exports.bi = {
-    "Q0" : biPink,
-    "U0" : biPink,
-    "E0" : biViolet,
-    "E1" : biBlue,
-    "R0" : biBlue,
-
-    "A0" : biPink,
-    "L0" : biPink,
-    "L1" : biPink,
-
-    "Y0" : biViolet,
-    "E2" : biBlue,
-    "A1" : biBlue,
-    "R1" : biBlue,
-};
-
-
-exports.pan = {
-    "Q0" : panPink,
-    "U0" : panPink,
-    "E0" : panYellow,
-    "E1" : panYellow,
-    "R0" : panBlue,
-
-    "A0" : panPink,
-    "L0" : panPink,
-    "L1" : panPink,
-
-    "Y0" : panYellow,
-    "E2" : panYellow,
-    "A1" : panBlue,
-    "R1" : panBlue,
-};
-
-
-exports.ace = {
-    "Q0" : black,
-    "U0" : aceGrey,
-    "E0" : aceGrey,
-    "E1" : white,
-    "R0" : aceViolet,
-
-    "A0" : black,
-    "L0" : aceGrey,
-    "L1" : aceGrey,
-
-    "Y0" : white,
-    "E2" : white,
-    "A1" : aceViolet,
-    "R1" : aceViolet,
+exports.allFlags = {
+    "Asexuell" : exports.ace, 
+    "Bisexuell" : exports.bi, 
+    "Pansexiell" : exports.pan, 
+    "Trans*" : exports.trans, 
+    "Aromantisch" : exports.aro, 
+    "Nicht-Binär" : exports.nonbinary,
+    "Genderqueer" : exports.genderqueer,
+    "Polyamor" : exports.polyam,
+    "Polysexuell" : exports.polysexual
 };
