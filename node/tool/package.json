@@ -6,6 +6,8 @@
         "jsdom": " ^15.1.1"
     },
     "scripts": {
-        "start": "node queerallyear.js"
-    }
+        "start": "node cmd.js"
+    },
+    "main" : "cmd.js",
+    "browser" : "browser.js"
 }

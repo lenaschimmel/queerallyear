@@ -1,27 +1,5 @@
 var util = require('util');
-var fs = require('fs');
 var color = require('color');
-var flags = require('./flags.js');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-
-function processSvgFile() {
-    JSDOM.fromFile("../../web/img/logo.svg", {} ).then(dom => {
-        var doc = dom.window.document;
-        //var gradients = dom.window.document.querySelector("defs");
-        var gradients = doc.getElementsByTagName("defs").item(0);
-        processGradients(gradients);
-        fs.writeFileSync("../output.svg", dom.serialize());
-    });
-}
-
-function processSvgInline() {
-    // TODO find element
-    // TODO process
-    // DONE, nothing to "output" because we work inplace
-}
-
-processSvgFile();
 
 var rangesL = {};
 var rangesS = {};
@@ -30,7 +8,7 @@ composedRangesL = {};
 composedRangesS = {};
 
 // the parameter "gradients" must be the DOM element with tag "defs" from the SVG file.
-function processGradients(gradients) {
+exports.processGradients = function(gradients, flag) {
     for (let i = 0; i < gradients.children.length; i++) {
         const gradient = gradients.children.item(i);
         var id = gradient.id;
@@ -62,15 +40,13 @@ function processGradients(gradients) {
         }
     }
 
-    targetColors = flags.ace;
-
     for (let i = 0; i < gradients.children.length; i++) {
         const gradient = gradients.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
            
-            var targetColor = targetColors[letter];
+            var targetColor = flag[letter];
             var [th, ts, tl] = color(targetColor).hsl().color;
             var stops = gradient.children;
             var diffLightness = adaptRange(composedRangesL[letter], tl);
@@ -149,4 +125,3 @@ function getRange(stops, index) {
         "width": max - min
     };
 }
-
