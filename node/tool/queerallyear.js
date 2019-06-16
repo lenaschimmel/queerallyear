@@ -1,21 +1,42 @@
-var convert = require('xml-js');
 var util = require('util');
 var fs = require('fs');
 var color = require('color');
+var flags = require('./flags.js');
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
 
-var xml = fs.readFileSync("../progtest.svg");
-var js = convert.xml2js(xml, { compact: false, spaces: 4 });
+function processSvgFile() {
+    JSDOM.fromFile("../../web/img/logo.svg", {} ).then(dom => {
+        var doc = dom.window.document;
+        //var gradients = dom.window.document.querySelector("defs");
+        var gradients = doc.getElementsByTagName("defs").item(0);
+        processGradients(gradients);
+        fs.writeFileSync("../output.svg", dom.serialize());
+    });
+}
 
-var gradients = js.elements[0].elements[2].elements;
+function processSvgInline() {
+    // TODO find element
+    // TODO process
+    // DONE, nothing to "output" because we work inplace
+}
+
+processSvgFile();
+
 var rangesL = {};
 var rangesS = {};
-for (const key in gradients) {
-    if (gradients.hasOwnProperty(key)) {
-        const gradient = gradients[key];
-        var id = gradient.attributes.id;
+
+composedRangesL = {};
+composedRangesS = {};
+
+// the parameter "gradients" must be the DOM element with tag "defs" from the SVG file.
+function processGradients(gradients) {
+    for (let i = 0; i < gradients.children.length; i++) {
+        const gradient = gradients.children.item(i);
+        var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-            var stops = gradient.elements;
+            var stops = gradient.children;
             
             if(!rangesL[letter]) 
                 rangesL[letter] = [];
@@ -26,148 +47,52 @@ for (const key in gradients) {
             rangesS[letter].push(getSaturationRange(stops));
         }
     }
-}
-console.log(util.inspect(rangesL));
 
-composedRangesL = {};
-composedRangesS = {};
-
-for (const letter in rangesL) {
-    if (rangesL.hasOwnProperty(letter)) {
-        const letterRanges = rangesL[letter];
-        composedRangesL[letter] = composeRanges(letterRanges);
+    for (const letter in rangesL) {
+        if (rangesL.hasOwnProperty(letter)) {
+            const letterRanges = rangesL[letter];
+            composedRangesL[letter] = composeRanges(letterRanges);
+        }
     }
-}
 
-for (const letter in rangesS) {
-    if (rangesS.hasOwnProperty(letter)) {
-        const letterRanges = rangesS[letter];
-        composedRangesS[letter] = composeRanges(letterRanges);
+    for (const letter in rangesS) {
+        if (rangesS.hasOwnProperty(letter)) {
+            const letterRanges = rangesS[letter];
+            composedRangesS[letter] = composeRanges(letterRanges);
+        }
     }
-}
 
-const white = "#FFFFFF";
-const black = "#000000";
-const transBlue = "#6ad7fb";
-const transRose = "#f8b9c5";
+    targetColors = flags.ace;
 
-const biPink = "#d70271";
-const biViolet = "#9c4e98";
-const biBlue = "#0035aa";
-
-const aceGrey = "#919191";
-const aceViolet = "#922091";
-
-const panPink = "#ff1a8d";
-const panYellow = "#ffc500";
-const panBlue = "#1ab3ff";
- 
-trans = {
-    "Q0" : transBlue,
-    "U0" : transRose,
-    "E0" : white,
-    "E1" : transRose,
-    "R0" : transBlue,
-
-    "A0" : transBlue,
-    "L0" : transRose,
-    "L1" : transRose,
-
-    "Y0" : white,
-    "E2" : white,
-    "A1" : transRose,
-    "R1" : transBlue,
-};
-
-
-bi = {
-    "Q0" : biPink,
-    "U0" : biPink,
-    "E0" : biViolet,
-    "E1" : biBlue,
-    "R0" : biBlue,
-
-    "A0" : biPink,
-    "L0" : biPink,
-    "L1" : biPink,
-
-    "Y0" : biViolet,
-    "E2" : biBlue,
-    "A1" : biBlue,
-    "R1" : biBlue,
-};
-
-
-pan = {
-    "Q0" : panPink,
-    "U0" : panPink,
-    "E0" : panYellow,
-    "E1" : panYellow,
-    "R0" : panBlue,
-
-    "A0" : panPink,
-    "L0" : panPink,
-    "L1" : panPink,
-
-    "Y0" : panYellow,
-    "E2" : panYellow,
-    "A1" : panBlue,
-    "R1" : panBlue,
-};
-
-
-ace = {
-    "Q0" : black,
-    "U0" : aceGrey,
-    "E0" : aceGrey,
-    "E1" : white,
-    "R0" : aceViolet,
-
-    "A0" : black,
-    "L0" : aceGrey,
-    "L1" : aceGrey,
-
-    "Y0" : white,
-    "E2" : white,
-    "A1" : aceViolet,
-    "R1" : aceViolet,
-};
-
-targetColors = pan;
-
-for (const key in gradients) {
-    if (gradients.hasOwnProperty(key)) {
-        const gradient = gradients[key];
-        var id = gradient.attributes.id;
+    for (let i = 0; i < gradients.children.length; i++) {
+        const gradient = gradients.children.item(i);
+        var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-            console.log(letter);
-
+           
             var targetColor = targetColors[letter];
             var [th, ts, tl] = color(targetColor).hsl().color;
-            var stops = gradient.elements;
+            var stops = gradient.children;
             var diffLightness = adaptRange(composedRangesL[letter], tl);
             var diffSaturation = adaptRange(composedRangesS[letter], 75);
-            console.log("dl: " + diffLightness);
-            console.log("ds: " + diffSaturation);
+            
+            for (let s = 0; s < stops.length; s++) {
+                var stop = stops.item(s);
+            
+                var stopcolor = color(stop.getAttribute("stop-color"));
 
-            for (const key2 in stops) {
-                if (stops.hasOwnProperty(key2)) {
-                    const stop = stops[key2];
-                    var stopcolor = color(stop.attributes["stop-color"]);
+                var [sh, ss, sl] = stopcolor.hsl().color;
 
-                    var [sh, ss, sl] = stopcolor.hsl().color;
+                var nh = th;
+                var ns = (ss - diffSaturation) * ts / 100;
+                var nl = sl - diffLightness;
 
-                    var nh = th;
-                    var ns = (ss - diffSaturation) * ts / 100;
-                    var nl = sl - diffLightness;
-
-                    var newColor = color.hsl([nh, ns, nl]).hex()
-                    stop.attributes["stop-color"] = newColor;
-                }
+                var newColor = color.hsl([nh, ns, nl]).hex()
+                stop.setAttribute("stop-color", newColor);
             }
         }
     }
+    
 }
 
 function composeRanges(rangeArray) {
@@ -175,7 +100,6 @@ function composeRanges(rangeArray) {
     for (const key in rangeArray) {
         if (rangeArray.hasOwnProperty(key)) {
             const range = rangeArray[key];
-            console.log("range: " + util.inspect(range));
             
             min = min ? Math.min(min, range.min) : range.min;
             max = max ? Math.max(max, range.max) : range.max;
@@ -209,15 +133,14 @@ function getSaturationRange(stops) {
 
 function getRange(stops, index) {
     var min, max;
-    for (const key2 in stops) {
-        if (stops.hasOwnProperty(key2)) {
-            const stop = stops[key2];
-            var stopcolor = color(stop.attributes["stop-color"]);
+    for (let s = 0; s < stops.length; s++) {
+        var stop = stops.item(s);
+        var stopcolor = color(stop.getAttribute("stop-color"));
 
-            var hsl = stopcolor.hsl().color;
-            min = min ? Math.min(min, hsl[index]) : hsl[index];
-            max = max ? Math.max(max, hsl[index]) : hsl[index];
-        }
+        var hsl = stopcolor.hsl().color;
+        min = min ? Math.min(min, hsl[index]) : hsl[index];
+        max = max ? Math.max(max, hsl[index]) : hsl[index];
+        
     }
     return {
         "min": min,
@@ -227,7 +150,3 @@ function getRange(stops, index) {
     };
 }
 
-
-var output = convert.js2xml(js, { compact: false, spaces: 4 });
-//console.log(util.inspect(js, {showHidden: false, depth: null}));
-fs.writeFileSync("../output.svg", output);

@@ -1,0 +1,1 @@
+browserify queerallyear.js > ../../web/js/modules.js
