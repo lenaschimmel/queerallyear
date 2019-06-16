@@ -6,7 +6,7 @@ var app = express();
 
 var index = fs.readFileSync("../../web/index.html").toString();
 var logo  = fs.readFileSync("../../web/img/logo.svg").toString();
-logo = logo.replace('<svg', '<svg id="mainlogo"');
+logo = logo.substring(logo.indexOf("?>")+2).replace('id="Ebene_1"', 'id="mainlogo"');
 var output = index.replace('<img id="mainlogo" src="img/logo.svg" alt="Queer all year">', logo);
 
 app.get('/', function (req, res) {

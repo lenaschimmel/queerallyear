@@ -4,17 +4,25 @@ var color = require('color');
 var rangesL = {};
 var rangesS = {};
 
-composedRangesL = {};
-composedRangesS = {};
+var composedRangesL = {};
+var composedRangesS = {};
+
+var originalColors = {};
 
 // the parameter "gradients" must be the DOM element with tag "defs" from the SVG file.
-exports.processGradients = function(gradients, flag) {
+exports.prepareGradients = function(gradients) {
     for (let i = 0; i < gradients.children.length; i++) {
         const gradient = gradients.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
             var stops = gradient.children;
+
+            originalColors[id] = {};
+            for (let s = 0; s < stops.length; s++) {
+                var stop = stops.item(s);
+                originalColors[id][s] = color(stop.getAttribute("stop-color"));
+            }
             
             if(!rangesL[letter]) 
                 rangesL[letter] = [];
@@ -40,6 +48,10 @@ exports.processGradients = function(gradients, flag) {
         }
     }
 
+    console.log(util.inspect(originalColors));
+}
+
+exports.changeGradients = function(gradients, flag) {
     for (let i = 0; i < gradients.children.length; i++) {
         const gradient = gradients.children.item(i);
         var id = gradient.id;
@@ -55,7 +67,8 @@ exports.processGradients = function(gradients, flag) {
             for (let s = 0; s < stops.length; s++) {
                 var stop = stops.item(s);
             
-                var stopcolor = color(stop.getAttribute("stop-color"));
+                console.log("Get " + id  + " - " + s);
+                var stopcolor = originalColors[id][s];
 
                 var [sh, ss, sl] = stopcolor.hsl().color;
 

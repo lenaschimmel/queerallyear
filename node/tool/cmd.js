@@ -10,7 +10,8 @@ function processSvgFile() {
         var doc = dom.window.document;
         //var gradients = dom.window.document.querySelector("defs");
         var gradients = doc.getElementsByTagName("defs").item(0);
-        recolor.processGradients(gradients, flags.pan);
+        recolor.prepareGradients(gradients);
+        recolor.changeGradients(gradients, flags.pan);
         fs.writeFileSync("../output.svg", dom.serialize());
     });
 }
