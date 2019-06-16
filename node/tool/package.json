@@ -1,0 +1,11 @@
+{
+    "name": "queerallyear",
+    "version": "0.0.1",
+    "dependencies": {
+        "color": "^3.1.2",
+        "xml-js": "^1.6.11"
+    },
+    "scripts": {
+        "start": "node queerallyear.js"
+    }
+}
