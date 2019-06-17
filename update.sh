@@ -1,3 +1,7 @@
 git pull
+cd node/tool
 npm install
-forever restart node/queer.js
+./compile.sh
+cd ../server
+npm install
+forever restart server.js
