@@ -204,13 +204,25 @@ textarea {
 
 .screenbox {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100%;
   width: 100%;
 }
 
+
+.pagebox {
+  margin-top: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .innerbox {
+  display: block;
   width: 42em;
   max-width: 75%;
   background-color: #D2E8FF;
@@ -249,10 +261,53 @@ textarea {
   font-size: 1.6em;
 }
 
+#topbar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+#topbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #D2E8FF;
+}
+
+#topbar li {
+  float: left;
+}
+
+#topbar li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: black;
+}
+
+#topbar li a:visited {
+  color: black;
+}
+
+#topbar li a.active {
+  font-weight: 600;
+  background-color: #badbff;
+  background-image: url(../img/back.jpg);
+}
+
+#topbar li a:hover {
+  background-color: white;
+}
 
 #arrow a {
   text-decoration: none;
 }
+
 
 #arrow a:visited {
   color: black;
