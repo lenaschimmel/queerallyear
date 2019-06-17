@@ -61,11 +61,11 @@ function flag5spezial(c1, c2, c3, c4, c5) {
         "Q0": c1,
         "U0": c1,
         "E0": c2,
-        "E1": c1,
-        "R0": c1,
+        "E1": c5,
+        "R0": c5,
 
-        "A0": c5,
-        "L0": c5,
+        "A0": c1,
+        "L0": c1,
         "L1": c4,
 
         "Y0": c3,
@@ -136,7 +136,7 @@ const lebsian7 = "#933514";
 const polyamRed = "#ED4024";
 const polyamBlue = "#1432F5";
 const polyamYellow = "#FFFD52";
-const agenderGrey = "#CECECE";
+const agenderGrey = "#AAAAAA";
 const agenderGreen = "#CDF29F";
 
 exports.aro = flag5(romanticDarkGreen, romanticLightGreen, white, aceGrey, black);
