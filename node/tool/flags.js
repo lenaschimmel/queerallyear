@@ -138,6 +138,8 @@ const polyamBlue = "#1432F5";
 const polyamYellow = "#FFFD52";
 const agenderGrey = "#AAAAAA";
 const agenderGreen = "#CDF29F";
+const kinkBlue = "#0E24C0";
+const kinkRed = "#ED4024";
 
 exports.aro = flag5(romanticDarkGreen, romanticLightGreen, white, aceGrey, black);
 exports.nonbinary = flag4(nonbinaryYellow, white, nonbinaryViolet, black);
@@ -154,6 +156,24 @@ exports.rosa = flag3(transRose, transRose, transRose);
 exports.agender = flag7(black, agenderGrey, white, agenderGreen, white, agenderGrey, black);
 exports.lebsian = flag7(lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7);
 
+exports.kink = {
+        "Q0": kinkBlue,
+        "U0": black,
+        "E0": white,
+        "E1": kinkBlue,
+        "R0": black,
+
+        "A0": black,
+        "L0": kinkBlue,
+        "L1": black,
+
+        "Y0": kinkRed,
+        "E2": white,
+        "A1": kinkBlue,
+        "R1": black,
+    };
+
+
 exports.allFlags = {
     "Asexuell" : exports.ace, 
     "Bisexuell" : exports.bi, 
@@ -167,5 +187,6 @@ exports.allFlags = {
     "Inter*" : exports.intersex,
     "Genderfluid" : exports.genderfluid,
     "Agender" : exports.agender,
-    "Lesbisch" : exports.lebsian
+    "Lesbisch" : exports.lebsian,
+    "Kinky" : exports.kink
 };
