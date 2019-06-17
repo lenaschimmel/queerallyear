@@ -192,6 +192,14 @@ textarea {
 
 #mainlogo {
   width:90%;
+  position: absolute;
+  height: 90%;
+ }
+
+ #shadow {
+  position: absolute;
+  width:80%;
+  height: 80%;
  }
 
 .screenbox {
@@ -203,7 +211,7 @@ textarea {
 }
 
 .innerbox {
-  width: 40em;
+  width: 42em;
   max-width: 75%;
   background-color:#FFFFFF55;
   font-size: 115%;
@@ -222,6 +230,32 @@ textarea {
 
 .innerbox h1 {
   font-family: 'Merriweather', serif;
+}
+
+#identity {
+  position: absolute;
+  bottom: 5%;
+  font-family: 'Merriweather', serif;
+  font-size: 1.6em;
+  font-style: italic;
+}
+
+
+#arrow {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  font-family: 'Merriweather', serif;
+  font-size: 1.6em;
+}
+
+
+#arrow a {
+  text-decoration: none;
+}
+
+#arrow a:visited {
+  color: black;
 }
 
 /* ==========================================================================
