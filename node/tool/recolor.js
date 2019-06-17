@@ -53,19 +53,20 @@ function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
  }
 
-exports.changeGradients = async function(gradients, flag) {
+exports.changeGradients = async function(gradients, flag, animate = false) {
     for (let i = 0; i < gradients.children.length; i++) {
         const gradient = gradients.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-            colorLetter(gradient, flag[letter]);
+            colorLetter(gradient, flag[letter], animate);
         }
-        await sleep(25);
+        if(animate)
+          await sleep(25);
     }
 }
 
-async function colorLetter(gradient, targetColor) {
+async function colorLetter(gradient, targetColor, animate = false) {
     var id = gradient.id;
     var letter = id.substring(0,2);
     var [th, ts, tl] = color(targetColor).hsl().color;
@@ -74,14 +75,15 @@ async function colorLetter(gradient, targetColor) {
     var diffSaturation = adaptRange(composedRangesS[letter], 75);
     
     for (let s = 0; s < stops.length; s++) {
-        await sleep(45);
+        if(animate)
+            await sleep(45);
         var stop = stops.item(s);
         var stopcolor = originalColors[id][s];
 
         var [sh, ss, sl] = stopcolor.hsl().color;
 
         var nh = th;
-        var ns = (ss - diffSaturation) * ts / 100;
+        var ns = (ss - diffSaturation) * 1.15 * ts / 100;
         var nl = sl - diffLightness;
 
         var newColor = color.hsl([nh, ns, nl]).hex()

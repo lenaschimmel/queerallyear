@@ -1,22 +1,3 @@
-function flag5(c1, c2, c3, c4, c5) {
-    return {
-        "Q0": c1,
-        "U0": c2,
-        "E0": c3,
-        "E1": c4,
-        "R0": c5,
-
-        "A0": c1,
-        "L0": c2,
-        "L1": c2,
-
-        "Y0": c3,
-        "E2": c3,
-        "A1": c4,
-        "R1": c5,
-    };
-}
-
 function flag3(c1, c2, c3) {
     return {
         "Q0": c1,
@@ -55,21 +36,81 @@ function flag4(c1, c2, c3, c4) {
     };
 }
 
+function flag5(c1, c2, c3, c4, c5) {
+    return {
+        "Q0": c1,
+        "U0": c2,
+        "E0": c3,
+        "E1": c4,
+        "R0": c5,
+
+        "A0": c1,
+        "L0": c2,
+        "L1": c2,
+
+        "Y0": c3,
+        "E2": c3,
+        "A1": c4,
+        "R1": c5,
+    };
+}
+
+
+function flag5spezial(c1, c2, c3, c4, c5) {
+    return {
+        "Q0": c1,
+        "U0": c1,
+        "E0": c2,
+        "E1": c1,
+        "R0": c1,
+
+        "A0": c5,
+        "L0": c5,
+        "L1": c4,
+
+        "Y0": c3,
+        "E2": c4,
+        "A1": c5,
+        "R1": c5,
+    };
+}
+
+
+function flag7(c1, c2, c3, c4, c5, c6, c7) {
+    return {
+        "Q0": c2,
+        "U0": c3,
+        "E0": c4,
+        "E1": c5,
+        "R0": c6,
+
+        "A0": c1,
+        "L0": c2,
+        "L1": c3,
+
+        "Y0": c4,
+        "E2": c5,
+        "A1": c6,
+        "R1": c7,
+    };
+}
+
+
 const white = "#FFFFFF";
 const black = "#000000";
-const transBlue = "#6ad7fb";
-const transRose = "#f8b9c5";
+const transBlue = "#86D5F7";
+const transRose = "#EFBCC5";
 
-const biPink = "#d70271";
-const biViolet = "#9c4e98";
-const biBlue = "#0035aa";
+const biPink = "#CE3D81";
+const biViolet = "#A36AA3";
+const biBlue = "#1E4DB0";
 
-const aceGrey = "#919191";
-const aceViolet = "#922091";
+const aceGrey = "#B2B2B2";
+const aceViolet = "#882B8E";
 
-const panPink = "#ff1a8d";
-const panYellow = "#ffc500";
-const panBlue = "#1ab3ff";
+const panPink = "#EE539C";
+const panYellow = "#FADE49";
+const panBlue = "#5BBDF9";
 
 const romanticDarkGreen = "#60AB58";
 const romanticLightGreen = "#B8D58E";
@@ -95,25 +136,36 @@ const lebsian7 = "#933514";
 const polyamRed = "#ED4024";
 const polyamBlue = "#1432F5";
 const polyamYellow = "#FFFD52";
+const agenderGrey = "#CECECE";
+const agenderGreen = "#CDF29F";
 
 exports.aro = flag5(romanticDarkGreen, romanticLightGreen, white, aceGrey, black);
 exports.nonbinary = flag4(nonbinaryYellow, white, nonbinaryViolet, black);
 exports.genderqueer = flag3(genderqueerViolet, white, genderqueerGreen);
-exports.polysexual = flag4(polysexualPink, polysexualGreen, polysexualBlue);
+exports.polysexual = flag3(polysexualPink, polysexualGreen, polysexualBlue);
 exports.trans = flag5(transBlue, transRose, white, transRose, transBlue);
 exports.bi = flag5(biPink, biPink, biViolet, biBlue, biBlue);
 exports.pan = flag3(panPink, panYellow, panBlue);
 exports.ace = flag4(black, aceGrey, white, aceViolet);
-exports.polyam = flag4(polyamBlue, polyamRed, polyamYellow, black);
+exports.polyam = flag5spezial(polyamBlue, polyamRed, polyamYellow, polyamRed, black);
+exports.intersex = flag5spezial(intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow);
+exports.genderfluid = flag5(genderfluidPink, white, genderfluidViolet, black, genderfluidBlue);
+exports.rosa = flag3(transRose, transRose, transRose);
+exports.agender = flag7(black, agenderGrey, white, agenderGreen, white, agenderGrey, black);
+exports.lebsian = flag7(lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7);
 
 exports.allFlags = {
     "Asexuell" : exports.ace, 
     "Bisexuell" : exports.bi, 
-    "Pansexiell" : exports.pan, 
+    "Pansexuell" : exports.pan, 
     "Trans*" : exports.trans, 
     "Aromantisch" : exports.aro, 
     "Nicht-Binär" : exports.nonbinary,
     "Genderqueer" : exports.genderqueer,
     "Polyamor" : exports.polyam,
-    "Polysexuell" : exports.polysexual
+    "Polysexuell" : exports.polysexual,
+    "Inter*" : exports.intersex,
+    "Genderfluid" : exports.genderfluid,
+    "Agender" : exports.agender,
+    "Lesbisch" : exports.lebsian
 };
