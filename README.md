@@ -1,10 +1,10 @@
 # Queer all year
-Dies ist eine Kampagne für mehr vielfalt und weniger Regenbogenkapitalismus beim Braunschweiger CSD 2019.
+Dies ist eine Kampagne für mehr Vielfalt und weniger Regenbogenkapitalismus beim Braunschweiger CSD 2019.
 
 Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werden wird. Bisherige Ideen:
 
- * [*] Alternatives Logo im Stil des Originals
- * [*] Website mit kurzer Erläuterung, so dass wir [QueerAllYear.de](http://queerallyear.de) auf unseren Merch drucken können
+ * [x] Alternatives Logo im Stil des Originals
+ * [x] Website mit kurzer Erläuterung, so dass wir [QueerAllYear.de](http://queerallyear.de) auf unseren Merch drucken können
  * [ ] Umfangreichere Website mit Navigation
  * [ ] Ausführliches Manifest / Erklärung unserer Position
  * [ ] Liste von Unterzeichner_innen
@@ -13,7 +13,7 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
  * [ ] Fertiger Merch (z.B. Sticker) die wir designen, in Druck geben und verbreiten
 
 # Motto
-Da sowohl der Reduktion auf "gay" als auch dem Konzepz "for one day" etwas entgegen gesetzt werden sollte, standen "queer" und "year" schnell fest. In einer Abstimmung zwischen den folgenden Mottos setzte sich _Queer all year_ mit 8 von 8 Stimmen durch:
+Da sowohl der Reduktion auf "gay" als auch dem Konzept "for one day" etwas entgegen gesetzt werden sollte, standen "queer" und "year" schnell fest. In einer Abstimmung zwischen den folgenden Mottos setzte sich _Queer all year_ mit 8 von 8 Stimmen durch:
 
  * **Queer all year**
  * Queer throughout the year
@@ -59,6 +59,6 @@ Die aktuelle Website basiert ist eine einzelne html-Seite (`index.html`), die (q
 Es gibt einen NodeJS-Server, der beim Ausliefern die obige Zeile durch den Inhalt der SVG-Datei ersetzt. Nur bei dieser Art der Einbettung kann später clientseitig im JavaScript auf den Bildinhalt zugriffen werden, denn das SVG wird einfach teil des (HTML-)DOM.
 
 # Tool
-Es existiert ein Tool, das eine SVG mit der Struktur von `logo.svg` modifizieren kann. Es analysiert die vorhandenne Farverläufe und färbt diese um.
+Es existiert ein Tool, das eine SVG mit der Struktur von `logo.svg` modifizieren kann. Es analysiert die vorhandenen Farbverläufe und färbt diese um.
 
 Das Modul `recolor` arbeitet auf dem DOM des SVG. Es kann im Browser oder in NodeJS eingesetzt werden. Damit es im Browser läuft, muss es durch [Browserify](https://www.npmjs.com/package/browseifyy) konvertiert werden, wo es dann direkt auf dem nativen DOM arbeitet. Innerhalb von NodeJS nutzt es [jsdom](https://www.npmjs.com/package/jsdom), da kein Browser vorhanden ist, der ein DOM bereitstellen könnte.
