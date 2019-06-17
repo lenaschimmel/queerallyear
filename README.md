@@ -62,3 +62,34 @@ Es gibt einen NodeJS-Server, der beim Ausliefern die obige Zeile durch den Inhal
 Es existiert ein Tool, das eine SVG mit der Struktur von `logo.svg` modifizieren kann. Es analysiert die vorhandenen Farbverläufe und färbt diese um.
 
 Das Modul `recolor` arbeitet auf dem DOM des SVG. Es kann im Browser oder in NodeJS eingesetzt werden. Damit es im Browser läuft, muss es durch [Browserify](https://www.npmjs.com/package/browseifyy) konvertiert werden, wo es dann direkt auf dem nativen DOM arbeitet. Innerhalb von NodeJS nutzt es [jsdom](https://www.npmjs.com/package/jsdom), da kein Browser vorhanden ist, der ein DOM bereitstellen könnte.
+
+# Inhalte
+In erster Linie geht es darum, das Motto zu kritisieren. Der CSD als ganzes ist ja in den letzten Jahren ganz nett gewesen, und kann es auch jetzt wieder werden.
+
+Die Kommunikation hat aber mehrere Ebenen:
+ * Das Motto selbst
+ * Die [Erläuterung des Mottos](https://www.csd-braunschweig.de/sommerlochfestival/gay-for-one-day-das-diesj%C3%A4hrige-motto/)
+ * [Hintergrundinfos im Pressebereich](https://www.csd-braunschweig.de/presse-1/hintergrund-info/)
+ * [Programm](https://www.csd-braunschweig.de/programm-2019/rahmenprogramm-details/)
+ * Sonstige Kommunikation (z.B. [T-Shirt-Aktion](https://www.csd-braunschweig.de/unterst%C3%BCtze-uns/t-shirt-aktion/))
+ * [Forderungen](https://www.csd-braunschweig.de/sommerlochfestival/unsere-forderungen/) (die ziemlich veraltet sind)
+
+ * Gay als Überbegriff - während CSDs eh schon als "Schwulenparade" gesehen werden
+ * Gay für Fröhlichsein - Gegensatz zu "eine Meile in seinen Schuhen gegangen" sein
+ * Gay for one day …  Lebensfreude und *Vielfalt* sichtbar werden zu lassen
+ * "wie fröhlich und heiter das Leben sein kann, wenn Unterschiede, wie beispielsweise sexuelle Orientierung, gleichgültig sind"
+
+# Struktur
+ * Intro-Animation
+ * Kurzbeschreibung (wie schon vorhanden)
+ * Langes Statement mit Unterstützer-Unterschriften
+ * (Micro-)Blog
+ * Merch
+ * Designer
+ * Impressum / Datenschutz
+
+# Ablauf
+ * Teaser konkretisieren
+ * Kerngruppe suchen
+ * gemeinsam Manifest formulieren
+ * Unterstützer_innen suchen
