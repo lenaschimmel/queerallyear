@@ -3,7 +3,7 @@ var express = require('express');
 var fs = require('fs');
 var app = express();
 var { pages } = require('./pages.js');
-const recolor = require('../tool/recolor.js');
+const GradientSvg = require('../tool/recolor.js');
 const flags = require('../tool/flags.js');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -92,9 +92,8 @@ async function initSvg(withshadow) {
     dom = await JSDOM.fromFile("../../web/img/logo.svg", {} );
   var doc = dom.window.document;
   //var gradients = dom.window.document.querySelector("defs");
-  var gradients = doc.getElementsByTagName("defs").item(0);
-  recolor.prepareGradients(gradients);
-  return gradients;
+  var defs = doc.getElementsByTagName("defs").item(0);
+  return new GradientSvg(defs);
 }
 
 //gradientsFutureWithShadow = initSvg(true);
@@ -110,7 +109,7 @@ app.get('/design/download', async function (req, res) {
   
   //var gradients = withshadow ? (await gradientsFutureWithShadow) : (await gradientsFuture);
   var gradients = await gradientsFuture;
-  recolor.changeGradients(gradients, flags.allFlags[flag]);
+  gradients.changeGradients(flags.allFlags[flag]);
   var start = '<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><html><head></head><body>';
   var end = '</body></html>';
 

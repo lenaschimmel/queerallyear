@@ -1,16 +1,14 @@
-const recolor = require('./recolor.js');
+const GradientSvg = require('./recolor.js');
 const flags = require('./flags.js');
 const util = require('util');
 
-var gradients = window.document.getElementsByTagName("defs").item(0);
-recolor.prepareGradients(gradients);
+var defs = window.document.getElementsByTagName("defs").item(0);
+gradientSvg = new GradientSvg(defs);
 
 window.queer = {};
 window.queer.showflag = function (flagname) {
-    recolor.changeGradients(gradients, flags[flagname], true);
+    gradientSvg.changeGradients(flags[flagname], true);
 }
-
-
 
 window.queer.initFlagAnimation = function () {
     var lastFlagName = "Gay";
@@ -27,15 +25,12 @@ window.queer.initFlagAnimation = function () {
                 $("#identity").html("(" + flagName + ")").fadeIn(500);
             });
 
-            recolor.changeGradients(gradients, flags.allFlags[flagName], true);
+            gradientSvg.changeGradients(flags.allFlags[flagName], true);
         }
     }
 
     setInterval(nextFlag, 3500);
 }
-
-
-
 
 window.queer.initArrow = function () {
 
@@ -68,6 +63,5 @@ window.queer.initArrow = function () {
 
 window.queer.flagSelected = function () {
     flagName = $("#flagselect :selected").val();
-    console.log("Selected flag: " + flagName);
-    recolor.changeGradients(gradients, flags.allFlags[flagName], false);
+    gradientSvg.changeGradients(flags.allFlags[flagName], false);
 }

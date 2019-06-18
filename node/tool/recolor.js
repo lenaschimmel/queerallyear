@@ -1,84 +1,87 @@
 var util = require('util');
 var color = require('color');
 
-var rangesL = {};
-var rangesS = {};
+function sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+ }
 
-var composedRangesL = {};
-var composedRangesS = {};
+var method = GradientSvg.prototype;
 
-var originalColors = {};
+// the parameter "defs" must be the DOM element with tag "defs" from the SVG file.
+function GradientSvg(defs) {
+    this.defs = defs;
+    this.rangesL = {};
+    this.rangesS = {};
 
-// the parameter "gradients" must be the DOM element with tag "defs" from the SVG file.
-exports.prepareGradients = function(gradients) {
-    for (let i = 0; i < gradients.children.length; i++) {
-        const gradient = gradients.children.item(i);
+    this.composedRangesL = {};
+    this.composedRangesS = {};
+
+    this.originalColors = {};
+
+    for (let i = 0; i < defs.children.length; i++) {
+        const gradient = defs.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
             var stops = gradient.children;
 
-            originalColors[id] = {};
+            this.originalColors[id] = {};
             for (let s = 0; s < stops.length; s++) {
                 var stop = stops.item(s);
-                originalColors[id][s] = color(stop.getAttribute("stop-color"));
+                this.originalColors[id][s] = color(stop.getAttribute("stop-color"));
             }
             
-            if(!rangesL[letter]) 
-                rangesL[letter] = [];
-            if(!rangesS[letter]) 
-                rangesS[letter] = [];
+            if(!this.rangesL[letter]) 
+                this.rangesL[letter] = [];
+            if(!this.rangesS[letter]) 
+                this.rangesS[letter] = [];
             
-            rangesL[letter].push(getLightnessRange(stops));
-            rangesS[letter].push(getSaturationRange(stops));
+            this.rangesL[letter].push(getLightnessRange(stops));
+            this.rangesS[letter].push(getSaturationRange(stops));
         }
     }
 
-    for (const letter in rangesL) {
-        if (rangesL.hasOwnProperty(letter)) {
-            const letterRanges = rangesL[letter];
-            composedRangesL[letter] = composeRanges(letterRanges);
+    for (const letter in this.rangesL) {
+        if (this.rangesL.hasOwnProperty(letter)) {
+            const letterRanges = this.rangesL[letter];
+            this.composedRangesL[letter] = composeRanges(letterRanges);
         }
     }
 
-    for (const letter in rangesS) {
-        if (rangesS.hasOwnProperty(letter)) {
-            const letterRanges = rangesS[letter];
-            composedRangesS[letter] = composeRanges(letterRanges);
+    for (const letter in this.rangesS) {
+        if (this.rangesS.hasOwnProperty(letter)) {
+            const letterRanges = this.rangesS[letter];
+            this.composedRangesS[letter] = composeRanges(letterRanges);
         }
     }
 }
 
-function sleep(milliseconds) {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
- }
-
-exports.changeGradients = async function(gradients, flag, animate = false) {
-    for (let i = 0; i < gradients.children.length; i++) {
-        const gradient = gradients.children.item(i);
+method.changeGradients = async function(flag, animate = false) {
+    for (let i = 0; i < this.defs.children.length; i++) {
+        const gradient = this.defs.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-            colorLetter(gradient, flag[letter], animate);
+            this.colorLetter(gradient, flag[letter], animate);
         }
         if(animate)
           await sleep(25);
     }
 }
 
-async function colorLetter(gradient, targetColor, animate = false) {
+method.colorLetter = async function(gradient, targetColor, animate = false) {
     var id = gradient.id;
     var letter = id.substring(0,2);
     var [th, ts, tl] = color(targetColor).hsl().color;
     var stops = gradient.children;
-    var diffLightness = adaptRange(composedRangesL[letter], tl);
-    var diffSaturation = adaptRange(composedRangesS[letter], 75);
+    var diffLightness = adaptRange(this.composedRangesL[letter], tl);
+    var diffSaturation = adaptRange(this.composedRangesS[letter], 75);
     
     for (let s = 0; s < stops.length; s++) {
         if(animate)
             await sleep(45);
         var stop = stops.item(s);
-        var stopcolor = originalColors[id][s];
+        var stopcolor = this.originalColors[id][s];
 
         var [sh, ss, sl] = stopcolor.hsl().color;
 
@@ -90,8 +93,6 @@ async function colorLetter(gradient, targetColor, animate = false) {
         stop.setAttribute("stop-color", newColor);
     }
 }
-
-exports.colorLetter = colorLetter;
 
 function composeRanges(rangeArray) {
     var min, max;
@@ -147,3 +148,5 @@ function getRange(stops, index) {
         "width": max - min
     };
 }
+
+module.exports = GradientSvg;
