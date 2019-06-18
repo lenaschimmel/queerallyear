@@ -196,6 +196,12 @@ textarea {
   height: 90%;
  }
 
+
+
+ #smalllogo {
+  width:30em;
+ }
+
  #shadow {
   position: absolute;
   width:90%;

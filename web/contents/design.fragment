@@ -1,0 +1,44 @@
+
+<div class="pagebox">
+    <div class="innerbox">
+        <div class="innerinnerbox">
+            
+            <h1>Design</h1>
+            <p>Du möchtest dir etwas mit 'Queer all year' gestalten oder bedrucken? Hier findest du die Daten in verschiedenen Formaten.</p>
+
+            <form action="/design/download" id="person" target="_download">
+                <label for="width">Breite in Pixeln</label> 
+                <input type="text" name="width" id="width" maxlength="30" value="1920">
+                <br>
+<!--
+                <label for="withshadow">Schatten</label> 
+                <input type="checkbox" name="withshadow" id="withshadow">
+                <br>
+-->
+                <label for="flag">Flagge</label>  
+                <select name="flag" id="flagselect" onchange="queer.flagSelected();">
+                    $FLAGS
+                </select>
+                <br>
+
+                <label for="type">Format</label>  
+                <select name="type">
+                    <option value="pdf">pdf (zum Drucken)</option>
+                    <option value="png">png (transparenter Hintergrund)</option>
+                    <option value="jpg">jpg (blauer Hintergrund)</option>
+                    <option value="svg">svg (für's Web bzw. Inkscape)</option>
+                </select>
+                <br>
+
+                <button type="submit">Herunterladen</button>
+            </form> 
+            <h1>Vorschau</h1>
+            $SMALLLOGO
+            <noscript>Die Vorschau erfordert Javascript. Der Download funtioniert auch ohne.</noscript>
+        </div>
+    </div>
+</div>
+<script src="js/modules.js"></script>
+<script>
+    queer.flagSelected();
+</script>
