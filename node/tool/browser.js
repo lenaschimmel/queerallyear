@@ -2,8 +2,7 @@ const GradientSvg = require('./recolor.js');
 const flags = require('./flags.js');
 const util = require('util');
 
-var defs = window.document.getElementsByTagName("defs").item(0);
-gradientSvg = new GradientSvg(defs);
+gradientSvg = new GradientSvg(window);
 
 window.queer = {};
 window.queer.showflag = function (flagname) {

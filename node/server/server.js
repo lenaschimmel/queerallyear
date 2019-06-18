@@ -14,7 +14,7 @@ const resolve = require('path').resolve;
 const logo = fs.readFileSync("../../web/img/logo.svg").toString();
 const logo_with_shadow = fs.readFileSync("../../web/img/logo_with_shadow.svg").toString();
 const mainlogo = logo.substring(logo.indexOf("?>") + 2).replace('id="Ebene_1"', 'id="mainlogo"');
-const smalllogo = logo_with_shadow.substring(logo.indexOf("?>") + 2).replace('id="Ebene_1"', 'id="smalllogo"');
+const smalllogo = logo_with_shadow.substring(logo_with_shadow.indexOf("?>") + 2).replace('id="Ebene_1"', 'id="smalllogo"');
 
 var fragments = {};
 
@@ -85,40 +85,44 @@ for (const key in pages) {
 app.use(express.static('../../web/'));
 
 async function initSvg(withshadow) {
-  dom = "";
+  var dom = "";
   if(withshadow)
     dom = await JSDOM.fromFile("../../web/img/logo_with_shadow.svg", {} );
   else
     dom = await JSDOM.fromFile("../../web/img/logo.svg", {} );
-  var doc = dom.window.document;
-  //var gradients = dom.window.document.querySelector("defs");
-  var defs = doc.getElementsByTagName("defs").item(0);
-  return new GradientSvg(defs);
+  return new GradientSvg(dom);
 }
 
-//gradientsFutureWithShadow = initSvg(true);
+gradientsFutureWithShadow = initSvg(true);
 gradientsFuture = initSvg(false);
 
 app.get('/design/download', async function (req, res) {
   var flag = req.query.flag;
   var type = req.query.type;
-  // var withshadow = req.query.type;
+  var withshadow = req.query.withshadow;
   var width = parseInt(req.query.width) || 1920;
 
-  console.log("Building " + flag + ", " + type);
+  if(type == "pdf" && withshadow) {
+    res.status(500).send("Sorry, pdf-Ausgabe funktioniert derzeit nicht mit aktivierten Schatten.");
+    return;
+  } 
+
+  var prettyFileName = "QueerAllYear_" + flag + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
+      
+
+  console.log("Building " + flag + ", " + type + ", withShadow: " + withshadow);
   
-  //var gradients = withshadow ? (await gradientsFutureWithShadow) : (await gradientsFuture);
-  var gradients = await gradientsFuture;
+  var gradients = withshadow ? (await gradientsFutureWithShadow) : (await gradientsFuture);
   gradients.changeGradients(flags.allFlags[flag]);
-  var start = '<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><html><head></head><body>';
-  var end = '</body></html>';
 
   if(type == "svg") {
-    res.send(dom.serialize().replace(start, "").replace(end, ""));
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.setHeader('Content-Disposition','attachment; filename="'+prettyFileName+'"');
+    res.send(gradients.svgString());
   } else if(type == "pdf" || type == "png" || type == "jpg") {
     try {
       const filenameBase = resolve("tmp/tmp" + Math.random().toString());
-      fs.writeFileSync(filenameBase + ".svg", dom.serialize().replace(start, "").replace(end, ""));
+      fs.writeFileSync(filenameBase + ".svg", gradients.svgString());
       const inkscape = process.env.inkscape || "inkscape";
 
       extraParams = "";
@@ -146,7 +150,10 @@ app.get('/design/download', async function (req, res) {
         console.log("Executung: " + command);
         const { stdout, stderr } = await exec(command);
       }
-
+      if(type == "pdf") res.setHeader('Content-Type', 'application/pdf');
+      if(type == "png") res.setHeader('Content-Type', 'image/png');
+      if(type == "jpg") res.setHeader('Content-Type', 'image/jpeg');
+      res.setHeader('Content-Disposition','attachment; filename="'+prettyFileName+'"');
       res.sendFile(filenameBase + "." + type);
     } catch(e) {
       res.status(500).send("Sorry, Fehler beim Erstellen der "+type+"-Datei! " + e.toString());

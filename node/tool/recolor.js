@@ -7,9 +7,9 @@ function sleep(milliseconds) {
 
 var method = GradientSvg.prototype;
 
-// the parameter "defs" must be the DOM element with tag "defs" from the SVG file.
-function GradientSvg(defs) {
-    this.defs = defs;
+function GradientSvg(dom) {
+    this.dom = dom;
+    this.defs = dom.window.document.getElementsByTagName("defs").item(0);
     this.rangesL = {};
     this.rangesS = {};
 
@@ -18,8 +18,8 @@ function GradientSvg(defs) {
 
     this.originalColors = {};
 
-    for (let i = 0; i < defs.children.length; i++) {
-        const gradient = defs.children.item(i);
+    for (let i = 0; i < this.defs.children.length; i++) {
+        const gradient = this.defs.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
@@ -54,6 +54,12 @@ function GradientSvg(defs) {
             this.composedRangesS[letter] = composeRanges(letterRanges);
         }
     }
+}
+
+method.svgString = function() {
+    const start = '<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><html><head></head><body>';
+    const end = '</body></html>';
+    return this.dom.serialize().replace(start, "").replace(end, "");
 }
 
 method.changeGradients = async function(flag, animate = false) {

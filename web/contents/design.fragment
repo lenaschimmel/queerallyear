@@ -10,11 +10,11 @@
                 <label for="width">Breite in Pixeln</label> 
                 <input type="text" name="width" id="width" maxlength="30" value="1920">
                 <br>
-<!--
+
                 <label for="withshadow">Schatten</label> 
                 <input type="checkbox" name="withshadow" id="withshadow">
                 <br>
--->
+
                 <label for="flag">Flagge</label>  
                 <select name="flag" id="flagselect" onchange="queer.flagSelected();">
                     $FLAGS
