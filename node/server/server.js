@@ -23,7 +23,7 @@ function getNavi(activeName) {
   for (const key in pages) {
     if (pages.hasOwnProperty(key)) {
       const page = pages[key];
-      if(!page.hidden) {
+      if (!page.hidden) {
         if (page.name == activeName)
           navi += '<li><a href="/' + page.name + '.html" class="active">' + page.title + '</a></li>';
         else
@@ -46,23 +46,23 @@ function flagList() {
 
 function getPageOutput(page) {
   const content = fragment(page.name);
-  const output = 
-      fragment('head')
-        .replace("$NAVI", getNavi(page.name))
-        .replace("$TITLE", "Queer All Year - " + page.title) 
-        .replace("$CARDTITLE", page.cardtitle)
-        .replace("$DESCRIPTION", page.description)
-    + content 
-        .replace("$MAINLOGO", mainlogo)
-        .replace("$SMALLLOGO", smalllogo)
-        .replace("$FLAGS", flagList())
+  const output =
+    fragment('head')
+      .replace("$NAVI", getNavi(page.name))
+      .replace("$TITLE", "Queer All Year - " + page.title)
+      .replace("$CARDTITLE", page.cardtitle)
+      .replace("$DESCRIPTION", page.description)
+    + content
+      .replace("$MAINLOGO", mainlogo)
+      .replace("$SMALLLOGO", smalllogo)
+      .replace("$FLAGS", flagList())
     + fragment('foot');
   return output;
 }
 
 function fragment(name) {
   //if (!fragments[name]) {
-    fragments[name] = fs.readFileSync("../../web/contents/" + name + ".fragment").toString();
+  fragments[name] = fs.readFileSync("../../web/contents/" + name + ".fragment").toString();
   //}
   return fragments[name];
 }
@@ -74,7 +74,7 @@ for (const key in pages) {
     app.get('/' + page.name + ".html", function (req, res) {
       res.send(output);
     });
-    if(page.name == "index") {
+    if (page.name == "index") {
       app.get('/', function (req, res) {
         res.send(output);
       });
@@ -86,10 +86,10 @@ app.use(express.static('../../web/'));
 
 async function initSvg(withshadow) {
   var dom = "";
-  if(withshadow)
-    dom = await JSDOM.fromFile("../../web/img/logo_with_shadow.svg", {} );
+  if (withshadow)
+    dom = await JSDOM.fromFile("../../web/img/logo_with_shadow.svg", {});
   else
-    dom = await JSDOM.fromFile("../../web/img/logo.svg", {} );
+    dom = await JSDOM.fromFile("../../web/img/logo.svg", {});
   return new GradientSvg(dom);
 }
 
@@ -102,24 +102,24 @@ app.get('/design/download', async function (req, res) {
   var withshadow = req.query.withshadow;
   var width = parseInt(req.query.width) || 1920;
 
-  if(type == "pdf" && withshadow) {
+  if (type == "pdf" && withshadow) {
     res.status(500).send("Sorry, pdf-Ausgabe funktioniert derzeit nicht mit aktivierten Schatten.");
     return;
-  } 
+  }
 
   var prettyFileName = "QueerAllYear_" + flag + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
-      
+
 
   console.log("Building " + flag + ", " + type + ", withShadow: " + withshadow);
-  
+
   var gradients = withshadow ? (await gradientsFutureWithShadow) : (await gradientsFuture);
   gradients.changeGradients(flags.allFlags[flag]);
 
-  if(type == "svg") {
+  if (type == "svg") {
     res.setHeader('Content-Type', 'image/svg+xml');
-    res.setHeader('Content-Disposition','attachment; filename="'+prettyFileName+'"');
+    res.setHeader('Content-Disposition', 'attachment; filename="' + prettyFileName + '"');
     res.send(gradients.svgString());
-  } else if(type == "pdf" || type == "png" || type == "jpg") {
+  } else if (type == "pdf" || type == "png" || type == "jpg") {
     try {
       const filenameBase = resolve("tmp/tmp" + Math.random().toString());
       fs.writeFileSync(filenameBase + ".svg", gradients.svgString());
@@ -128,35 +128,35 @@ app.get('/design/download', async function (req, res) {
       extraParams = "";
       typeForInksacpe = type;
 
-      if(type == "png" || type == "jpg" ) {
-        if(width > 4096) {
+      if (type == "png" || type == "jpg") {
+        if (width > 4096) {
           res.status(500).send("Sorry, größer als 4096 ist nicht erlaubt.");
           return;
         }
-        if(type == "jpg") {
-          extraParams = " --export-width=" + width +  " --export-background-opacity=1 --export-background=#badbff ";
+        if (type == "jpg") {
+          extraParams = " --export-width=" + width + " --export-background-opacity=1 --export-background=#badbff ";
           typeForInksacpe = "png";
         } else {
-          extraParams = " --export-width=" + width +  " --export-background-opacity=0 ";
+          extraParams = " --export-width=" + width + " --export-background-opacity=0 ";
         }
       }
-      
-      const command = inkscape + " " + filenameBase + '.svg --export-'+typeForInksacpe+'=' + filenameBase + "." + typeForInksacpe + extraParams;
+
+      const command = inkscape + " " + filenameBase + '.svg --export-' + typeForInksacpe + '=' + filenameBase + "." + typeForInksacpe + extraParams;
       console.log("Executung: " + command);
       const { stdout, stderr } = await exec(command);
 
-      if(type == "jpg") {
-        const command ="convert " + filenameBase + ".png " + filenameBase + ".jpg";
+      if (type == "jpg") {
+        const command = "convert " + filenameBase + ".png " + filenameBase + ".jpg";
         console.log("Executung: " + command);
         const { stdout, stderr } = await exec(command);
       }
-      if(type == "pdf") res.setHeader('Content-Type', 'application/pdf');
-      if(type == "png") res.setHeader('Content-Type', 'image/png');
-      if(type == "jpg") res.setHeader('Content-Type', 'image/jpeg');
-      res.setHeader('Content-Disposition','attachment; filename="'+prettyFileName+'"');
+      if (type == "pdf") res.setHeader('Content-Type', 'application/pdf');
+      if (type == "png") res.setHeader('Content-Type', 'image/png');
+      if (type == "jpg") res.setHeader('Content-Type', 'image/jpeg');
+      res.setHeader('Content-Disposition', 'attachment; filename="' + prettyFileName + '"');
       res.sendFile(filenameBase + "." + type);
-    } catch(e) {
-      res.status(500).send("Sorry, Fehler beim Erstellen der "+type+"-Datei! " + e.toString());
+    } catch (e) {
+      res.status(500).send("Sorry, Fehler beim Erstellen der " + type + "-Datei! " + e.toString());
     }
   } else {
     res.status(500).send("Sorry, " + type + " ist kein gültiges Format.");
