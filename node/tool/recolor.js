@@ -57,7 +57,7 @@ function GradientSvg(dom) {
 }
 
 method.svgString = function() {
-    const start = '<!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><html><head></head><body>';
+    const start = '<html><head></head><body>';
     const end = '</body></html>';
     return this.dom.serialize().replace(start, "").replace(end, "");
 }

@@ -10,11 +10,48 @@ const { JSDOM } = jsdom;
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const resolve = require('path').resolve;
+const SVGO = require('svgo');
 
-const logo = fs.readFileSync("../../web/img/logo.svg").toString();
-const logo_with_shadow = fs.readFileSync("../../web/img/logo_with_shadow.svg").toString();
-const mainlogo = logo.substring(logo.indexOf("?>") + 2).replace('id="Ebene_1"', 'id="mainlogo"');
-const smalllogo = logo_with_shadow.substring(logo_with_shadow.indexOf("?>") + 2).replace('id="Ebene_1"', 'id="smalllogo"');
+const enabledPlugins = [
+  "cleanupAttrs", "removeDoctype", "removeXMLProcInst", "removeComments", "removeMetadata", "removeTitle", "removeDesc", 
+  "removeUselessDefs", "removeEditorsNSData", "removeEmptyAttrs", "removeHiddenElems", "removeEmptyText", 
+  "removeEmptyContainers", "cleanupEnableBackground", "convertStyleToAttrs", "convertColors", "convertPathData", 
+  "convertTransform", "removeUnknownsAndDefaults", "removeNonInheritableGroupAttrs", "removeUselessStrokeAndFill", 
+  "removeUnusedNS", "cleanupNumericValues", "moveElemsAttrsToGroup", "moveGroupAttrsToElems", "collapseGroups", "mergePaths", 
+  "convertShapeToPath", "sortAttrs", "removeDimensions"
+];
+
+const disabledPlugins = ["removeViewBox", "cleanupIDs", "removeRasterImages"];
+
+function createPluginsArray(enabled, disabled) {
+  var array = [];
+  enabled.forEach(plugin => {
+    array.push({ [plugin]: true });
+  });
+  disabled.forEach(plugin => {
+    array.push({ [plugin]: false });
+  });
+  return array;
+}
+
+const svgo = new SVGO({
+  pretty: true,
+  floatPrecision: 4,
+  plugins: createPluginsArray(enabledPlugins, disabledPlugins)
+});
+
+async function readSvg(filename, newId) {
+  const filepath = resolve("../../web/img/" + filename + ".svg");
+  const data = fs.readFileSync(filepath).toString();
+  const optimized = await svgo.optimize(data, { path: filepath });
+  const onlySvg = optimized.data.substring(optimized.data.indexOf("?>") + 1);
+  return onlySvg.replace('id="Ebene_1"', 'id="' + newId + '"');
+}
+
+const graphics = {
+  "mainlogo": readSvg("logo", "mainlogo"),
+  "smalllogo": readSvg("logo_with_shadow", "smallogo")
+};
 
 var fragments = {};
 
@@ -44,7 +81,7 @@ function flagList() {
   return list;
 }
 
-function getPageOutput(page) {
+async function getPageOutput(page) {
   const content = fragment(page.name);
   const output =
     fragment('head')
@@ -53,8 +90,8 @@ function getPageOutput(page) {
       .replace("$CARDTITLE", page.cardtitle)
       .replace("$DESCRIPTION", page.description)
     + content
-      .replace("$MAINLOGO", mainlogo)
-      .replace("$SMALLLOGO", smalllogo)
+      .replace("$MAINLOGO", await graphics['mainlogo'])
+      .replace("$SMALLLOGO", await graphics['smalllogo'])
       .replace("$FLAGS", flagList())
     + fragment('foot');
   return output;
@@ -71,12 +108,12 @@ for (const key in pages) {
   if (pages.hasOwnProperty(key)) {
     const page = pages[key];
     const output = getPageOutput(page)
-    app.get('/' + page.name + ".html", function (req, res) {
-      res.send(output);
+    app.get('/' + page.name + ".html", async function (req, res) {
+      res.send(await output);
     });
     if (page.name == "index") {
-      app.get('/', function (req, res) {
-        res.send(output);
+      app.get('/', async function (req, res) {
+        res.send(await output);
       });
     }
   }
@@ -85,11 +122,8 @@ for (const key in pages) {
 app.use(express.static('../../web/'));
 
 async function initSvg(withshadow) {
-  var dom = "";
-  if (withshadow)
-    dom = await JSDOM.fromFile("../../web/img/logo_with_shadow.svg", {});
-  else
-    dom = await JSDOM.fromFile("../../web/img/logo.svg", {});
+  const source = await graphics[withshadow ? 'mainlogo' : 'smalllogo'];
+  const dom = new JSDOM(source);
   return new GradientSvg(dom);
 }
 

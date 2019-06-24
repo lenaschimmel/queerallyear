@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "dependencies": {
     "express": "^4.17.1",
-    "jsdom": " ^15.1.1"
+    "jsdom": " ^15.1.1",
+    "svgo": "^1.2.2"
   },
   "devDependencies": {}
 }
