@@ -37,6 +37,7 @@ window.queer.initPreviewLogo = function() {
     previewLogo = new GradientSvg(window.document.getElementById("previewlogo"), window.document, window);
     previewLogo.setShadowMode("off");
     window.queer.flagSelected();
+    window.queer.layoutSelected();
 }
 
 window.queer.initArrow = function () {

@@ -240,6 +240,18 @@ textarea {
   margin: 2em 2em;
 }
 
+.innerbox strong {
+  font-family: 'Merriweather', serif;
+  font-weight: 700;
+  padding-left: 3em;
+}
+
+
+.innerbox blockquote {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+}
+
 .moneyquote {
   font-family: 'Merriweather', serif;
   font-style: italic;
