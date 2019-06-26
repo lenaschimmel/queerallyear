@@ -15,13 +15,13 @@ const flags = require('../tool/flags.js');
 const enabledPlugins = [
   "cleanupAttrs", "removeDoctype", "removeXMLProcInst", "removeComments", "removeMetadata", "removeTitle", "removeDesc", 
   "removeUselessDefs", "removeEditorsNSData", "removeEmptyAttrs", "removeHiddenElems", "removeEmptyText", 
-  "removeEmptyContainers", "cleanupEnableBackground", "convertStyleToAttrs", "convertColors", "convertPathData", 
+  "removeEmptyContainers", "cleanupEnableBackground", "convertStyleToAttrs", "convertColors", 
   "convertTransform", "removeUnknownsAndDefaults", "removeNonInheritableGroupAttrs", "removeUselessStrokeAndFill", 
   "removeUnusedNS", "cleanupNumericValues", "moveElemsAttrsToGroup", "moveGroupAttrsToElems", "collapseGroups", "mergePaths", 
-  "convertShapeToPath", "sortAttrs", "removeDimensions"
+  "sortAttrs", "removeDimensions"
 ];
 
-const disabledPlugins = ["removeViewBox", "cleanupIDs", "removeRasterImages"];
+const disabledPlugins = ["removeViewBox", "cleanupIDs", "removeRasterImages", "convertPathData", "convertShapeToPath"];
 
 function createPluginsArray(enabled, disabled) {
   var array = [];
