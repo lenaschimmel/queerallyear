@@ -51,6 +51,40 @@ Die Farbverläufe sind im SVG so definiert:
 
 Die IDs der Verläufe sind dreistellig, in diesem Fall `E13`. Dabei Steht `E` für den Buchstaben, zu dem es gehört, die `1` definiert den Index des Buchstabens _(ab 0 gezählt!)_ und die `3` den Index des Verlaufs im Buchstaben _(ab 1 gezählt!)_. Somit ist `E13` der dritte Verlauf im zweiten E des Schriftzugs.
 
+Ablauf der Grafikverarbeitung im `server`:
+
+ * `readSvg` 
+    * lädt eine Datei vom Datenträger,
+    * optimiert sie mit svgo
+    * entfernt die XML-Präambel (heitß das so?) `<?xml ... >`
+    * ersetzt die ID des Top-Level-Elements `<svg... >` mit dem jeweiligen Namen (orig, vert)
+    * fügt den svg-Code als String in die map `graphics` ein
+ *  `getPageOutput`
+    * ist furchtbar ineffizient, aber läuft ja nur einmal beim Start
+    * inlined gewisse svg-Grafiken
+    * ersetzt dabei die id (vert, orig) durch eine andere (mainlogo, shadow, previewlogo) 
+ * `initSvg`
+    * holt svg-source aus `graphics`
+    * parsed zu einem `JSDOM`-Objekt
+    * erstellt daraus `GradientSvg` Instanz
+    * returned Future, die in `gradientsFuture` abgelegt wird
+ *  `app.get('/img/shadow', ...)`
+    * arbeitet mit `gradientsFuture`
+ *  `app.get('/design/download' ...)`
+    * arbeitet mit `gradientsFuture`
+
+* `GradientSvg`
+   * speichert Referenzen auf das svg-Element das document und den dom (werden alle hinein gegeben)
+   * `svgString` nutzt den `dom` zum Serialisieren, entfernt überflüssiges html-Markup   
+  
+Ablauf der Grafikverarbeitung im `browser`:
+ * `initFlagAnimation` und `initPreviewLogo`
+   * Holt svg-root aus dem document
+   * Erzeugt `GradientSvg`-Instanz
+   * Schaltet Schatten ein/aus (beim mainlogo immer aus, wird nämlich extra dahiner gelegt)
+   * setzt Farben
+
+
 # Website
 Die aktuelle Website basiert ist eine einzelne html-Seite (`index.html`), die (quasi als Fallback) das Logo einbindet:
 

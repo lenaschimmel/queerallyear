@@ -1,6 +1,5 @@
 <div class="screenbox">
-    <!-- The next line will be replaced with the inlined SVG-file, but don't change it! -->
-    <img id="shadow" src="img/logo_shadow.svg" alt="Queer all year">
+    <img id="shadow" src="img/shadow/orig.svg" alt="Queer all year">
     $MAINLOGO
     <div id="identity">(Gay)</div>
     <div id="arrow"><a href="#" onclick="queer.scrollDown(); return false;">⇣</a></div>

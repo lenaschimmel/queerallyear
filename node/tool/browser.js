@@ -2,14 +2,17 @@ const GradientSvg = require('./recolor.js');
 const flags = require('./flags.js');
 const util = require('util');
 
-gradientSvg = new GradientSvg(window);
 
 window.queer = {};
 window.queer.showflag = function (flagname) {
-    gradientSvg.changeGradients(flags[flagname], true);
+    mainLogo.changeGradients(flags[flagname], true);
 }
 
 window.queer.initFlagAnimation = function () {
+
+    mainLogo = new GradientSvg(window.document.getElementById("mainlogo"), window.document, window);
+    mainLogo.setShadowMode("off");
+
     var lastFlagName = "Gay";
 
     function nextFlag() {
@@ -19,16 +22,21 @@ window.queer.initFlagAnimation = function () {
                 flagName = keys[keys.length * Math.random() << 0];
             } while (flagName == lastFlagName);
             lastFlagName = flagName;
-            console.log("flagName: " + util.inspect(flagName));
             $("#identity").fadeOut(500, () => {
                 $("#identity").html("(" + flagName + ")").fadeIn(500);
             });
 
-            gradientSvg.changeGradients(flags.allFlags[flagName], true);
+            mainLogo.changeGradients(flags.allFlags[flagName], true);
         }
     }
 
     setInterval(nextFlag, 3500);
+}
+
+window.queer.initPreviewLogo = function() {
+    previewLogo = new GradientSvg(window.document.getElementById("previewlogo"), window.document, window);
+    previewLogo.setShadowMode("off");
+    window.queer.flagSelected();
 }
 
 window.queer.initArrow = function () {
@@ -62,5 +70,24 @@ window.queer.initArrow = function () {
 
 window.queer.flagSelected = function () {
     flagName = $("#flagselect :selected").val();
-    gradientSvg.changeGradients(flags.allFlags[flagName], false);
+    shadow = $("#withshadow").is(":checked");
+    previewLogo.changeGradients(flags.allFlags[flagName], false);
+    previewLogo.setShadowMode(shadow ? "on" : "off");
+}
+
+window.queer.layoutSelected = function () {
+    layoutName = $("#layoutselect :selected").val();
+    console.log("Layout: " + layoutName);
+    $.get("/img/shadow/" + layoutName + ".svg", function(data) {
+        data.documentElement.setAttribute("id", "previewlogo");
+        $("#previewlogo").replaceWith(data.documentElement);
+        previewLogo = new GradientSvg(window.document.getElementById("previewlogo"), window.document, window);
+
+        flagName = $("#flagselect :selected").val();
+        shadow = $("#withshadow").is(":checked");
+        previewLogo.changeGradients(flags.allFlags[flagName], false);
+        previewLogo.setShadowMode(shadow ? "on" : "off");
+    });
+
+    
 }

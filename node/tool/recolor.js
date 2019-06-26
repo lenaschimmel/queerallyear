@@ -7,9 +7,14 @@ function sleep(milliseconds) {
 
 var method = GradientSvg.prototype;
 
-function GradientSvg(dom) {
+function GradientSvg(svgElement, document, dom) {
+    this.svgElement = svgElement;
+    this.document = document;
     this.dom = dom;
-    this.defs = dom.window.document.getElementsByTagName("defs").item(0);
+    const svgId = svgElement.getAttribute("id");
+    this.defs = document.querySelectorAll("#" + svgId + " defs").item(0);
+    this.mainGroup = document.querySelectorAll("#" + svgId + " #mainGroup").item(0);
+    this.finalComposite = document.querySelectorAll("#" + svgId + " #finalComposite").item(0);
     this.rangesL = {};
     this.rangesS = {};
 
@@ -72,6 +77,25 @@ method.changeGradients = async function(flag, animate = false) {
         }
         if(animate)
           await sleep(25);
+    }
+}
+
+// IDEA:
+// - Use only one source file per Layout, which contains the shadow
+// - Create version without shadow by removing the "style" attribute from the element "mainGroup"
+// - Create version with only shadow by changing the "operator" attribute of the element "finalComposite" to "destination"
+// - find a better way to set IDs for the inlined SVG
+method.setShadowMode = function(mode) {
+    if(mode == "on") {
+        this.mainGroup.setAttribute("filter", "url(#filterShadow)");
+        this.finalComposite.setAttribute("operator", "over");
+    }
+    if(mode == "off") {
+        this.mainGroup.setAttribute("filter", "");
+    }
+    if(mode == "only") {
+        this.mainGroup.setAttribute("filter", "url(#filterShadow)");
+        this.finalComposite.setAttribute("operator", "arithmetic");
     }
 }
 

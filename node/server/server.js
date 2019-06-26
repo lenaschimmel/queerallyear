@@ -1,16 +1,16 @@
-
 var express = require('express');
 var fs = require('fs');
 var app = express();
-var { pages } = require('./pages.js');
-const GradientSvg = require('../tool/recolor.js');
-const flags = require('../tool/flags.js');
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const resolve = require('path').resolve;
 const SVGO = require('svgo');
+
+var { pages } = require('./pages.js');
+const GradientSvg = require('../tool/recolor.js');
+const flags = require('../tool/flags.js');
 
 const enabledPlugins = [
   "cleanupAttrs", "removeDoctype", "removeXMLProcInst", "removeComments", "removeMetadata", "removeTitle", "removeDesc", 
@@ -40,18 +40,20 @@ const svgo = new SVGO({
   plugins: createPluginsArray(enabledPlugins, disabledPlugins)
 });
 
+const graphics = {};
+
 async function readSvg(filename, newId) {
-  const filepath = resolve("../../web/img/" + filename + ".svg");
-  const data = fs.readFileSync(filepath).toString();
-  const optimized = await svgo.optimize(data, { path: filepath });
-  const onlySvg = optimized.data.substring(optimized.data.indexOf("?>") + 1);
-  return onlySvg.replace('id="Ebene_1"', 'id="' + newId + '"');
+  graphics[newId] = async function() {
+    const filepath = resolve("../../web/img/" + filename + ".svg");
+    const data = fs.readFileSync(filepath).toString();
+    const optimized = await svgo.optimize(data, { path: filepath });
+    const onlySvg = optimized.data.substring(optimized.data.indexOf("?>") + 1);
+    return onlySvg.replace('id="svgdocument"', 'id="' + newId + '"');
+  }();
 }
 
-const graphics = {
-  "mainlogo": readSvg("logo", "mainlogo"),
-  "smalllogo": readSvg("logo_with_shadow", "smallogo")
-};
+readSvg("logo_vert_shadow", "vert");
+readSvg("logo_orig_shadow", "orig");
 
 var fragments = {};
 
@@ -82,6 +84,7 @@ function flagList() {
 }
 
 async function getPageOutput(page) {
+  const defaultLogo = "orig";
   const content = fragment(page.name);
   const output =
     fragment('head')
@@ -90,8 +93,9 @@ async function getPageOutput(page) {
       .replace("$CARDTITLE", page.cardtitle)
       .replace("$DESCRIPTION", page.description)
     + content
-      .replace("$MAINLOGO", await graphics['mainlogo'])
-      .replace("$SMALLLOGO", await graphics['smalllogo'])
+      .replace("$SHADOW", (await graphics[defaultLogo]).replace(defaultLogo,"shadow"))
+      .replace("$MAINLOGO", (await graphics[defaultLogo]).replace(defaultLogo,"mainlogo"))
+      .replace("$PREVIEWLOGO", (await graphics[defaultLogo]).replace(defaultLogo,"previewlogo"))
       .replace("$FLAGS", flagList())
     + fragment('foot');
   return output;
@@ -121,19 +125,29 @@ for (const key in pages) {
 
 app.use(express.static('../../web/'));
 
-async function initSvg(withshadow) {
-  const source = await graphics[withshadow ? 'mainlogo' : 'smalllogo'];
+async function initSvg(svgId) {
+  const source = await graphics[svgId];
   const dom = new JSDOM(source);
-  return new GradientSvg(dom);
+  return new GradientSvg(dom.window.document.getElementById(svgId), dom.window.document, dom);
 }
 
-gradientsFutureWithShadow = initSvg(true);
-gradientsFuture = initSvg(false);
+gradientsFuture = {};
+
+gradientsFuture["vert"] = initSvg("vert");
+gradientsFuture["orig"] = initSvg("orig");
+
+app.get('/img/shadow/:layout.svg', async function (req, res) {
+  var gradients = await gradientsFuture[req.params.layout];
+  gradients.setShadowMode("only");
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.send(gradients.svgString());
+});
 
 app.get('/design/download', async function (req, res) {
   var flag = req.query.flag;
   var type = req.query.type;
   var withshadow = req.query.withshadow;
+  var layout = req.query.layout;
   var width = parseInt(req.query.width) || 1920;
 
   if (type == "pdf" && withshadow) {
@@ -141,13 +155,20 @@ app.get('/design/download', async function (req, res) {
     return;
   }
 
-  var prettyFileName = "QueerAllYear_" + flag + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
+  var prettyFileName = "QueerAllYear_" + layout + "_" + flag + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
 
 
   console.log("Building " + flag + ", " + type + ", withShadow: " + withshadow);
 
-  var gradients = withshadow ? (await gradientsFutureWithShadow) : (await gradientsFuture);
+  var gradients = await gradientsFuture[layout];
+
+  if(!gradients) {
+    res.status(500).send("Sorry, das layout " + layout + " existiert nicht.");
+    return;
+  }
+
   gradients.changeGradients(flags.allFlags[flag]);
+  gradients.setShadowMode(withshadow ? "on" : "off");
 
   if (type == "svg") {
     res.setHeader('Content-Type', 'image/svg+xml');
