@@ -5,6 +5,7 @@ var colorLib = require('color');
 
 var lastLayout = "";
 var activeColor = "#000000";
+var lines = 1;
 
 window.queer = {};
 window.queer.showflag = function (flagname) {
@@ -48,7 +49,6 @@ window.queer.initPreviewLogo = function() {
     for (let g of gs) {
         if(g.getAttribute("id").startsWith("letter")) {
             var letter = g.getAttribute("id").substring(6);
-            console.log("letter: " + letter);
             if(letter.length == 2) {
                 g.setAttribute("onclick", "queer.colorLetter('"+ letter +"')");
             }
@@ -100,7 +100,7 @@ window.queer.flagSelected = function () {
         });
         $("#colors").removeClass("hidden");
     } else {
-        previewLogo.changeGradients(flags.allFlags[flagName], false);
+        previewLogo.changeGradients(flags.flagmap(lines, flags.allFlags[flagName]), false);
         $("#colors").addClass("hidden");
     }
     shadow = $("#withshadow").is(":checked");
@@ -109,6 +109,10 @@ window.queer.flagSelected = function () {
 
 window.queer.layoutSelected = function () {
     layoutName = $("#layoutselect :selected").val();
+    if(layoutName.indexOf("1") > 0) lines = 1;
+    if(layoutName.indexOf("2") > 0) lines = 2;
+    if(layoutName.indexOf("3") > 0) lines = 3;
+    
     if(lastLayout != layoutName) {
         lastLayout = layoutName;
         console.log("Layout: " + layoutName);

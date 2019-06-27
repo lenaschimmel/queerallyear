@@ -1,100 +1,56 @@
-function flag3(c1, c2, c3) {
-    return {
-        "Q0": c1,
-        "U0": c1,
-        "E0": c2,
-        "E1": c2,
-        "R0": c3,
-
-        "A0": c1,
-        "L0": c1,
-        "L1": c1,
-
-        "Y0": c2,
-        "E2": c2,
-        "A1": c3,
-        "R1": c3,
-    };
+exports.flagmap = function(lines, c) {
+    if(lines == 1) {
+        if(c.length == 3) {
+            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2]};
+        } else {
+            var ret = {};
+            for (let i = 0; i < exports.letters.length; i++) {
+                const letter = exports.letters[i];
+                ret[letter] = c[Math.floor(i * c.length / exports.letters.length)];
+            }
+        }
+        return ret;
+}
+    if(lines == 2) {
+        if(c.length == 3) 
+            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[1], "R0": c[2], "A0": c[0], "L0": c[0], "L1": c[0], "Y0": c[1], "E2": c[1], "A1": c[2], "R1": c[2]};
+        else if (c.length == 4) 
+            return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3]};
+        else if (c.length == 5)  
+            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4]};
+        else if (c.length == 7)
+            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6]};
+}
+    if(lines == 3) {
+        if(c.length == 3) 
+            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2]};
+        else if (c.length == 4) 
+            return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3]};
+        else if (c.length == 5)  
+            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4]};
+        else if (c.length == 7)
+            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6]};
+    }
 }
 
-function flag4(c1, c2, c3, c4) {
+function flag5spezial(c) {
     return {
-        "Q0": c1,
-        "U0": c2,
-        "E0": c2,
-        "E1": c3,
-        "R0": c4,
+        "Q0": c[0],
+        "U0": c[0],
+        "E0": c[1],
+        "E1": c[4],
+        "R0": c[4],
 
-        "A0": c1,
-        "L0": c2,
-        "L1": c2,
+        "A0": c[0],
+        "L0": c[0],
+        "L1": c[3],
 
-        "Y0": c3,
-        "E2": c3,
-        "A1": c4,
-        "R1": c4,
+        "Y0": c[2],
+        "E2": c[3],
+        "A1": c[4],
+        "R1": c[4],
     };
 }
-
-function flag5(c1, c2, c3, c4, c5) {
-    return {
-        "Q0": c1,
-        "U0": c2,
-        "E0": c3,
-        "E1": c4,
-        "R0": c5,
-
-        "A0": c1,
-        "L0": c2,
-        "L1": c2,
-
-        "Y0": c3,
-        "E2": c3,
-        "A1": c4,
-        "R1": c5,
-    };
-}
-
-
-function flag5spezial(c1, c2, c3, c4, c5) {
-    return {
-        "Q0": c1,
-        "U0": c1,
-        "E0": c2,
-        "E1": c5,
-        "R0": c5,
-
-        "A0": c1,
-        "L0": c1,
-        "L1": c4,
-
-        "Y0": c3,
-        "E2": c4,
-        "A1": c5,
-        "R1": c5,
-    };
-}
-
-
-function flag7(c1, c2, c3, c4, c5, c6, c7) {
-    return {
-        "Q0": c2,
-        "U0": c3,
-        "E0": c4,
-        "E1": c5,
-        "R0": c6,
-
-        "A0": c1,
-        "L0": c2,
-        "L1": c3,
-
-        "Y0": c4,
-        "E2": c5,
-        "A1": c6,
-        "R1": c7,
-    };
-}
-
 
 const white = "#FFFFFF";
 const black = "#000000";
@@ -159,39 +115,22 @@ exports.allColors = [
 ];
 
 
-exports.gay = flag7(gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink);
-exports.aro = flag5(romanticDarkGreen, romanticLightGreen, white, aceGrey, black);
-exports.nonbinary = flag4(nonbinaryYellow, white, nonbinaryViolet, black);
-exports.genderqueer = flag3(genderqueerViolet, white, genderqueerGreen);
-exports.polysexual = flag3(polysexualPink, polysexualGreen, polysexualBlue);
-exports.trans = flag5(transBlue, transRose, white, transRose, transBlue);
-exports.bi = flag5(biPink, biPink, biViolet, biBlue, biBlue);
-exports.pan = flag3(panPink, panYellow, panBlue);
-exports.ace = flag4(black, aceGrey, white, aceViolet);
-exports.polyam = flag5spezial(polyamBlue, polyamRed, polyamYellow, polyamRed, black);
-exports.intersex = flag5spezial(intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow);
-exports.genderfluid = flag5(genderfluidPink, white, genderfluidViolet, black, genderfluidBlue);
-exports.rosa = flag3(transRose, transRose, transRose);
-exports.agender = flag7(black, agenderGrey, white, agenderGreen, white, agenderGrey, black);
-exports.lebsian = flag7(lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7);
-
-exports.kink = {
-        "Q0": kinkBlue,
-        "U0": black,
-        "E0": white,
-        "E1": kinkBlue,
-        "R0": black,
-
-        "A0": black,
-        "L0": kinkBlue,
-        "L1": black,
-
-        "Y0": kinkRed,
-        "E2": white,
-        "A1": kinkBlue,
-        "R1": black,
-    };
-
+exports.gay = [gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink];
+exports.aro = [romanticDarkGreen, romanticLightGreen, white, aceGrey, black];
+exports.nonbinary = [nonbinaryYellow, white, nonbinaryViolet, black];
+exports.genderqueer = [genderqueerViolet, white, genderqueerGreen];
+exports.polysexual = [polysexualPink, polysexualGreen, polysexualBlue];
+exports.trans = [transBlue, transRose, white, transRose, transBlue];
+exports.bi = [biPink, biPink, biViolet, biBlue, biBlue];
+exports.pan = [panPink, panYellow, panBlue];
+exports.ace = [black, aceGrey, white, aceViolet];
+exports.genderfluid = [genderfluidPink, white, genderfluidViolet, black, genderfluidBlue];
+exports.rosa = [transRose, transRose, transRose];
+exports.agender = [black, agenderGrey, white, agenderGreen, white, agenderGrey, black];
+exports.lebsian = [lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7];
+exports.polyam = /*spezial*/ [polyamBlue, polyamRed, polyamYellow, polyamRed, black];
+exports.intersex = /*spezial*/ [intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow];
+exports.kink = /*spezial*/ [kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
 
 exports.allFlags = {
     "Gay" : exports.gay, 
