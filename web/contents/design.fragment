@@ -11,8 +11,9 @@
                 <select name="layout" id="layoutselect" onchange="queer.layoutSelected();">
                     <option value="orig">2 Zeilen gewellt</option>
                     <option value="orig3">3 Zeilen gewellt</option>
-                    <option value="block1">1 Zeile gerade</option>
-                    <option value="vert">3 Zeilen gerade</option>
+                    <option value="vert1">1 Zeile gerade</option>
+                    <option value="vert2">2 Zeilen gerade</option>
+                    <option value="vert3">3 Zeilen gerade</option>
                     <option value="block2">Blocksatz 2 Zeilen gerade</option>
                     <option value="block3">Blocksatz 3 Zeilen gerade</option>
                 </select>
