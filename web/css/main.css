@@ -342,11 +342,14 @@ textarea {
 
 .cd.active {
   border: 2px solid black;
+  transform: rotate(45deg);
 }
 
 .colorgroup {
   float: left;
-  width: 45%;
+  padding: 0.4em;
+  background-color: #FFF7;
+  margin: 3px;
 }
 
 /* ==========================================================================

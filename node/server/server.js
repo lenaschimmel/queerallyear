@@ -41,6 +41,7 @@ const svgo = new SVGO({
 });
 
 const graphics = {};
+gradientsFuture = {};
 
 async function readSvg(filename, newId) {
   graphics[newId] = async function() {
@@ -52,8 +53,10 @@ async function readSvg(filename, newId) {
   }();
 }
 
-readSvg("logo_vert_shadow", "vert");
-readSvg("logo_orig_shadow", "orig");
+flags.layouts.forEach(layout => {
+  readSvg("logo_"+layout+"_shadow", layout);
+  gradientsFuture[layout] = initSvg(layout);
+});
 
 var fragments = {};
 
@@ -130,11 +133,6 @@ async function initSvg(svgId) {
   const dom = new JSDOM(source);
   return new GradientSvg(dom.window.document.getElementById(svgId), dom.window.document, dom);
 }
-
-gradientsFuture = {};
-
-gradientsFuture["vert"] = initSvg("vert");
-gradientsFuture["orig"] = initSvg("orig");
 
 app.get('/img/shadow/:layout.svg', async function (req, res) {
   var gradients = await gradientsFuture[req.params.layout];

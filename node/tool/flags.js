@@ -212,3 +212,6 @@ exports.allFlags = {
 };
 
 exports.letters = ["Q0", "U0", "E0", "E1", "R0", "A0", "L0", "L1", "Y0", "E2", "A1", "R1"];
+
+exports.layouts = ["block1", "block2", "block3", "orig", "orig3", "vert"];
+
