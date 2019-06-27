@@ -8,8 +8,8 @@ var activeColor = "#000000";
 var lines = 1;
 
 window.queer = {};
-window.queer.showflag = function (flagname) {
-    mainLogo.changeGradients(flags[flagname], true);
+window.queer.showflag = function (flagName) {
+    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName]), true);
 }
 
 window.queer.initFlagAnimation = function () {
@@ -30,7 +30,7 @@ window.queer.initFlagAnimation = function () {
                 $("#identity").html("(" + flagName + ")").fadeIn(500);
             });
 
-            mainLogo.changeGradients(flags.allFlags[flagName], true);
+            mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName]), true);
         }
     }
 
