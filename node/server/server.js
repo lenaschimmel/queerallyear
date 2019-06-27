@@ -74,7 +74,7 @@ function getNavi(activeName) {
 }
 
 function flagList() {
-  var list = "";
+  var list = "<option>Eigene Farbkombination</option>";
   for (const key in flags.allFlags) {
     if (flags.allFlags.hasOwnProperty(key)) {
       list += '<option>' + key + '</option>';
@@ -167,7 +167,14 @@ app.get('/design/download', async function (req, res) {
     return;
   }
 
-  gradients.changeGradients(flags.allFlags[flag]);
+  if(flag == "Eigene Farbkombination") {
+    flags.letters.forEach(letter => {
+      var color = "#" + (req.query[letter] || "FFFFFF");
+      gradients.colorLetter(letter, color, false);
+    });
+  } else {
+    gradients.changeGradients(flags.allFlags[flag]);
+  }
   gradients.setShadowMode(withshadow ? "on" : "off");
 
   if (type == "svg") {

@@ -1,7 +1,10 @@
 const GradientSvg = require('./recolor.js');
 const flags = require('./flags.js');
 const util = require('util');
+var colorLib = require('color');
 
+var lastLayout = "";
+var activeColor = "#000000";
 
 window.queer = {};
 window.queer.showflag = function (flagname) {
@@ -36,8 +39,27 @@ window.queer.initFlagAnimation = function () {
 window.queer.initPreviewLogo = function() {
     previewLogo = new GradientSvg(window.document.getElementById("previewlogo"), window.document, window);
     previewLogo.setShadowMode("off");
+    flags.letters.forEach(letter => {
+        $("#"+letter).attr("value", sessionStorage.getItem(letter) || "FFFFFF");
+    });
     window.queer.flagSelected();
     window.queer.layoutSelected();
+    var gs = window.document.getElementsByTagName("g");
+    for (let g of gs) {
+        if(g.getAttribute("id").startsWith("letter")) {
+            var letter = g.getAttribute("id").substring(6);
+            console.log("letter: " + letter);
+            if(letter.length == 2) {
+                g.setAttribute("onclick", "queer.colorLetter('"+ letter +"')");
+            }
+        }
+    }
+}
+
+window.queer.colorLetter = function(letter) {
+    $("#"+letter).attr("value", activeColor.substring(1));
+    sessionStorage.setItem(letter, activeColor.substring(1));
+    previewLogo.colorLetter(letter, activeColor);
 }
 
 window.queer.initArrow = function () {
@@ -71,24 +93,69 @@ window.queer.initArrow = function () {
 
 window.queer.flagSelected = function () {
     flagName = $("#flagselect :selected").val();
+    if(flagName == "Eigene Farbkombination") {
+        flags.letters.forEach(letter => {
+            var color = "#" + ($("#"+letter).val() || "FFFFFF");
+            previewLogo.colorLetter(letter, color, false);
+        });
+        $("#colors").removeClass("hidden");
+    } else {
+        previewLogo.changeGradients(flags.allFlags[flagName], false);
+        $("#colors").addClass("hidden");
+    }
     shadow = $("#withshadow").is(":checked");
-    previewLogo.changeGradients(flags.allFlags[flagName], false);
     previewLogo.setShadowMode(shadow ? "on" : "off");
 }
 
 window.queer.layoutSelected = function () {
     layoutName = $("#layoutselect :selected").val();
-    console.log("Layout: " + layoutName);
-    $.get("/img/shadow/" + layoutName + ".svg", function(data) {
-        data.documentElement.setAttribute("id", "previewlogo");
-        $("#previewlogo").replaceWith(data.documentElement);
-        previewLogo = new GradientSvg(window.document.getElementById("previewlogo"), window.document, window);
-
-        flagName = $("#flagselect :selected").val();
-        shadow = $("#withshadow").is(":checked");
-        previewLogo.changeGradients(flags.allFlags[flagName], false);
-        previewLogo.setShadowMode(shadow ? "on" : "off");
-    });
-
+    if(lastLayout != layoutName) {
+        lastLayout = layoutName;
+        console.log("Layout: " + layoutName);
+        $.get("/img/shadow/" + layoutName + ".svg", function(data) {
+            data.documentElement.setAttribute("id", "previewlogo");
+            $("#previewlogo").replaceWith(data.documentElement);
+            queer.initPreviewLogo();
+        });
+    }
     
+}
+
+window.queer.initColors = function() {
+    var x = "<div class='colorgroup'>";
+    for (let l = 0; l < 100; l+= 15) {
+        var color = colorLib.hsl(0,0,l);
+        id = "color" + color.hex().substring(1);
+        x += '<div class="cd" id="'+id+'" style="background-color:'+color+'" onclick="queer.activateColor(\''+id+'\');" />';
+    }
+    x += " (Gray)</div>";
+    $("#colors").append(x);
+
+    for (const flagKey in flags.allFlags) {
+        if (flags.allFlags.hasOwnProperty(flagKey)) {
+            const flag = flags.allFlags[flagKey];
+            
+            var colors = {};
+            for (const letterKey in flag) {
+                if (flag.hasOwnProperty(letterKey)) {
+                    const color = flag[letterKey];
+                    colors[color] = true;
+                }
+            }
+
+            var x = "<div class='colorgroup'>";
+            for(const color in colors) {
+                id = "color" + color.substring(1);
+                x += '<div class="cd" id="'+id+'" style="background-color:'+color+'" onclick="queer.activateColor(\''+id+'\');" />';
+            }
+            x += " ("+flagKey+")</div>";
+            $("#colors").append(x);
+        }
+    }
+}
+
+window.queer.activateColor = function(id) {
+    $(".cd").removeClass("active");
+    $("#" + id).addClass("active");
+    activeColor = "#" + id.substring(5);
 }

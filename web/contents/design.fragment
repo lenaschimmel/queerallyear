@@ -38,15 +38,36 @@
                 </select>
                 <br>
 
+                <input type="hidden" name="Q0" id="Q0">
+                <input type="hidden" name="U0" id="U0">
+                <input type="hidden" name="E0" id="E0">
+                <input type="hidden" name="E1" id="E1">
+                <input type="hidden" name="R0" id="R0">
+                <input type="hidden" name="A0" id="A0">
+                <input type="hidden" name="L0" id="L0">
+                <input type="hidden" name="L1" id="L1">
+                <input type="hidden" name="Y0" id="Y0">
+                <input type="hidden" name="E2" id="E2">
+                <input type="hidden" name="A1" id="A1">
+                <input type="hidden" name="R1" id="R1">
+
                 <button type="submit">Herunterladen</button>
             </form> 
             <h1>Vorschau</h1>
             $PREVIEWLOGO
             <noscript>Die Vorschau erfordert Javascript. Der Download funtioniert auch ohne.</noscript>
+            
+            <div id="colors" class="hidden">
+                <h1>Eigene Farbkombination bauen</h1>
+                <p>Wähle unten eine Farbe aus, und klicke auf die Buchstaben um sie entsprechend einzufärben.</p>
+                <p>Deine Farbauswahl wird lokal gespeichert, bis du deine Browsersitzung beendest.</p>
+            </div>
+            <div style="clear:both; height:2em; display:block;"> </div>
         </div>
     </div>
 </div>
 <script src="js/modules.js"></script>
 <script>
     queer.initPreviewLogo();
+    queer.initColors();
 </script>

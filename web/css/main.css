@@ -331,6 +331,24 @@ textarea {
   color: black;
 }
 
+.cd {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid transparent;
+  margin: 2px;
+  vertical-align: bottom;
+}
+
+.cd.active {
+  border: 2px solid black;
+}
+
+.colorgroup {
+  float: left;
+  width: 45%;
+}
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.

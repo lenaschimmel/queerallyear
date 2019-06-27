@@ -141,6 +141,25 @@ const agenderGreen = "#CDF29F";
 const kinkBlue = "#0E24C0";
 const kinkRed = "#ED4024";
 
+const gayRed = "#CA0E26";
+const gayOrange = "#EC7408";
+const gayYellow = "#F9DA00";
+const gayGreen = "#6FB327";
+const gayBlue = "#073E85";
+const gayViolet = "#8E3371";
+const gayPink = "#E4007D";
+
+
+exports.allColors = [
+    white, black, transBlue, transRose, biPink, biViolet, biBlue, aceGrey, aceViolet, panPink, panYellow, panBlue, 
+    romanticDarkGreen, romanticLightGreen, intersexYellow, nonbinaryYellow, nonbinaryViolet, genderqueerViolet, 
+    genderqueerGreen, phillyBrown, genderfluidPink, genderfluidViolet, genderfluidBlue, polysexualPink, polysexualGreen, 
+    polysexualBlue, lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7, polyamRed, polyamBlue, 
+    polyamYellow, agenderGrey, agenderGreen, kinkBlue, kinkRed, gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink
+];
+
+
+exports.gay = flag7(gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink);
 exports.aro = flag5(romanticDarkGreen, romanticLightGreen, white, aceGrey, black);
 exports.nonbinary = flag4(nonbinaryYellow, white, nonbinaryViolet, black);
 exports.genderqueer = flag3(genderqueerViolet, white, genderqueerGreen);
@@ -175,6 +194,7 @@ exports.kink = {
 
 
 exports.allFlags = {
+    "Gay" : exports.gay, 
     "Asexuell" : exports.ace, 
     "Bisexuell" : exports.bi, 
     "Pansexuell" : exports.pan, 
@@ -190,3 +210,5 @@ exports.allFlags = {
     "Lesbisch" : exports.lebsian,
     "Kinky" : exports.kink
 };
+
+exports.letters = ["Q0", "U0", "E0", "E1", "R0", "A0", "L0", "L1", "Y0", "E2", "A1", "R1"];

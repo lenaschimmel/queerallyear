@@ -73,7 +73,23 @@ method.changeGradients = async function(flag, animate = false) {
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-            this.colorLetter(gradient, flag[letter], animate);
+            this.colorLetterGradient(gradient, flag[letter], animate);
+        }
+        if(animate)
+          await sleep(25);
+    }
+}
+
+
+method.colorLetter = async function(letterToColor, targetColor, animate = false) {
+    for (let i = 0; i < this.defs.children.length; i++) {
+        const gradient = this.defs.children.item(i);
+        var id = gradient.id;
+        if (id.length == 3) {
+            var letter = id.substring(0,2);
+            if(letter == letterToColor) {
+              this.colorLetterGradient(gradient, targetColor, animate);
+            }
         }
         if(animate)
           await sleep(25);
@@ -99,7 +115,7 @@ method.setShadowMode = function(mode) {
     }
 }
 
-method.colorLetter = async function(gradient, targetColor, animate = false) {
+method.colorLetterGradient = async function(gradient, targetColor, animate = false) {
     var id = gradient.id;
     var letter = id.substring(0,2);
     var [th, ts, tl] = color(targetColor).hsl().color;
