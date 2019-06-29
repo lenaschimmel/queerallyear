@@ -173,7 +173,7 @@ app.get('/design/download', async function (req, res) {
       gradients.colorLetter(letter, color, false);
     });
   } else {
-    const colormap = flags.flagmap(flags.linesInDesign(layout), flags.allFlags[flag], flag);
+    const colormap = flags.flagmap(flags.linesInDesign(layout), flags.allFlags[flag], flag, domain == "bold");
     gradients.changeGradients(colormap);
   }
   gradients.setShadowMode(withshadow ? "on" : "off");

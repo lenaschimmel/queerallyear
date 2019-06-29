@@ -1,19 +1,25 @@
-exports.flagmap = function (lines, c, flagName) {
+exports.flagmap = function (lines, c, flagName, colorDomain = false) {
     if (lines == 1) {
         if (c.length == 3) {
             return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2] };
         } else {
             var ret = {};
-            for (let i = 0; i < exports.letters.length; i++) {
+            var relevantCount = exports.letters.length - (colorDomain ? 0 : 3);
+            console.log("Mapping on letter count: " + relevantCount);
+            for (let i = 0; i < relevantCount; i++) {
                 const letter = exports.letters[i];
-                ret[letter] = c[Math.floor(i * c.length / exports.letters.length)];
+                ret[letter] = c[Math.floor(i * c.length / relevantCount)];
             }
         }
         return ret;
     }
 
     if (lines == 2) {
-        if (c.length == 3)
+        if(flagName == "Inter")
+            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[0], "R0": c[0], "A0": c[0], "L0": c[0], "L1": c[1], "Y0": c[0], "E2": c[1], "A1": c[0], "R1": c[0] };
+        else if(flagName == "Polyamor") // [polyamBlue, polyamRed, polyamYellow, polyamRed, black];
+            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[0], "L1": c[1], "Y0": c[2], "E2": c[1], "A1": c[4], "R1": c[4] };
+        else if (c.length == 3)
             return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[1], "R0": c[2], "A0": c[0], "L0": c[0], "L1": c[0], "Y0": c[1], "E2": c[1], "A1": c[2], "R1": c[2] };
         else if (c.length == 4)
             return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3] };
@@ -28,7 +34,7 @@ exports.flagmap = function (lines, c, flagName) {
     if (lines == 3) {
         if(flagName == "Inter")
             return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[0], "L1": c[1], "Y0": c[0], "E2": c[0], "A1": c[1], "R1": c[0] };
-       else if(flagName == "Polyamor")
+        else if(flagName == "Polyamor")
             return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[2], "L1": c[1], "Y0": c[4], "E2": c[4], "A1": c[4], "R1": c[4] };
         else if(flagName == "Kinky") // [kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
             return { "Q0": c[0], "U0": c[1], "E0": c[0], "E1": c[1], "R0": c[0], "A0": c[3], "L0": c[4], "L1": c[3], "Y0": c[1], "E2": c[0], "A1": c[1], "R1": c[0] };
@@ -37,7 +43,7 @@ exports.flagmap = function (lines, c, flagName) {
         else if (c.length == 4)
             return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3] };
         else if (c.length == 5)
-            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4] };
+            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[2], "R0": c[4], "A0": c[1], "L0": c[2], "L1": c[3], "Y0": c[1], "E2": c[2], "A1": c[3], "R1": c[4] };
         else if (c.length == 7)
             return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6] };
         else if (c.length == 8)
@@ -137,7 +143,7 @@ exports.allColors = [
 
 
 exports.gay =           [gayRed,    gayOrange,  gayYellow, gayGreen, gayBlue, gayViolet, gayPink];
-exports.philly =        [black,     phillyBrown,    gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayPink];
+exports.philly =        [black,     phillyBrown,    gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet];
 exports.aro =           [romanticDarkGreen,     romanticLightGreen,     white, aceGrey, black];
 exports.nonbinary =     [nonbinaryYellow,   white,  nonbinaryViolet, black];
 exports.genderqueer =   [genderqueerViolet,     white,  genderqueerGreen];

@@ -70,15 +70,21 @@ method.svgString = function() {
 }
 
 method.changeGradients = async function(flag, animate = false) {
+    indices = [];
     for (let i = 0; i < this.defs.children.length; i++) {
-        const gradient = this.defs.children.item(i);
+        indices[i] = i;
+    }
+    shuffleArray(indices);
+
+    for (let i = 0; i < this.defs.children.length; i++) {
+        const gradient = this.defs.children.item(indices[i]);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
             this.colorLetterGradient(gradient, flag[letter], animate);
-        }
         if(animate)
-          await sleep(25);
+              await sleep(35); // time per gradient
+        }
     }
 }
 
@@ -91,9 +97,9 @@ method.colorLetter = async function(letterToColor, targetColor, animate = false)
             if(letter == letterToColor) {
               this.colorLetterGradient(gradient, targetColor, animate);
             }
-        }
         if(animate)
-          await sleep(45);
+                await sleep(35); // time per gradient
+        }
     }
 }
 
@@ -126,7 +132,7 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
     
     for (let s = 0; s < stops.length; s++) {
         if(animate)
-            await sleep(45);
+            await sleep(55); // time per stop
         var stop = stops.item(s);
         var stopcolor = this.originalColors[id][s];
 
@@ -196,6 +202,13 @@ function getRange(stops, index) {
         "mid": (min + max) / 2,
         "width": max - min
     };
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
 
 module.exports = GradientSvg;

@@ -6,10 +6,11 @@ var colorLib = require('color');
 var lastLayout = "";
 var activeColor = "#000000";
 var lines = 1;
+var domain = "off";
 
 window.queer = {};
 window.queer.showflag = function (flagName, animate = true) {
-    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName), animate);
+    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName, domain == "bold"), animate);
 }
 
 window.queer.initFlagAnimation = function () {
@@ -32,7 +33,7 @@ window.queer.initFlagAnimation = function () {
                 $("#identity").html("(" + flagName + ")").fadeIn(500);
             });
 
-            mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName), true);
+            mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName, domain == "bold"), true);
         }
     }
 
@@ -102,7 +103,7 @@ window.queer.flagSelected = function () {
         });
         $("#colors").removeClass("hidden");
     } else {
-        previewLogo.changeGradients(flags.flagmap(lines, flags.allFlags[flagName], flagName), false);
+        previewLogo.changeGradients(flags.flagmap(lines, flags.allFlags[flagName], flagName, domain == "bold"), false);
         $("#colors").addClass("hidden");
     }
     shadow = $("#withshadow").is(":checked");
@@ -126,8 +127,9 @@ window.queer.layoutSelected = function () {
 }
 
 window.queer.domainSelected = function () {
-    mode = $("#domainselect :selected").val();
-    previewLogo.setDomainMode(mode);
+    domain = $("#domainselect :selected").val();
+    previewLogo.setDomainMode(domain);
+    queer.flagSelected();
 }
 
 window.queer.initColors = function() {
