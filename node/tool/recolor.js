@@ -12,7 +12,7 @@ function GradientSvg(svgElement, document, dom) {
     this.document = document;
     this.dom = dom;
     const svgId = svgElement.getAttribute("id");
-    this.defs = document.querySelectorAll("#" + svgId + " defs").item(0);
+    this.defs = svgElement;
     this.mainGroup = document.querySelectorAll("#" + svgId + " #mainGroup").item(0);
     this.finalComposite = document.querySelectorAll("#" + svgId + " #finalComposite").item(0);
     this.rangesL = {};
@@ -26,6 +26,7 @@ function GradientSvg(svgElement, document, dom) {
     for (let i = 0; i < this.defs.children.length; i++) {
         const gradient = this.defs.children.item(i);
         var id = gradient.id;
+        console.log("Found letter: " + id);
         if (id.length == 3) {
             var letter = id.substring(0,2);
             var stops = gradient.children;
@@ -80,13 +81,13 @@ method.changeGradients = async function(flag, animate = false) {
     }
 }
 
-
 method.colorLetter = async function(letterToColor, targetColor, animate = false) {
     for (let i = 0; i < this.defs.children.length; i++) {
         const gradient = this.defs.children.item(i);
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
+            console.log("Vielleicht färbe ich das hier ein: " + letter);
             if(letter == letterToColor) {
               this.colorLetterGradient(gradient, targetColor, animate);
             }
@@ -132,8 +133,11 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
         var [sh, ss, sl] = stopcolor.hsl().color;
 
         var nh = th;
-        var ns = (ss - diffSaturation) * 1.15 * ts / 100;
-        var nl = sl - diffLightness;
+        var ns = ts; //(ss - diffSaturation) * 1.15 * ts / 100;
+        var nl = tl - (tl - sl) * (0.4 - tl * 0.002);
+        if(nl < 0) nl = 0;
+        if(nl > 100) nl = 100;
+        
 
         var newColor = color.hsl([nh, ns, nl]).hex()
         stop.setAttribute("stop-color", newColor);
@@ -159,11 +163,11 @@ function composeRanges(rangeArray) {
 }
 
 function adaptRange(range, target) {
-    if (target < range.width / 2)
+    /*if (target < range.width / 2)
         target = range.width / 2;
 
     if (target > 100 - range.width / 2)
-        target = 100 - range.width / 2;
+        target = 100 - range.width / 2;*/
 
     return range.mid - target;
 }

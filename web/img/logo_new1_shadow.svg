@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" 
+	xmlns:cc="http://creativecommons.org/ns#" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+	xmlns:svg="http://www.w3.org/2000/svg" 
+	xmlns="http://www.w3.org/2000/svg" 
+	xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" 
+	xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="svgdocument" x="0px" y="0px" viewBox="0 0 516.42 64.85" style="enable-background:new 0 0 516.42 64.85;" xml:space="preserve" sodipodi:docname="logo_new1_shadow.svg" inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+	<metadata id="metadata193">
+		<rdf:RDF>
+			<cc:Work rdf:about="">
+				<dc:format>image/svg+xml</dc:format>
+				<dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+			</cc:Work>
+		</rdf:RDF>
+	</metadata>
+	<defs id="defs191">
+		<filter style="color-interpolation-filters:sRGB;" inkscape:label="Drop Shadow" id="filterShadow">
+			<feFlood flood-opacity="0.498039" flood-color="rgb(0,0,0)" result="flood" id="feFlood1277" />
+			<feComposite in="flood" in2="SourceGraphic" operator="in" result="composite1" id="feComposite1279" />
+			<feGaussianBlur in="composite1" stdDeviation="1.5" result="blur" id="feGaussianBlur1281" />
+			<feOffset dx="3" dy="3.4" result="offset" id="feOffset1283" />
+			<feComposite in="SourceGraphic" in2="offset" operator="over" result="composite2" id="finalComposite" k1="0" k2="0" k3="1" k4="0" />
+		</filter>
+	</defs>
+	<sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1638" inkscape:window-height="1005" id="namedview189" showgrid="false" inkscape:zoom="2.45" inkscape:cx="226.13705" inkscape:cy="10.047216" inkscape:window-x="42" inkscape:window-y="1" inkscape:window-maximized="1" inkscape:current-layer="Ebene_1" />
+	<style type="text/css" id="style2">
+	.l00{fill:url(#L00);}
+	.l01{fill:url(#L01);}
+	.e30{fill:url(#E30);}
+	.e31{fill:url(#E31);}
+	.d00{fill:url(#D00);}
+	.d01{fill:url(#D01);}
+	.p00{fill:url(#P00);}
+	.r11{fill:url(#R11);}
+	.r10{fill:url(#R10);}
+	.a10{fill:url(#A10);}
+	.a11{fill:url(#A11);}
+	.e21{fill:url(#E21);}
+	.e20{fill:url(#E20);}
+	.y00{fill:url(#Y00);}
+	.y01{fill:url(#Y01);}
+	.l10{fill:url(#L10);}
+	.l11{fill:url(#L11);}
+	.a00{fill:url(#A00);}
+	.a01{fill:url(#A01);}
+	.r01{fill:url(#R01);}
+	.r00{fill:url(#R00);}
+	.e01{fill:url(#E01);}
+	.e00{fill:url(#E00);}
+	.e10{fill:url(#E10);}
+	.e11{fill:url(#E11);}
+	.u00{fill:url(#U00);}
+	.u01{fill:url(#U01);}
+	.q00{fill:url(#Q00);}
+	.q01{fill:url(#Q01);}
+	.q02{fill:url(#Q02);}
+	</style>
+	<linearGradient id="L00" gradientUnits="userSpaceOnUse" x1="229.3883" y1="18.3596" x2="244.648" y2="53.8551">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop4" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop6" />
+	</linearGradient>
+	<linearGradient id="L01" gradientUnits="userSpaceOnUse" x1="249.7042" y1="29.1336" x2="232.9516" y2="46.052">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop10" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop12" />
+	</linearGradient>
+	<linearGradient id="E30" gradientUnits="userSpaceOnUse" x1="480.3744" y1="17.4293" x2="501.1071" y2="49.1808">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop16" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop18" />
+	</linearGradient>
+	<linearGradient id="E31" gradientUnits="userSpaceOnUse" x1="493.9286" y1="41.5532" x2="485.5195" y2="21.8354">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop22" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop24" />
+	</linearGradient>
+	<linearGradient id="D00" gradientUnits="userSpaceOnUse" x1="471.2181" y1="41.2834" x2="445.6357" y2="30.3918">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop28" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop30" />
+	</linearGradient>
+	<linearGradient id="D01" gradientUnits="userSpaceOnUse" x1="441.0465" y1="32.437" x2="463.8716" y2="32.437">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop34" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop36" />
+	</linearGradient>
+	<linearGradient id="P00" gradientUnits="userSpaceOnUse" x1="428.4555" y1="41.3233" x2="435.8497" y2="50.4573">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop40" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop42" />
+	</linearGradient>
+	<linearGradient id="R11" gradientUnits="userSpaceOnUse" x1="418.2066" y1="20.7083" x2="397.782" y2="30.5745">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop46" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop48" />
+	</linearGradient>
+	<linearGradient id="R10" gradientUnits="userSpaceOnUse" x1="395.5869" y1="17.8962" x2="420.889" y2="53.1447">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop52" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop54" />
+	</linearGradient>
+	<linearGradient id="A10" gradientUnits="userSpaceOnUse" x1="373.5918" y1="15.2047" x2="372.9971" y2="41.3714">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop58" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop60" />
+	</linearGradient>
+	<linearGradient id="A11" gradientUnits="userSpaceOnUse" x1="355.0282" y1="48.0038" x2="391.6727" y2="40.4132">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop64" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop66" />
+	</linearGradient>
+	<linearGradient id="E21" gradientUnits="userSpaceOnUse" x1="344.5523" y1="16.8403" x2="338.0107" y2="32.6989">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop70" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop72" />
+	</linearGradient>
+	<linearGradient id="E20" gradientUnits="userSpaceOnUse" x1="330.5862" y1="25.6537" x2="358.1406" y2="42.9">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop76" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop78" />
+	</linearGradient>
+	<linearGradient id="Y00" gradientUnits="userSpaceOnUse" x1="296.7784" y1="41.5219" x2="320.9246" y2="9.4734">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop82" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop84" />
+	</linearGradient>
+	<linearGradient id="Y01" gradientUnits="userSpaceOnUse" x1="297.5605" y1="32.7431" x2="315.4015" y2="30.3643">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop88" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop90" />
+	</linearGradient>
+	<linearGradient id="L10" gradientUnits="userSpaceOnUse" x1="277.5868" y1="26.9683" x2="252.8727" y2="42.0622">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop94" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop96" />
+	</linearGradient>
+	<linearGradient id="L11" gradientUnits="userSpaceOnUse" x1="259.22" y1="39.9936" x2="265.6888" y2="18.0992">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop100" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop102" />
+	</linearGradient>
+	<linearGradient id="A00" gradientUnits="userSpaceOnUse" x1="191.3555" y1="31.4688" x2="224.4228" y2="35.046">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop106" />
+		<stop offset="1" style="stop-color:#000000" id="stop108" />
+	</linearGradient>
+	<linearGradient id="A01" gradientUnits="userSpaceOnUse" x1="226.263" y1="46.8056" x2="194.7483" y2="33.2046">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop112" />
+		<stop offset="1" style="stop-color:#000000" id="stop114" />
+	</linearGradient>
+	<linearGradient id="R01" gradientUnits="userSpaceOnUse" x1="176.7777" y1="47.9528" x2="146.2131" y2="28.1854">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop118" />
+		<stop offset="1" style="stop-color:#000000" id="stop120" />
+	</linearGradient>
+	<linearGradient id="R00" gradientUnits="userSpaceOnUse" x1="144.1624" y1="18.1121" x2="164.3981" y2="40.8358">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop124" />
+		<stop offset="1" style="stop-color:#000000" id="stop126" />
+	</linearGradient>
+	<linearGradient id="E11" gradientUnits="userSpaceOnUse" x1="141.7942" y1="44.015" x2="116.0169" y2="31.8216">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop130" />
+		<stop offset="1" style="stop-color:#000000" id="stop132" />
+	</linearGradient>
+	<linearGradient id="E10" gradientUnits="userSpaceOnUse" x1="138.9617" y1="24.1902" x2="116.8211" y2="42.0525">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop136" />
+		<stop offset="1" style="stop-color:#000000" id="stop138" />
+	</linearGradient>
+	<linearGradient id="E00" gradientUnits="userSpaceOnUse" x1="90.6665" y1="22.6194" x2="114.917" y2="47.8994">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop142" />
+		<stop offset="1" style="stop-color:#000000" id="stop144" />
+	</linearGradient>
+	<linearGradient id="E01" gradientUnits="userSpaceOnUse" x1="87.2541" y1="14.8513" x2="102.811" y2="45.622">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop148" />
+		<stop offset="1" style="stop-color:#000000" id="stop150" />
+	</linearGradient>
+	<linearGradient id="U00" gradientUnits="userSpaceOnUse" x1="71.4533" y1="45.4328" x2="63.5509" y2="11.1892">
+		<stop offset="0.2291" style="stop-color:#FFFFFF" id="stop154" />
+		<stop offset="1" style="stop-color:#000000" id="stop156" />
+	</linearGradient>
+	<linearGradient id="U01" gradientUnits="userSpaceOnUse" x1="80.4142" y1="28.6944" x2="53.4184" y2="43.6794">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop160" />
+		<stop offset="1" style="stop-color:#000000" id="stop162" />
+	</linearGradient>
+	<linearGradient id="Q00" gradientUnits="userSpaceOnUse" x1="30.2469" y1="47.6172" x2="42.3721" y2="21.6509">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop166" />
+		<stop offset="1" style="stop-color:#000000" id="stop168" />
+	</linearGradient>
+	<linearGradient id="Q01" gradientUnits="userSpaceOnUse" x1="48.9573" y1="24.4107" x2="30.1263" y2="44.2452">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop172" />
+		<stop offset="0.1806" style="stop-color:#D6D6D6" id="stop174" />
+		<stop offset="0.589" style="stop-color:#6E6E6E" id="stop176" />
+		<stop offset="1" style="stop-color:#000000" id="stop178" />
+	</linearGradient>
+	<linearGradient id="Q02" gradientUnits="userSpaceOnUse" x1="53.3646" y1="48.6701" x2="14.3579" y2="52.1018">
+		<stop offset="0" style="stop-color:#FFFFFF" id="stop182" />
+		<stop offset="0.5" style="stop-color:#808080" />
+		<stop offset="1" style="stop-color:#000000" id="stop184" />
+	</linearGradient>
+	<g id="mainGroup" style="filter:url(#filterShadow)">
+		<g id="wordDE">
+			<g id="letterE3">
+				<path d="M478.15,49.36V15.52h24.05v6.82h-15.46v6.43h14.5v6.77h-14.5v7.01h15.46v6.82H478.15z" class="e30" id="E30" />
+				<path d="M486.74,42.36v-6.82h14.5v-6.77h-14.5v-6.24c-4.86,0.72-8.59,4.88-8.59,9.92  S481.88,41.63,486.74,42.36z" class="e31" id="E31" />
+			</g>
+			<g id="letterD0">
+				<path d="M441.05,15.52h13.78c3.74,0,6.97,0.67,9.67,2.02c2.7,1.34,4.78,3.29,6.22,5.83  c1.44,2.54,2.16,5.56,2.16,9.05c0,3.52-0.71,6.55-2.14,9.1s-3.49,4.49-6.19,5.83c-2.71,1.34-5.95,2.02-9.72,2.02h-13.78V15.52z   M454.2,42.25c3.33,0,5.81-0.82,7.44-2.45c1.63-1.63,2.45-4.1,2.45-7.39c0-3.3-0.82-5.75-2.45-7.37c-1.63-1.62-4.11-2.42-7.44-2.42  h-4.32v19.63H454.2z" class="d00" id="D00" />
+				<path d="M463.84,35.25c-0.35,1.91-1.08,3.44-2.2,4.56c-1.63,1.63-4.11,2.45-7.44,2.45h-4.32V22.62h4.32  c3.33,0,5.81,0.81,7.44,2.42c1.16,1.15,1.9,2.73,2.23,4.72c-0.98-6.64-5.6-12.08-11.77-14.25h-11.05v33.84h10.83  C458.09,47.27,462.78,41.87,463.84,35.25z" class="d01" id="D01" />
+			</g>
+			<g id="letterP0">
+				<path id="P00" class="p00" d="M426.98,40.62h8.88v8.74h-8.88V40.62z" />
+			</g>
+		</g>
+		<g id="wordYEAR">
+			<g id="letterR1">
+				<path d="M419.21,39.76l5.38,9.6h-9.7l-5.86-10.8c-0.74-1.25-1.9-1.87-3.5-1.87h-2.69v12.67h-8.69V15.52h16.13  c4.1,0,7.18,0.89,9.24,2.66c2.06,1.78,3.1,4.34,3.1,7.7c0,2.56-0.7,4.73-2.11,6.5c-1.02,1.29-2.35,2.27-3.99,2.95 M413.09,29.15  c0.85-0.61,1.27-1.6,1.27-2.98c0-1.41-0.42-2.42-1.27-3.05c-0.85-0.62-2.25-0.94-4.2-0.94h-6.14v7.87h6.14  C410.84,30.06,412.24,29.76,413.09,29.15z" class="r10" id="R10" />
+				<path d="M416.55,35.4l-0.04-0.06c1.63-0.67,2.96-1.66,3.99-2.95c1.41-1.78,2.11-3.94,2.11-6.5  c0-3.36-1.03-5.93-3.1-7.7c-2.06-1.78-5.14-2.66-9.24-2.66H400.2c-1.91,2.26-3.07,5.18-3.07,8.37c0,7.16,5.81,12.97,12.97,12.97  C412.35,36.86,414.57,36.34,416.55,35.4z M402.74,30.06v-7.87h6.14c1.95,0,3.35,0.31,4.2,0.94c0.85,0.62,1.27,1.64,1.27,3.05  c0,1.38-0.42,2.37-1.27,2.98c-0.85,0.61-2.25,0.91-4.2,0.91H402.74z" class="r11" id="R11" />
+			</g>
+			<g id="letterA1">
+				<path d="M383.4,49.36l-3.02-7.01H365.4l-3.02,7.01h-8.88l15.79-33.84h7.01l15.84,33.84H383.4z M368.23,35.73  h9.31l-4.66-10.85L368.23,35.73z" class="a10" id="A10" />
+				<path d="M390.03,44.86c-3.74-5.51-10.05-9.14-17.22-9.14c-7.17,0-13.5,3.63-17.23,9.16l-2.09,4.47h8.88  l3.02-7.01h14.98l3.02,7.01h2.96h5.78L390.03,44.86z" class="a11" id="A11" />
+			</g>
+			<g id="letterE2">
+				<path d="M 329.4,49.36 V 15.52 h 24.05 v 6.82 h -15.46 v 6.43 h 14.5 v 6.77 h -14.5 v 7.01 h 15.46 v 6.82 H 329.4 Z" class="e20" id="E20" style="fill:url(#E20)" inkscape:connector-curvature="0" />
+				<path d="m 329.45,15.65 c 0,10.57 9.67,19.21 21.89,19.88 h 1.15 v -6.77 h -14.5 v -6.43 h 15.46 v -6.82 h -24 c 0,0.05 0,0.1 0,0.14 z" class="e21" id="E21" style="fill:url(#E21)" inkscape:connector-curvature="0" />
+			</g>
+			<g id="letterY0">
+				<path d="M329.45,15.52l-14.3,18.77v15.07h-8.83V34.29L292.1,15.52h9.94l8.64,11.76l8.74-11.76H329.45z" class="y00" id="Y00" />
+				<path d="M310.68,27.28l-8.64-11.76h-9.94l14.21,18.77v15.07h1.3c4.42-2.09,7.49-6.57,7.49-11.78  c0-3.15-1.12-6.04-2.98-8.29" class="y01" id="Y01" />
+			</g>
+		</g>
+		<g id="woldALL">
+			<g id="letterL0">
+				<path d="M229.56,49.36V15.52h8.83v26.69h14.4v7.15H229.56z" class="l00" id="L00" />
+				<path d="M252.73,42.21h-14.34V25.58c-5.09,1.44-8.83,6.11-8.83,11.66c0,6.7,5.43,12.12,12.12,12.12  C246.61,49.36,250.83,46.42,252.73,42.21z" class="l01" id="L01" />
+			</g>
+			<g id="letterL1">
+				<path d="M257.02,49.36V15.52h8.83v26.69h14.4v7.15H257.02z" class="l10" id="L10" />
+				<path d="M257.02,38.36c2.13,2.36,5.19,3.84,8.62,3.84c0.07,0,0.14-0.01,0.22-0.01V18.98  c-0.07,0-0.14-0.01-0.22-0.01c-3.42,0-6.49,1.49-8.62,3.84V38.36z" class="l11" id="L11" />
+			</g>
+			<g id="letterA0">
+				<path d="M218.81,49.36l-3.02-7.01h-14.98l-3.02,7.01h-8.88l15.79-33.84h7.01l15.84,33.84H218.81z   M203.64,35.73h9.31l-4.66-10.85L203.64,35.73z" class="a00" id="A00" />
+				<path d="M218.81,49.36h8.74l-3.56-7.62c-3.16-6.75-7.52-6.02-11.03-6.02h-9.31  c-2.65,0.01-4.99-1.41-6.83-3.31l-3.24,6.94c2.22,1.8,4.68,3,7.23,3h14.98L218.81,49.36z" class="a01" id="A01" />
+			</g>
+		</g>
+		<g id="wordQUEER">
+			<g id="letterR0">
+				<path d="m 170.43,39.76 5.38,9.6 h -9.7 l -5.86,-10.8 c -0.74,-1.25 -1.9,-1.87 -3.5,-1.87 h -2.69 v 12.67 h -8.69 V 15.52 h 16.13 c 4.1,0 7.18,0.89 9.24,2.66 2.06,1.78 3.1,4.34 3.1,7.7 0,2.56 -0.7,4.73 -2.11,6.5 -1.02,1.29 -2.35,2.27 -3.99,2.95 m -3.43,-6.18 c 0.85,-0.61 1.27,-1.6 1.27,-2.98 0,-1.41 -0.42,-2.42 -1.27,-3.05 -0.85,-0.62 -2.25,-0.94 -4.2,-0.94 h -6.14 v 7.87 h 6.14 c 1.95,0.01 3.35,-0.29 4.2,-0.9 z" class="r00" id="R00" style="fill:url(#R00)" inkscape:connector-curvature="0" />
+				<path d="m 154.06,36.63 h 2.69 c 1.6,0 2.77,0.63 3.5,1.88 l 5.86,10.85 h 9.7 l -5.38,-9.64 -2.69,-4.44 c -1.47,-2.09 -4.09,-5.3 -8.18,-5.3 h -5.59 c -4.05,0.03 -8.59,-2.69 -8.59,-5.1 v 9.84 c 2.36,1.11 5.22,1.85 8.68,1.91 z" class="r01" id="R01" style="fill:url(#R01)" inkscape:connector-curvature="0" />
+			</g>
+			<g id="letterE1">
+				<path d="M 116.72,49.36 V 15.52 h 24.05 v 6.82 h -15.46 v 6.43 h 14.5 v 6.77 h -14.5 v 7.01 h 15.46 v 6.82 h -24.05 z" class="e10" id="E01" style="fill:url(#E10)" inkscape:connector-curvature="0" />
+				<path d="m 127.16,42.54 c -0.08,0.01 -0.16,0.02 -0.24,0.02 -1.94,0 -3.52,-1.57 -3.52,-3.52 0,-1.95 1.57,-3.52 3.52,-3.52 0.08,0 0.15,0.02 0.22,0.02 v -0.02 h 12.66 v -6.77 h -14.5 c -7.55,0 -8.59,6.13 -8.59,8.74 v 3.12 c 0,2.49 0.89,8.73 8.59,8.73 h 15.46 v -6.82 h -13.6 z" class="e11" id="E11" style="fill:url(#E11)" inkscape:connector-curvature="0" />
+			</g>
+			<g id="letterE0">
+				<path d="M88.06,49.36V15.52h24.05v6.82H96.65v6.43h14.5v6.77h-14.5v7.01h15.46v6.82H88.06z" class="e00" id="E00" />
+				<path d="M96.65,42.54c-0.08-3.27,0-17.63,0-20.21c0-2.58,0.74-6.82,7.58-6.82H88.06v33.84  C94.94,49.34,96.73,45.81,96.65,42.54z" class="e01" id="E01" />
+			</g>
+			<g id="letterU0">
+				<path d="M55.92,46.04c-2.54-2.5-3.82-6.14-3.82-10.94V15.52h8.64v19.92c0,2.43,0.54,4.3,1.63,5.62  c1.09,1.31,2.66,1.97,4.7,1.97c2.05,0,3.62-0.66,4.7-1.97c1.09-1.31,1.63-3.18,1.63-5.62V15.52h8.69V35.1  c0,4.77-1.29,8.41-3.86,10.92c-2.58,2.51-6.3,3.77-11.16,3.77C62.19,49.79,58.47,48.54,55.92,46.04z" class="u00" id="U00" />
+				<path d="M55.92,46.04c2.54,2.5,6.26,3.74,11.16,3.74c4.86,0,8.58-1.26,11.16-3.77  c2.58-2.51,3.86-6.15,3.86-10.92v-7.28c0,5.71-7.28,14.41-14.01,15.14c-0.33,0.04-0.66,0.07-1.01,0.07c-0.64,0-1.22-0.07-1.77-0.2  c-6.5-1.2-13.21-8.13-13.21-15v7.28C52.11,39.9,53.38,43.55,55.92,46.04z" class="u01" id="U01" />
+			</g>
+			<g id="letterQ0">
+				<path d="M53.14,55.06l-5.74,4.55l-12.83-8.3c-1.26-0.74-2.64-1.52-4.4-1.52c-3.46,0-6.46-0.71-9-2.14  c-2.54-1.42-4.5-3.44-5.88-6.05c-1.38-2.61-2.06-5.67-2.06-9.19c0-3.52,0.69-6.58,2.06-9.19c1.38-2.61,3.34-4.62,5.88-6.02  c2.54-1.41,5.54-2.11,9-2.11s6.46,0.7,9,2.11c2.54,1.41,4.5,3.42,5.86,6.02c1.36,2.61,2.04,5.67,2.04,9.19  c0,3.49-0.69,6.54-2.06,9.17c-1.38,2.62-3.34,4.64-5.9,6.05 M36.17,40.31c1.44-1.81,2.16-4.44,2.16-7.9s-0.73-6.08-2.18-7.87  c-1.46-1.79-3.45-2.69-5.98-2.69c-2.56,0-4.56,0.89-6,2.66c-1.44,1.78-2.16,4.41-2.16,7.9c0,3.49,0.72,6.13,2.16,7.92  c1.44,1.79,3.44,2.69,6,2.69C32.73,43.02,34.73,42.12,36.17,40.31z" class="q00" id="Q00" />
+				<path d="M50.88,53.86L39.1,47.63c2.56-1.41,4.53-3.42,5.9-6.05c1.38-2.62,2.06-5.68,2.06-9.17  c0-3.52-0.68-6.58-2.04-9.19c-1.36-2.61-3.31-4.62-5.86-6.02c-2.54-1.41-5.54-2.11-9-2.11c-2.13,0-4.09,0.27-5.88,0.81  c7.08,1.44,14.15,5.44,14.04,16.52c0,1.07-0.08,2.06-0.22,2.97c-0.01,0.1-0.03,0.2-0.05,0.3c-0.03,0.15-0.05,0.29-0.08,0.44  c-1.48,8.28-7.66,11.53-13.82,12.81c1.82,0.57,3.82,0.85,6,0.85c1.76,0,3.14,0.78,4.4,1.52l12.83,8.3l3.6-2.85L50.88,53.86z" class="q01" id="Q01" />
+				<path d="M37.15,52.98l10.25,6.63l5.74-4.55L41.3,48.79c-1.31-0.62-2.58-1.22-3.7-1.76  c-6.18-3-16.03-6.07-22.31-5.43c1.38,2.61,3.34,4.62,5.88,6.05c1.59,0.89,3.36,1.47,5.3,1.84C29.22,50,31.78,49.79,37.15,52.98z" class="q02" id="Q02" />
+			</g>
+		</g>
+	</g>
+</svg>

@@ -9,6 +9,7 @@
             <form action="/design/download" id="person" target="_download">
                 <label for="layout">Layout</label>  
                 <select name="layout" id="layoutselect" onchange="queer.layoutSelected();">
+                    <option value="new1">Neu</option>
                     <option value="orig2">2 Zeilen gewellt</option>
                     <option value="orig3">3 Zeilen gewellt</option>
                     <option value="vert1">1 Zeile gerade</option>
@@ -55,6 +56,9 @@
                 <input type="hidden" name="E2" id="E2">
                 <input type="hidden" name="A1" id="A1">
                 <input type="hidden" name="R1" id="R1">
+                <input type="hidden" name="P0" id="P0">
+                <input type="hidden" name="D0" id="D0">
+                <input type="hidden" name="E3" id="E3">
 
                 <button type="submit">Herunterladen</button>
             </form> 
