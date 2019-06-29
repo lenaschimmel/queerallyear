@@ -28,8 +28,10 @@ exports.flagmap = function (lines, c, flagName) {
     if (lines == 3) {
         if(flagName == "Inter")
             return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[0], "L1": c[1], "Y0": c[0], "E2": c[0], "A1": c[1], "R1": c[0] };
-        if(flagName == "Polyamor")
+       else if(flagName == "Polyamor")
             return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[2], "L1": c[1], "Y0": c[4], "E2": c[4], "A1": c[4], "R1": c[4] };
+        else if(flagName == "Kinky") // [kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
+            return { "Q0": c[0], "U0": c[1], "E0": c[0], "E1": c[1], "R0": c[0], "A0": c[3], "L0": c[4], "L1": c[3], "Y0": c[1], "E2": c[0], "A1": c[1], "R1": c[0] };
         else if (c.length == 3)
             return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2] };
         else if (c.length == 4)
