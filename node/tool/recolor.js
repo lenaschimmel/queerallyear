@@ -93,7 +93,7 @@ method.colorLetter = async function(letterToColor, targetColor, animate = false)
             }
         }
         if(animate)
-          await sleep(25);
+          await sleep(45);
     }
 }
 
@@ -134,7 +134,7 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
 
         var nh = th;
         var ns = ts; //(ss - diffSaturation) * 1.15 * ts / 100;
-        var nl = tl - (tl - sl) * (0.4 - tl * 0.002);
+        var nl = tl - (tl - sl) * (0.5 - tl * 0.0025);
         if(nl < 0) nl = 0;
         if(nl > 100) nl = 100;
         

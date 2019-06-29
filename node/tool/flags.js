@@ -80,7 +80,7 @@ const biPink = "#CE3D81";
 const biViolet = "#A36AA3";
 const biBlue = "#1E4DB0";
 
-const aceGrey = "#B2B2B2";
+const aceGrey = "#A0A0A0";
 const aceViolet = "#882B8E";
 
 const panPink = "#EE539C";
@@ -111,7 +111,7 @@ const lebsian7 = "#933514";
 const polyamRed = "#ED4024";
 const polyamBlue = "#1432F5";
 const polyamYellow = "#FFFD52";
-const agenderGrey = "#AAAAAA";
+const agenderGrey = "#A0A0A0";
 const agenderGreen = "#CDF29F";
 const kinkBlue = "#0E24C0";
 const kinkRed = "#ED4024";
