@@ -4,12 +4,11 @@
         <div class="innerinnerbox">
             
             <h1>Design</h1>
-            <p>Du möchtest dir etwas mit 'Queer all year' gestalten oder bedrucken? Hier findest du die Daten in verschiedenen Formaten.</p>
+            <p>Du möchtest dir etwas mit 'Queer all Year' gestalten oder bedrucken? Hier findest du die Daten in verschiedenen Formaten.</p>
 
             <form action="/design/download" id="person" target="_download">
                 <label for="layout">Layout</label>  
                 <select name="layout" id="layoutselect" onchange="queer.layoutSelected();">
-                    <option value="new1">Neu</option>
                     <option value="orig2">2 Zeilen gewellt</option>
                     <option value="orig3">3 Zeilen gewellt</option>
                     <option value="vert1">1 Zeile gerade</option>
@@ -17,6 +16,14 @@
                     <option value="vert3">3 Zeilen gerade</option>
                     <option value="block2">Blocksatz 2 Zeilen gerade</option>
                     <option value="block3">Blocksatz 3 Zeilen gerade</option>
+                </select>
+                <br>
+
+                <label for="domain">Domain (.de)</label>  
+                <select name="domain" id="domainselect" onchange="queer.domainSelected();">
+                    <option value="off">Off</option>
+                    <option value="light">Light</option>
+                    <option value="bold">Bold</option>
                 </select>
                 <br>
 
@@ -29,7 +36,7 @@
                 <input type="checkbox" name="withshadow" id="withshadow" onchange="queer.flagSelected();">
                 <br>
 
-                <label for="flag">Flagge</label>  
+                <label for="flag">Flagge / Farben</label>  
                 <select name="flag" id="flagselect" onchange="queer.flagSelected();">
                     $FLAGS
                 </select>
@@ -37,7 +44,7 @@
 
                 <label for="type">Format</label>  
                 <select name="type">
-                    <option value="pdf">pdf (zum Drucken)</option>
+                    <option value="pdf">pdf (zum Drucken, kein Schatten möglich)</option>
                     <option value="png">png (transparenter Hintergrund)</option>
                     <option value="jpg">jpg (blauer Hintergrund)</option>
                     <option value="svg">svg (für's Web bzw. Inkscape)</option>
@@ -62,6 +69,9 @@
 
                 <button type="submit">Herunterladen</button>
             </form> 
+
+          
+
             <h1>Vorschau</h1>
             $PREVIEWLOGO
             <noscript>Die Vorschau erfordert Javascript. Der Download funtioniert auch ohne.</noscript>
@@ -74,10 +84,10 @@
                 Eigene Farbe: <input type="color" id="owncolor" name="owncolor" onchange="queer.ownColorChanged();"> (eventuell muss die Farbauswahl geschlossen werden, bevor die neue Farbe verwendet werden kann.)
 
                 <div>
-                <h1>Eigene Farbkombination bauen</h1>
-                <p>Wähle unten eine Farbe aus, und klicke auf die Buchstaben um sie entsprechend einzufärben.</p>
-                <p>Deine Farbauswahl wird lokal gespeichert, bis du deine Browsersitzung beendest.</p>
-            </div>
+                    <h1>Eigene Farbkombination bauen</h1>
+                    <p>Wähle unten eine Farbe aus, und klicke auf die Buchstaben um sie entsprechend einzufärben.</p>
+                    <p>Deine Farbauswahl wird lokal gespeichert, bis du deine Browsersitzung beendest.</p>
+                </div>
             </div>
             
         </div>

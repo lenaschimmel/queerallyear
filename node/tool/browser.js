@@ -8,14 +8,16 @@ var activeColor = "#000000";
 var lines = 1;
 
 window.queer = {};
-window.queer.showflag = function (flagName) {
-    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName), true);
+window.queer.showflag = function (flagName, animate = true) {
+    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName), animate);
 }
 
 window.queer.initFlagAnimation = function () {
 
     mainLogo = new GradientSvg(window.document.getElementById("mainlogo"), window.document, window);
     mainLogo.setShadowMode("off");
+    mainLogo.setDomainMode("off");
+    queer.showflag("Gay", false);
 
     var lastFlagName = "Gay";
 
@@ -45,6 +47,7 @@ window.queer.initPreviewLogo = function() {
     });
     window.queer.flagSelected();
     window.queer.layoutSelected();
+    window.queer.domainSelected();
     var gs = window.document.getElementsByTagName("g");
     for (let g of gs) {
         if(g.getAttribute("id").startsWith("letter")) {
@@ -63,7 +66,6 @@ window.queer.colorLetter = function(letter) {
 }
 
 window.queer.initArrow = function () {
-
     window.queer.scrollDown = function () {
         $('html,body').animate({ scrollTop: document.body.scrollHeight }, "slow");
         $("#arrow").fadeOut(300);
@@ -121,6 +123,11 @@ window.queer.layoutSelected = function () {
         });
     }
     
+}
+
+window.queer.domainSelected = function () {
+    mode = $("#domainselect :selected").val();
+    previewLogo.setDomainMode(mode);
 }
 
 window.queer.initColors = function() {

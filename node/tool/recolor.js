@@ -14,6 +14,8 @@ function GradientSvg(svgElement, document, dom) {
     const svgId = svgElement.getAttribute("id");
     this.defs = svgElement;
     this.mainGroup = document.querySelectorAll("#" + svgId + " #mainGroup").item(0);
+    this.domainBold = document.querySelectorAll("#wordDE").item(0);
+    this.domainLight = document.querySelectorAll("#wordDEthin").item(0);
     this.finalComposite = document.querySelectorAll("#" + svgId + " #finalComposite").item(0);
     this.rangesL = {};
     this.rangesS = {};
@@ -26,7 +28,6 @@ function GradientSvg(svgElement, document, dom) {
     for (let i = 0; i < this.defs.children.length; i++) {
         const gradient = this.defs.children.item(i);
         var id = gradient.id;
-        console.log("Found letter: " + id);
         if (id.length == 3) {
             var letter = id.substring(0,2);
             var stops = gradient.children;
@@ -87,7 +88,6 @@ method.colorLetter = async function(letterToColor, targetColor, animate = false)
         var id = gradient.id;
         if (id.length == 3) {
             var letter = id.substring(0,2);
-            console.log("Vielleicht färbe ich das hier ein: " + letter);
             if(letter == letterToColor) {
               this.colorLetterGradient(gradient, targetColor, animate);
             }
@@ -144,6 +144,11 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
     }
 }
 
+method.setDomainMode = function(mode) {
+    this.domainBold.setAttribute("style", (mode == "bold") ? "" : "display: none;");
+    this.domainLight.setAttribute("style", (mode == "light") ? "" : "display: none;");
+}
+
 function composeRanges(rangeArray) {
     var min, max;
     for (const key in rangeArray) {
@@ -163,12 +168,6 @@ function composeRanges(rangeArray) {
 }
 
 function adaptRange(range, target) {
-    /*if (target < range.width / 2)
-        target = range.width / 2;
-
-    if (target > 100 - range.width / 2)
-        target = 100 - range.width / 2;*/
-
     return range.mid - target;
 }
 

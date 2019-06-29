@@ -137,6 +137,7 @@ async function initSvg(svgId) {
 app.get('/img/shadow/:layout.svg', async function (req, res) {
   var gradients = await gradientsFuture[req.params.layout];
   gradients.setShadowMode("only");
+  gradients.setDomainMode("off");
   res.setHeader('Content-Type', 'image/svg+xml');
   res.send(gradients.svgString());
 });
@@ -146,6 +147,7 @@ app.get('/design/download', async function (req, res) {
   var type = req.query.type;
   var withshadow = req.query.withshadow;
   var layout = req.query.layout;
+  var domain = req.query.domain;
   var width = parseInt(req.query.width) || 1920;
 
   if (type == "pdf" && withshadow) {
@@ -153,10 +155,10 @@ app.get('/design/download', async function (req, res) {
     return;
   }
 
-  var prettyFileName = "QueerAllYear_" + layout + "_" + flag + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
+  var prettyFileName = "QueerAllYear_" + layout + "_" + flag + "_domain" + domain + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
 
 
-  console.log("Building " + flag + ", " + type + ", withShadow: " + withshadow);
+  console.log("Building " + flag + ", " + type + ", withShadow: " + withshadow + ", domain: " + domain);
 
   var gradients = await gradientsFuture[layout];
 
@@ -175,6 +177,7 @@ app.get('/design/download', async function (req, res) {
     gradients.changeGradients(colormap);
   }
   gradients.setShadowMode(withshadow ? "on" : "off");
+  gradients.setDomainMode(domain);
 
   if (type == "svg") {
     res.setHeader('Content-Type', 'image/svg+xml');
