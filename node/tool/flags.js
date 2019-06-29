@@ -1,4 +1,4 @@
-exports.flagmap = function (lines, c) {
+exports.flagmap = function (lines, c, flagName) {
     if (lines == 1) {
         if (c.length == 3) {
             return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2] };
@@ -26,7 +26,11 @@ exports.flagmap = function (lines, c) {
     }
 
     if (lines == 3) {
-        if (c.length == 3)
+        if(flagName == "Inter")
+            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[0], "L1": c[1], "Y0": c[0], "E2": c[0], "A1": c[1], "R1": c[0] };
+        if(flagName == "Polyamor")
+            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[2], "L1": c[1], "Y0": c[4], "E2": c[4], "A1": c[4], "R1": c[4] };
+        else if (c.length == 3)
             return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2] };
         else if (c.length == 4)
             return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3] };
@@ -130,23 +134,23 @@ exports.allColors = [
 ];
 
 
-exports.gay = [gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink];
-exports.philly = [black, phillyBrown, gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayPink];
-exports.aro = [romanticDarkGreen, romanticLightGreen, white, aceGrey, black];
-exports.nonbinary = [nonbinaryYellow, white, nonbinaryViolet, black];
-exports.genderqueer = [genderqueerViolet, white, genderqueerGreen];
-exports.polysexual = [polysexualPink, polysexualGreen, polysexualBlue];
-exports.trans = [transBlue, transRose, white, transRose, transBlue];
-exports.bi = [biPink, biViolet, biBlue];
-exports.pan = [panPink, panYellow, panBlue];
-exports.ace = [black, aceGrey, white, aceViolet];
-exports.genderfluid = [genderfluidPink, white, genderfluidViolet, black, genderfluidBlue];
-exports.rosa = [transRose, transRose, transRose];
-exports.agender = [black, agenderGrey, white, agenderGreen, white, agenderGrey, black];
-exports.lebsian = [lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7];
-exports.polyam = /*spezial*/[polyamBlue, polyamRed, polyamYellow, polyamRed, black];
-exports.intersex = /*spezial*/[intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow];
-exports.kink = /*spezial*/[kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
+exports.gay =           [gayRed,    gayOrange,  gayYellow, gayGreen, gayBlue, gayViolet, gayPink];
+exports.philly =        [black,     phillyBrown,    gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayPink];
+exports.aro =           [romanticDarkGreen,     romanticLightGreen,     white, aceGrey, black];
+exports.nonbinary =     [nonbinaryYellow,   white,  nonbinaryViolet, black];
+exports.genderqueer =   [genderqueerViolet,     white,  genderqueerGreen];
+exports.polysexual =    [polysexualPink,    polysexualGreen,    polysexualBlue];
+exports.trans =         [transBlue,     transRose,  white, transRose, transBlue];
+exports.bi =            [biPink,    biViolet,   biBlue];
+exports.pan =           [panPink,   panYellow,  panBlue];
+exports.ace =           [black,     aceGrey,    white, aceViolet];
+exports.genderfluid =   [genderfluidPink,   white,  genderfluidViolet, black, genderfluidBlue];
+exports.rosa =          [transRose,     transRose,  transRose];
+exports.agender =       [black,     agenderGrey,    white, agenderGreen, white, agenderGrey, black];
+exports.lebsian =       [lebsian1,  lebsian2,   lebsian3, lebsian4, lebsian5, lebsian6, lebsian7];
+exports.polyam =         /*spezial*/ [polyamBlue, polyamRed, polyamYellow, polyamRed, black];
+exports.intersex =       /*spezial*/ [intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow];
+exports.kink =           /*spezial*/ [kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
 
 exports.allFlags = {
     "Gay": exports.gay,

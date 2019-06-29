@@ -9,7 +9,7 @@ var lines = 1;
 
 window.queer = {};
 window.queer.showflag = function (flagName) {
-    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName]), true);
+    mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName), true);
 }
 
 window.queer.initFlagAnimation = function () {
@@ -30,7 +30,7 @@ window.queer.initFlagAnimation = function () {
                 $("#identity").html("(" + flagName + ")").fadeIn(500);
             });
 
-            mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName]), true);
+            mainLogo.changeGradients(flags.flagmap(2, flags.allFlags[flagName], flagName), true);
         }
     }
 
@@ -100,7 +100,7 @@ window.queer.flagSelected = function () {
         });
         $("#colors").removeClass("hidden");
     } else {
-        previewLogo.changeGradients(flags.flagmap(lines, flags.allFlags[flagName]), false);
+        previewLogo.changeGradients(flags.flagmap(lines, flags.allFlags[flagName], flagName), false);
         $("#colors").addClass("hidden");
     }
     shadow = $("#withshadow").is(":checked");
