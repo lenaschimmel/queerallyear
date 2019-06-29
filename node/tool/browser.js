@@ -128,10 +128,10 @@ window.queer.initColors = function() {
     for (let l = 0; l < 100; l+= 15) {
         var color = colorLib.hsl(0,0,l);
         id = "color" + color.hex().substring(1);
-        x += '<div class="cd" id="'+id+'" style="background-color:'+color+'" onclick="queer.activateColor(\''+id+'\');" />';
+        x += '<div class="cd '+id+'" style="background-color:'+color+'" onclick="queer.activateColor(\''+id+'\');" />';
     }
     x += " (Gray)</div>";
-    $("#colors").append(x);
+    $("#swatches").append(x);
 
     for (const flagKey in flags.allFlags) {
         if (flags.allFlags.hasOwnProperty(flagKey)) {
@@ -148,16 +148,24 @@ window.queer.initColors = function() {
             var x = "<div class='colorgroup'>";
             for(const color in colors) {
                 id = "color" + color.substring(1);
-                x += '<div class="cd" id="'+id+'" style="background-color:'+color+'" onclick="queer.activateColor(\''+id+'\');" />';
+                x += '<div class="cd '+id+'" style="background-color:'+color+'" onclick="queer.activateColor(\''+id+'\');" />';
             }
             x += " ("+flagKey+")</div>";
-            $("#colors").append(x);
+            $("#swatches").append(x);
         }
     }
+
+    document.getElementById('owncolor').addEventListener("change", window.queer.ownColorChanged);
 }
 
 window.queer.activateColor = function(id) {
     $(".cd").removeClass("active");
-    $("#" + id).addClass("active");
+    $("." + id).addClass("active");
     activeColor = "#" + id.substring(5);
+}
+
+window.queer.ownColorChanged = function() {
+    $(".cd").removeClass("active");
+    activeColor = document.getElementById('owncolor').value;
+    console.log("Color selected: " +  activeColor);
 }

@@ -63,11 +63,19 @@
             <noscript>Die Vorschau erfordert Javascript. Der Download funtioniert auch ohne.</noscript>
             
             <div id="colors" class="hidden">
+
+                <div id="swatches"></div>
+            
+                <div style="clear:both; height:2em; display:block;"> </div>
+                Eigene Farbe: <input type="color" id="owncolor" name="owncolor" onchange="queer.ownColorChanged();"> (eventuell muss die Farbauswahl geschlossen werden, bevor die neue Farbe verwendet werden kann.)
+
+                <div>
                 <h1>Eigene Farbkombination bauen</h1>
                 <p>Wähle unten eine Farbe aus, und klicke auf die Buchstaben um sie entsprechend einzufärben.</p>
                 <p>Deine Farbauswahl wird lokal gespeichert, bis du deine Browsersitzung beendest.</p>
             </div>
-            <div style="clear:both; height:2em; display:block;"> </div>
+            </div>
+            
         </div>
     </div>
 </div>
