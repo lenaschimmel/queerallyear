@@ -1,7 +1,7 @@
-exports.flagmap = function(lines, c) {
-    if(lines == 1) {
-        if(c.length == 3) {
-            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2]};
+exports.flagmap = function (lines, c) {
+    if (lines == 1) {
+        if (c.length == 3) {
+            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2] };
         } else {
             var ret = {};
             for (let i = 0; i < exports.letters.length; i++) {
@@ -10,27 +10,42 @@ exports.flagmap = function(lines, c) {
             }
         }
         return ret;
-}
-    if(lines == 2) {
-        if(c.length == 3) 
-            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[1], "R0": c[2], "A0": c[0], "L0": c[0], "L1": c[0], "Y0": c[1], "E2": c[1], "A1": c[2], "R1": c[2]};
-        else if (c.length == 4) 
-            return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3]};
-        else if (c.length == 5)  
-            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4]};
-        else if (c.length == 7)
-            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6]};
-}
-    if(lines == 3) {
-        if(c.length == 3) 
-            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2]};
-        else if (c.length == 4) 
-            return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3]};
-        else if (c.length == 5)  
-            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4]};
-        else if (c.length == 7)
-            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6]};
     }
+
+    if (lines == 2) {
+        if (c.length == 3)
+            return { "Q0": c[0], "U0": c[0], "E0": c[1], "E1": c[1], "R0": c[2], "A0": c[0], "L0": c[0], "L1": c[0], "Y0": c[1], "E2": c[1], "A1": c[2], "R1": c[2] };
+        else if (c.length == 4)
+            return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3] };
+        else if (c.length == 5)
+            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4] };
+        else if (c.length == 7)
+            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6] };
+        else if (c.length == 8)
+            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[5], "R0": c[6], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[4], "E2": c[5], "A1": c[6], "R1": c[7] };
+    }
+
+    if (lines == 3) {
+        if (c.length == 3)
+            return { "Q0": c[0], "U0": c[0], "E0": c[0], "E1": c[0], "R0": c[0], "A0": c[1], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[2], "R1": c[2] };
+        else if (c.length == 4)
+            return { "Q0": c[0], "U0": c[1], "E0": c[1], "E1": c[2], "R0": c[3], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[3] };
+        else if (c.length == 5)
+            return { "Q0": c[0], "U0": c[1], "E0": c[2], "E1": c[3], "R0": c[4], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[2], "E2": c[2], "A1": c[3], "R1": c[4] };
+        else if (c.length == 7)
+            return { "Q0": c[1], "U0": c[2], "E0": c[3], "E1": c[4], "R0": c[5], "A0": c[0], "L0": c[1], "L1": c[2], "Y0": c[3], "E2": c[4], "A1": c[5], "R1": c[6] };
+        else if (c.length == 8)
+            return { "Q0": c[2], "U0": c[3], "E0": c[4], "E1": c[5], "R0": c[6], "A0": c[0], "L0": c[1], "L1": c[1], "Y0": c[4], "E2": c[5], "A1": c[6], "R1": c[7] };
+    }
+}
+
+exports.linesInDesign = function (layoutName) {
+    console.log("linesInDesign");
+    if (layoutName.indexOf("1") > 0) return 1;
+    if (layoutName.indexOf("2") > 0) return 2;
+    if (layoutName.indexOf("3") > 0) return 3;
+    console.log("Unknown number of lines in " + layoutName);
+    return 1;
 }
 
 function flag5spezial(c) {
@@ -107,50 +122,52 @@ const gayPink = "#E4007D";
 
 
 exports.allColors = [
-    white, black, transBlue, transRose, biPink, biViolet, biBlue, aceGrey, aceViolet, panPink, panYellow, panBlue, 
-    romanticDarkGreen, romanticLightGreen, intersexYellow, nonbinaryYellow, nonbinaryViolet, genderqueerViolet, 
-    genderqueerGreen, phillyBrown, genderfluidPink, genderfluidViolet, genderfluidBlue, polysexualPink, polysexualGreen, 
-    polysexualBlue, lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7, polyamRed, polyamBlue, 
+    white, black, transBlue, transRose, biPink, biViolet, biBlue, aceGrey, aceViolet, panPink, panYellow, panBlue,
+    romanticDarkGreen, romanticLightGreen, intersexYellow, nonbinaryYellow, nonbinaryViolet, genderqueerViolet,
+    genderqueerGreen, phillyBrown, genderfluidPink, genderfluidViolet, genderfluidBlue, polysexualPink, polysexualGreen,
+    polysexualBlue, lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7, polyamRed, polyamBlue,
     polyamYellow, agenderGrey, agenderGreen, kinkBlue, kinkRed, gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink
 ];
 
 
 exports.gay = [gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayViolet, gayPink];
+exports.philly = [black, phillyBrown, gayRed, gayOrange, gayYellow, gayGreen, gayBlue, gayPink];
 exports.aro = [romanticDarkGreen, romanticLightGreen, white, aceGrey, black];
 exports.nonbinary = [nonbinaryYellow, white, nonbinaryViolet, black];
 exports.genderqueer = [genderqueerViolet, white, genderqueerGreen];
 exports.polysexual = [polysexualPink, polysexualGreen, polysexualBlue];
 exports.trans = [transBlue, transRose, white, transRose, transBlue];
-exports.bi = [biPink, biPink, biViolet, biBlue, biBlue];
+exports.bi = [biPink, biViolet, biBlue];
 exports.pan = [panPink, panYellow, panBlue];
 exports.ace = [black, aceGrey, white, aceViolet];
 exports.genderfluid = [genderfluidPink, white, genderfluidViolet, black, genderfluidBlue];
 exports.rosa = [transRose, transRose, transRose];
 exports.agender = [black, agenderGrey, white, agenderGreen, white, agenderGrey, black];
 exports.lebsian = [lebsian1, lebsian2, lebsian3, lebsian4, lebsian5, lebsian6, lebsian7];
-exports.polyam = /*spezial*/ [polyamBlue, polyamRed, polyamYellow, polyamRed, black];
-exports.intersex = /*spezial*/ [intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow];
-exports.kink = /*spezial*/ [kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
+exports.polyam = /*spezial*/[polyamBlue, polyamRed, polyamYellow, polyamRed, black];
+exports.intersex = /*spezial*/[intersexYellow, aceViolet, intersexYellow, aceViolet, intersexYellow];
+exports.kink = /*spezial*/[kinkBlue, black, kinkBlue, white, kinkRed, black, kinkBlue];
 
 exports.allFlags = {
-    "Gay" : exports.gay, 
-    "Asexuell" : exports.ace, 
-    "Bisexuell" : exports.bi, 
-    "Pansexuell" : exports.pan, 
-    "Trans" : exports.trans, 
-    "Aromantisch" : exports.aro, 
-    "Nicht-Binär" : exports.nonbinary,
-    "Genderqueer" : exports.genderqueer,
-    "Polyamor" : exports.polyam,
-    "Polysexuell" : exports.polysexual,
-    "Inter" : exports.intersex,
-    "Genderfluid" : exports.genderfluid,
-    "Agender" : exports.agender,
-    "Lesbisch" : exports.lebsian,
-    "Kinky" : exports.kink
+    "Gay": exports.gay,
+    "MoreColorPride": exports.philly,
+    "Asexuell": exports.ace,
+    "Bisexuell": exports.bi,
+    "Pansexuell": exports.pan,
+    "Trans": exports.trans,
+    "Aromantisch": exports.aro,
+    "Nicht-Binär": exports.nonbinary,
+    "Genderqueer": exports.genderqueer,
+    "Polyamor": exports.polyam,
+    "Polysexuell": exports.polysexual,
+    "Inter": exports.intersex,
+    "Genderfluid": exports.genderfluid,
+    "Agender": exports.agender,
+    "Lesbisch": exports.lebsian,
+    "Kinky": exports.kink
 };
 
 exports.letters = ["Q0", "U0", "E0", "E1", "R0", "A0", "L0", "L1", "Y0", "E2", "A1", "R1"];
 
-exports.layouts = ["block2", "block3", "orig", "orig3", "vert1", "vert2", "vert3"];
+exports.layouts = ["block2", "block3", "orig2", "orig3", "vert1", "vert2", "vert3"];
 

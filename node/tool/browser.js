@@ -109,9 +109,7 @@ window.queer.flagSelected = function () {
 
 window.queer.layoutSelected = function () {
     layoutName = $("#layoutselect :selected").val();
-    if(layoutName.indexOf("1") > 0) lines = 1;
-    if(layoutName.indexOf("2") > 0) lines = 2;
-    if(layoutName.indexOf("3") > 0) lines = 3;
+    lines = flags.linesInDesign(layoutName);
     
     if(lastLayout != layoutName) {
         lastLayout = layoutName;

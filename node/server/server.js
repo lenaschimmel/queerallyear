@@ -87,7 +87,7 @@ function flagList() {
 }
 
 async function getPageOutput(page) {
-  const defaultLogo = "orig";
+  const defaultLogo = "orig2";
   const content = fragment(page.name);
   const output =
     fragment('head')
@@ -171,7 +171,8 @@ app.get('/design/download', async function (req, res) {
       gradients.colorLetter(letter, color, false);
     });
   } else {
-    gradients.changeGradients(flags.allFlags[flag]);
+    const colormap = flags.flagmap(flags.linesInDesign(layout), flags.allFlags[flag]);
+    gradients.changeGradients(colormap);
   }
   gradients.setShadowMode(withshadow ? "on" : "off");
 

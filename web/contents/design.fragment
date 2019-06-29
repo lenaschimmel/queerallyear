@@ -9,7 +9,7 @@
             <form action="/design/download" id="person" target="_download">
                 <label for="layout">Layout</label>  
                 <select name="layout" id="layoutselect" onchange="queer.layoutSelected();">
-                    <option value="orig">2 Zeilen gewellt</option>
+                    <option value="orig2">2 Zeilen gewellt</option>
                     <option value="orig3">3 Zeilen gewellt</option>
                     <option value="vert1">1 Zeile gerade</option>
                     <option value="vert2">2 Zeilen gerade</option>
