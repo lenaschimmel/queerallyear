@@ -83,7 +83,7 @@ method.changeGradients = async function(flag, animate = false) {
             var letter = id.substring(0,2);
             this.colorLetterGradient(gradient, flag[letter], animate);
         if(animate)
-              await sleep(35); // time per gradient
+              await sleep(20); // time per gradient
         }
     }
 }
@@ -98,7 +98,7 @@ method.colorLetter = async function(letterToColor, targetColor, animate = false)
               this.colorLetterGradient(gradient, targetColor, animate);
             }
         if(animate)
-                await sleep(35); // time per gradient
+                await sleep(20); // time per gradient
         }
     }
 }
@@ -140,7 +140,7 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
 
         var nh = th;
         var ns = ts; //(ss - diffSaturation) * 1.15 * ts / 100;
-        var nl = tl - (tl - sl) * (0.5 - tl * 0.0025);
+        var nl = tl - (tl - sl) * (0.75 - tl * 0.0055) * (0.75 - (100 - tl) * 0.0035);
         if(nl < 0) nl = 0;
         if(nl > 100) nl = 100;
         

@@ -37,7 +37,7 @@ window.queer.initFlagAnimation = function () {
         }
     }
 
-    setInterval(nextFlag, 3500);
+    setInterval(nextFlag, 4500);
 }
 
 window.queer.initPreviewLogo = function() {
