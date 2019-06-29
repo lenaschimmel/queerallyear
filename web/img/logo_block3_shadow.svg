@@ -146,51 +146,61 @@
   </linearGradient>
   <linearGradient id="A00" gradientUnits="userSpaceOnUse" x1="191.3555" y1="31.4688" x2="224.42281" y2="35.046001">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop106" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop108" />
   </linearGradient>
   <linearGradient id="A01" gradientUnits="userSpaceOnUse" x1="226.263" y1="46.805599" x2="194.74831" y2="33.204601">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop112" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop114" />
   </linearGradient>
   <linearGradient id="R01" gradientUnits="userSpaceOnUse" x1="176.77769" y1="47.952801" x2="146.2131" y2="28.1854">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop118" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop120" />
   </linearGradient>
   <linearGradient id="R00" gradientUnits="userSpaceOnUse" x1="144.1624" y1="18.112101" x2="164.3981" y2="40.8358">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop124" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop126" />
   </linearGradient>
   <linearGradient id="E11" gradientUnits="userSpaceOnUse" x1="141.7942" y1="44.014999" x2="116.0169" y2="31.8216">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop130" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop132" />
   </linearGradient>
   <linearGradient id="E10" gradientUnits="userSpaceOnUse" x1="138.9617" y1="24.190201" x2="116.8211" y2="42.052502">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop136" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop138" />
   </linearGradient>
   <linearGradient id="E00" gradientUnits="userSpaceOnUse" x1="90.666496" y1="22.6194" x2="114.917" y2="47.899399">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop142" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop144" />
   </linearGradient>
   <linearGradient id="E01" gradientUnits="userSpaceOnUse" x1="87.254097" y1="14.8513" x2="102.811" y2="45.622002">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop148" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop150" />
   </linearGradient>
   <linearGradient id="U00" gradientUnits="userSpaceOnUse" x1="71.4533" y1="45.4328" x2="63.5509" y2="11.1892">
     <stop offset="0.2291" style="stop-color:#FFFFFF" id="stop154" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop156" />
   </linearGradient>
   <linearGradient id="U01" gradientUnits="userSpaceOnUse" x1="80.4142" y1="28.694401" x2="53.4184" y2="43.679401">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop160" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop162" />
   </linearGradient>
   <linearGradient id="Q00" gradientUnits="userSpaceOnUse" x1="30.246901" y1="47.617199" x2="42.372101" y2="21.6509">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop166" />
+    <stop offset="0.5" style="stop-color:#808080" />
     <stop offset="1" style="stop-color:#000000" id="stop168" />
   </linearGradient>
   <linearGradient id="Q01" gradientUnits="userSpaceOnUse" x1="48.957298" y1="24.4107" x2="30.126301" y2="44.245201">
     <stop offset="0" style="stop-color:#FFFFFF" id="stop172" />
-    <stop offset="0.1806" style="stop-color:#D6D6D6" id="stop174" />
     <stop offset="0.589" style="stop-color:#6E6E6E" id="stop176" />
     <stop offset="1" style="stop-color:#000000" id="stop178" />
   </linearGradient>
