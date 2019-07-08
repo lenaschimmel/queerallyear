@@ -1,3 +1,5 @@
+[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+
 # Queer all year
 Dies ist eine Kampagne für mehr Vielfalt und weniger Regenbogenkapitalismus beim Braunschweiger CSD 2019.
 
@@ -5,13 +7,31 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
 
  * [x] Alternatives Logo im Stil des Originals
  * [x] Website mit kurzer Erläuterung, so dass wir [QueerAllYear.de](http://queerallyear.de) auf unseren Merch drucken können
- * [ ] Umfangreichere Website mit Navigation
+ * [x] Umfangreichere Website mit Navigation
  * [ ] Ausführliches Manifest / Erklärung unserer Position
- * [ ] Liste von Unterzeichner_innen
- * [ ] Generator für Motive mit verschiedenen Farbkombinationen (WIP, sieht gut aus)
- * [ ] Generator für Motive mit verschiedenen Texten
+ * [x] Generator für Motive mit verschiedenen Farbkombinationen
+ * [ ] ~Generator für Motive mit verschiedenen Texten~ entfällt, zu viel Risiko für Missbrauch
  * [ ] Fertiger Merch (z.B. Sticker) die wir designen, in Druck geben und verbreiten
 
+ * [x] Interne Kommunikationsgruppe
+ * [x] Statement aktualisieren
+ * [ ] Lizenz CC0 auf alles incl. Code
+ * [x] Kürzere Intervalle probieren
+ * [ ] Bessere Navigationsleiste
+ * [ ] Github öffentlich schalten
+ * [ ] Zielsetzung schärfen
+ * [ ] Bekanntmachen - Tweets, Unterstützer_orgs etc.
+ * [ ] Liste von Unterzeichner_innen
+ * [ ] Evtl. auf Uberspace umziehen (Siehe https://wiki.uberspace.de/development:nodejs )
+ * [ ] Mailadresse
+ * [ ] Flyer designen
+ * [ ] Übersicht über Druckkosten
+ * [ ] Geld-Sammel-Plattform (Paypal)
+ * [ ] Identitäten erklären?
+ * [ ] Druckvorlagen auf Startseite erwähnen
+ * [ ] Performance auf alten Handys (evtl. Mobilbrowser whitelisten)
+ * [ ] Spreadshirt, sprd-design-upload
+  
 # Motto
 Da sowohl der Reduktion auf "gay" als auch dem Konzept "for one day" etwas entgegen gesetzt werden sollte, standen "queer" und "year" schnell fest. In einer Abstimmung zwischen den folgenden Mottos setzte sich _Queer all year_ mit 8 von 8 Stimmen durch:
 
@@ -21,7 +41,7 @@ Da sowohl der Reduktion auf "gay" als auch dem Konzept "for one day" etwas entge
  * Queer the whole year
 
 # Logo
-Das Logo des CSD basiert auf der Schriftart _Stone Sans ITC TT Bold_. Wir haben den Schriftzug darin gesetzt und den Glyphen von Hand in mehrere Teile geschnitten, die jeweils mit linearen Farbverläufen gefüllt sind. Dies geschah zunächst in Adobe Illustrator, wurde aber letztlich in Inkscape fortgesetzt.
+Das Logo des CSD basiert auf der Schriftart _Stone Sans ITC TT Bold_. Wir haben für unser Logo letztlich die Schrift _Nunito Sans_ gewählt, da diese freie Schriftart ausreichend ähnlich aussieht, und den Schriftzug darin gesetzt. Dann haben wir die Glyphen von Hand in mehrere Teile geschnitten, die jeweils mit linearen Farbverläufen gefüllt sind. Dies geschah zunächst in Adobe Illustrator, wurde aber letztlich in Inkscape fortgesetzt.
 
 Das Ergebnis ist eine SVG-Grafik, die wir mit selbstgebauten Tools weiter modifizieren können…
 
