@@ -14,8 +14,8 @@
                     <option value="vert1">1 Zeile gerade</option>
                     <option value="vert2">2 Zeilen gerade</option>
                     <option value="vert3">3 Zeilen gerade</option>
-                    <option value="block2">Blocksatz 2 Zeilen gerade</option>
-                    <option value="block3">Blocksatz 3 Zeilen gerade</option>
+                    <option value="block2">Blocksatz 2 Zeilen</option>
+                    <option value="block3">Blocksatz 3 Zeilen</option>
                 </select>
                 <br>
 
@@ -29,7 +29,7 @@
 
 
                 <label for="width">Breite in Pixeln</label> 
-                <input type="text" name="width" id="width" maxlength="30" value="1920">
+                <input type="text" name="width" id="width" maxlength="10" value="1920">
                 <br>
 
                 <label for="withshadow">Schatten</label> 
@@ -44,7 +44,7 @@
 
                 <label for="type">Format</label>  
                 <select name="type">
-                    <option value="pdf">pdf (zum Drucken, kein Schatten möglich)</option>
+                    <option value="pdf">pdf (zum Drucken, kein Schatten)</option>
                     <option value="png">png (transparenter Hintergrund)</option>
                     <option value="jpg">jpg (blauer Hintergrund)</option>
                     <option value="svg">svg (für's Web bzw. Inkscape)</option>
@@ -67,7 +67,10 @@
                 <input type="hidden" name="D0" id="D0">
                 <input type="hidden" name="E3" id="E3">
 
-                <button type="submit">Herunterladen</button>
+                <button type="submit">Grafik Herunterladen</button>
+
+                <p>Die herunter geladene Grafik steht, wie auch der Rest der Seite, unter der <a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="nofollow"><i>CC0 1.0 Universal</i>-Lizenz <img src="https://camo.githubusercontent.com/52b667086dddfc67bb933290c15f0d457de9244f/68747470733a2f2f6c6963656e7365627574746f6e732e6e65742f6c2f7a65726f2f312e302f38307831352e706e67" alt="License: CC0-1.0" data-canonical-src="https://licensebuttons.net/l/zero/1.0/80x15.png" style="max-width:100%;"></a>. Du kannst damit also machen, was du möchtest. 
+           
             </form> 
 
           

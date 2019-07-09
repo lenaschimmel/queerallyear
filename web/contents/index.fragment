@@ -1,5 +1,5 @@
 <div class="screenbox">
-    <img id="shadow" src="img/shadow/orig2.svg" alt="Queer all year">
+    <img id="shadow" src="img/shadow/orig2.svg">
     $MAINLOGO
     <div id="identity">(Gay)</div>
     <div id="arrow"><a href="#" onclick="queer.scrollDown(); return false;">⇣</a></div>
