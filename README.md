@@ -8,31 +8,31 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
  * [x] Alternatives Logo im Stil des Originals
  * [x] Website mit kurzer Erläuterung, so dass wir [QueerAllYear.de](http://queerallyear.de) auf unseren Merch drucken können
  * [x] Umfangreichere Website mit Navigation
- * [ ] Ausführliches Manifest / Erklärung unserer Position
+ * [x] Ausführliches Manifest / Erklärung unserer Position
  * [x] Generator für Motive mit verschiedenen Farbkombinationen
  * [ ] ~Generator für Motive mit verschiedenen Texten~ entfällt, zu viel Risiko für Missbrauch
- * [ ] Fertiger Merch (z.B. Sticker) die wir designen, in Druck geben und verbreiten
 
  * [x] Interne Kommunikationsgruppe
  * [x] Statement aktualisieren
  * [x] Lizenz CC0 auf alles incl. Code
  * [x] Kürzere Intervalle probieren
  * [x] Bessere Navigationsleiste (Logo)
- * [ ] Noch bessere Navigationsleiste (Burger Menu, siehe https://media.kulturbanause.de/2014/04/navigation/slider/responsive-navigation-slider-target.html#nav-closed )
- * [ ] Github öffentlich schalten
- * [ ] Zielsetzung schärfen
- * [ ] Bekanntmachen - Tweets, Unterstützer_orgs etc.
- * [ ] Liste von Unterzeichner_innen
+ * [x] Github öffentlich schalten
+ * [x] Designanpassungen für Handys 
+ * [x] Druckvorlagen auf Startseite erwähnen
  * [ ] Evtl. auf Uberspace umziehen (Siehe https://wiki.uberspace.de/development:nodejs )
  * [ ] Mailadresse
+ * [ ] Geld-Sammel-Plattform (Paypal)
+ * [ ] Liste von Unterzeichner_innen
+ * [ ] Bekanntmachen - Tweets, Unterstützer_orgs etc.
+ * [ ] Noch bessere Navigationsleiste (Burger Menu, siehe https://media.kulturbanause.de/2014/04/navigation/slider/responsive-navigation-slider-target.html#nav-closed )
+ * [ ] Spreadshirt, node  module sprd-design-upload
+ * [ ] Fertiger Merch (z.B. Sticker) die wir designen, in Druck geben und verbreiten
+ * [ ] Zielsetzung schärfen
  * [ ] Flyer designen
  * [ ] Übersicht über Druckkosten
- * [ ] Geld-Sammel-Plattform (Paypal)
  * [ ] Identitäten erklären?
- * [x] Druckvorlagen auf Startseite erwähnen
  * [ ] Performance auf alten Handys (evtl. Mobilbrowser whitelisten)
- * [ ] Spreadshirt, node  module sprd-design-upload
- * [x] Designanpassungen für Handys 
   
 # Motto
 Da sowohl der Reduktion auf "gay" als auch dem Konzept "for one day" etwas entgegen gesetzt werden sollte, standen "queer" und "year" schnell fest. In einer Abstimmung zwischen den folgenden Mottos setzte sich _Queer all year_ mit 8 von 8 Stimmen durch:
