@@ -4,7 +4,7 @@
             <h1>Datenschutz&shy;erklärung</h1>
                 <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich, insbesondere wenn Sie diese Seite nur lesen.</p>
 
-                <p>Beim Erstellen eigener Farbkombinationen im Bereich "Druckvorlagen" werden die ausgewählten Farben lokal abgespeichert (Html Session Storage). Beim Beenden des Brwosers werden diese gelöscht. Eine Übertragung und Verarbeitung der Farben findet nur beim Herunterladen von Grafiken mit dem Knopf "Herunterladen" statt.</p>
+                <p>Beim Erstellen eigener Farbkombinationen im Bereich "Druckvorlagen" werden die ausgewählten Farben lokal abgespeichert (Html Session Storage). Beim Beenden des Browsers werden diese gelöscht. Eine Übertragung und Verarbeitung der Farben findet nur beim Herunterladen von Grafiken mit dem Knopf "Herunterladen" statt.</p>
 
                 <p>Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
 
@@ -37,7 +37,7 @@
             
             <h1>Urheberrecht / Lizenz</h1>
 
-                <p>Die Seite, ihr Quelltext und sämliche Texte und Grafiken darauf stehen unter der <i>CC0 1.0 Universal</i>-Lizenz.</p>
+                <p>Die Seite, ihr Quelltext und sämliche Texte und Grafiken darauf (ausgenommen: Logos von unterstützenden Organisationen) stehen unter der <i>CC0 1.0 Universal</i>-Lizenz.</p>
 
                 <a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="nofollow"><img src="https://camo.githubusercontent.com/52b667086dddfc67bb933290c15f0d457de9244f/68747470733a2f2f6c6963656e7365627574746f6e732e6e65742f6c2f7a65726f2f312e302f38307831352e706e67" alt="License: CC0-1.0" data-canonical-src="https://licensebuttons.net/l/zero/1.0/80x15.png" style="max-width:100%;"></a>
             </div>

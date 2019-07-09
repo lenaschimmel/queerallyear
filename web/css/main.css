@@ -223,7 +223,7 @@ textarea {
 .header .logo {
   display: block;
   float: left;
-  padding: 10px 0;
+  padding: 13px 0;
   text-decoration: none;
 }
 .header .menu {
@@ -236,7 +236,7 @@ textarea {
   cursor: pointer;
   display: inline-block;
   float: right;
-  padding: 6px 12px;
+  padding: 20px 12px;
   position: relative;
   user-select: none;
 }
@@ -285,7 +285,7 @@ textarea {
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 1000px) {
   .header li {
     float: left;
   }
@@ -389,7 +389,7 @@ textarea {
     max-width: 100%;
   }
 
-  label {
+  .innerbox label {
   display: block;
     margin-top: 1em;
   }
