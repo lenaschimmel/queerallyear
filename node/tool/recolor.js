@@ -140,7 +140,7 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
 
         var nh = th;
         var ns = ts; //(ss - diffSaturation) * 1.15 * ts / 100;
-        var nl = tl - (tl - sl) * (0.75 - tl * 0.0055) * (0.75 - (100 - tl) * 0.0035);
+        var nl = tl - (tl - sl) * 1.4 * (0.75 - tl * 0.0055) * (0.75 - (100 - tl) * 0.0035);
         if(nl < 0) nl = 0;
         if(nl > 100) nl = 100;
         

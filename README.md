@@ -15,9 +15,10 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
 
  * [x] Interne Kommunikationsgruppe
  * [x] Statement aktualisieren
- * [ ] Lizenz CC0 auf alles incl. Code
+ * [x] Lizenz CC0 auf alles incl. Code
  * [x] Kürzere Intervalle probieren
- * [ ] Bessere Navigationsleiste
+ * [x] Bessere Navigationsleiste (Logo)
+ * [ ] Noch bessere Navigationsleiste (Burger Menu, siehe https://media.kulturbanause.de/2014/04/navigation/slider/responsive-navigation-slider-target.html#nav-closed )
  * [ ] Github öffentlich schalten
  * [ ] Zielsetzung schärfen
  * [ ] Bekanntmachen - Tweets, Unterstützer_orgs etc.
@@ -28,9 +29,10 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
  * [ ] Übersicht über Druckkosten
  * [ ] Geld-Sammel-Plattform (Paypal)
  * [ ] Identitäten erklären?
- * [ ] Druckvorlagen auf Startseite erwähnen
+ * [x] Druckvorlagen auf Startseite erwähnen
  * [ ] Performance auf alten Handys (evtl. Mobilbrowser whitelisten)
- * [ ] Spreadshirt, sprd-design-upload
+ * [ ] Spreadshirt, node  module sprd-design-upload
+ * [x] Designanpassungen für Handys 
   
 # Motto
 Da sowohl der Reduktion auf "gay" als auch dem Konzept "for one day" etwas entgegen gesetzt werden sollte, standen "queer" und "year" schnell fest. In einer Abstimmung zwischen den folgenden Mottos setzte sich _Queer all year_ mit 8 von 8 Stimmen durch:

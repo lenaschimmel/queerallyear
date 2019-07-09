@@ -81,7 +81,8 @@ function flagList() {
   var list = "<option>Eigene Farbkombination</option>";
   for (const key in flags.allFlags) {
     if (flags.allFlags.hasOwnProperty(key)) {
-      list += '<option>' + key + '</option>';
+      var sel = (key == "Gay") ? " selected='selected'" : "";
+      list += '<option ' + sel + '>' + key + '</option>';
     }
   }
   return list;
