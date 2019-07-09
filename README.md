@@ -21,7 +21,7 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
  * [x] Designanpassungen für Handys 
  * [x] Druckvorlagen auf Startseite erwähnen
  * [ ] Evtl. auf Uberspace umziehen (Siehe https://wiki.uberspace.de/development:nodejs )
- * [ ] Mailadresse
+ * [x] Mailadresse: kontakt@queerallyear.de
  * [ ] Geld-Sammel-Plattform (Paypal)
  * [ ] Liste von Unterzeichner_innen
  * [ ] Bekanntmachen - Tweets, Unterstützer_orgs etc.

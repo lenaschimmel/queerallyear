@@ -14,6 +14,12 @@ exports.pages = [
         "hidden" : false
     },
     {
+        "name" : "support",
+        "title" : "Unterstütze uns",
+        "cardtitle" : "Wie kannst du Queer All Year unterstüzen?",
+        "description" : "Sichtbar sein, Merch verteilen, die Erklärung unterzeichnen oder Geld beisteuern - auf viele verschiedene Weisen kannst du uns Support geben.",
+    },
+    {
         "name" : "design",
         "title" : "Dein Motiv gestalten",
         "cardtitle" : "Druckvorlagen und Designs von 'Queer all year'",
@@ -25,5 +31,6 @@ exports.pages = [
         "cardtitle" : "Wer steckt hinter 'Queer all Year'?",
         "description" : "Lies unser Impressum und unsere Datenschutzerklärung.",
     },
+
        
 ];
