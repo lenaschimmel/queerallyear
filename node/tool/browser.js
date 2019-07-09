@@ -68,7 +68,7 @@ window.queer.colorLetter = function(letter) {
 
 window.queer.initArrow = function () {
     window.queer.scrollDown = function () {
-        $('html,body').animate({ scrollTop: document.body.scrollHeight }, "slow");
+        $('html,body').animate({ scrollTop: document.documentElement.clientHeight * 0.9}, "slow");
         $("#arrow").fadeOut(300);
     }
 

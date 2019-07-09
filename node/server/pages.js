@@ -5,6 +5,7 @@ exports.pages = [
         "title" : 'Queer all year',
         "cardtitle" : "Gay for one Day? Queer all Year!",
         "description" : "Wir sind nicht nur gay, sondern auch lesbisch, bi, pan, asexuell, trans, polyamor, oder auch einfach: queer. Wir haben nicht immer Grund, fröhlich zu sein. Wir kämpfen nach wie vor um Sichtbarkeit, Anerkennung, Aufklärung und körperliche Selbstbestimmung.",
+        "hidden" : true
     },
     {
         "name" : "statement",

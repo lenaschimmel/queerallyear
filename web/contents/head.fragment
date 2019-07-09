@@ -33,8 +33,12 @@
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
-  <div id="topbar">
-    <ul>
+
+  <header class="header">
+    <a href="/" class="logo"><img id="navilogo" style="width:13em;" src="img/navi.png" alt="Queer all year - Startseite"></a>
+    <input class="menu-btn" type="checkbox" id="menu-btn" />
+    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+    <ul class="menu">
       $NAVI
     </ul>
-  </div>
+  </header>
