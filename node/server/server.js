@@ -66,10 +66,11 @@ function getNavi(activeName) {
     if (pages.hasOwnProperty(key)) {
       const page = pages[key];
       if (!page.hidden) {
+        var title = page.menutitle || page.title;
         if (page.name == activeName)
-          navi += '<li><a href="/' + page.name + '.html" class="active">' + page.title + '</a></li>';
+          navi += '<li><a href="/' + page.name + '.html" class="active">' + title + '</a></li>';
         else
-          navi += '<li><a href="/' + page.name + '.html">' + page.title + '</a></li>';
+          navi += '<li><a href="/' + page.name + '.html">' + title + '</a></li>';
       }
     }
   }

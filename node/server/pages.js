@@ -1,20 +1,21 @@
 exports.pages = [
     {
         "name" : "index",
-        "title" : "Startseite",
+        "menutitle" : '<img id="navilogo" style="width:13em;" src="img/navi.png" alt="Queer all year">',
+        "title" : 'Queer all year',
         "cardtitle" : "Gay for one Day? Queer all Year!",
         "description" : "Wir sind nicht nur gay, sondern auch lesbisch, bi, pan, asexuell, trans, polyamor, oder auch einfach: queer. Wir haben nicht immer Grund, fröhlich zu sein. Wir kämpfen nach wie vor um Sichtbarkeit, Anerkennung, Aufklärung und körperliche Selbstbestimmung.",
     },
     {
         "name" : "statement",
-        "title" : "Erklärung",
-        "cardtitle" : "Warum 'Gay* for one day' kein gutes Motto ist.",
-        "description" : "Hier soll eine genauere Erklärung entstehen, warum das CSD-Motto problematisch ist. Dazu braucht es allerdings noch etwas Zeit und Input.",
-        "hidden" : true
+        "title" : "Statement",
+        "cardtitle" : "Warum 'Gay* for one Day' kein gutes Motto ist.",
+        "description" : "Ausführliche Erklärung, warum das CSD-Motto problematisch ist und wir stattdessen ein eigenes Motto mitbringen.",
+        "hidden" : false
     },
     {
         "name" : "design",
-        "title" : "Druckvorlagen",
+        "title" : "Dein Motiv gestalten",
         "cardtitle" : "Druckvorlagen und Designs von 'Queer all year'",
         "description" : "Du möchtest dir etwas mit 'Queer all year' gestalten oder bedrucken? Hier findest du die Daten in verschiedenen Formaten."
     },
