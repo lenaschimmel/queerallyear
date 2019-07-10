@@ -46,10 +46,15 @@
                 <select name="type">
                     <option value="pdf">pdf (zum Drucken, kein Schatten)</option>
                     <option value="png">png (transparenter Hintergrund)</option>
-                    <option value="jpg">jpg (blauer Hintergrund)</option>
+                    <option value="jpg">jpg</option>
+                    <option value="twitter">jpg als Twitter-Header</option>
+                    <option value="profile">jpg als Profilbild (Kreis / Quadrat)</option>
                     <option value="svg">svg (für's Web bzw. Inkscape)</option>
                 </select>
                 <br>
+
+                <label for="background">Hintergrundfarbe (nur bei jpg)</label>  
+                <input type="color" id="background" name="background" value="#badbff"> 
 
                 <input type="hidden" name="Q0" id="Q0">
                 <input type="hidden" name="U0" id="U0">

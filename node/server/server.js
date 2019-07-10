@@ -151,6 +151,23 @@ app.get('/design/download', async function (req, res) {
   var layout = req.query.layout;
   var domain = req.query.domain;
   var width = parseInt(req.query.width) || 1920;
+  var twitterSize = false;
+  var background = req.query.background || 'badbff';
+  if(background.substring(0,1) == "#") {
+    background = background.substring(1);
+  }
+
+  if (type == "twitter") {
+    type = "jpg";
+    specialSize = "twitter";
+    width = 1500;
+  }
+
+  if (type == "profile") {
+    type = "jpg";
+    specialSize = "profile";
+    width = 512;
+  }
 
   if (type == "pdf" && withshadow) {
     res.status(500).send("Sorry, pdf-Ausgabe funktioniert derzeit nicht mit aktivierten Schatten.");
@@ -200,7 +217,7 @@ app.get('/design/download', async function (req, res) {
           return;
         }
         if (type == "jpg") {
-          extraParams = " --export-width=" + width + " --export-background-opacity=1 --export-background=#badbff ";
+          extraParams = " --export-width=" + width + " --export-background-opacity=1 --export-background=#" + background + " ";
           typeForInksacpe = "png";
         } else {
           extraParams = " --export-width=" + width + " --export-background-opacity=0 ";
@@ -212,7 +229,15 @@ app.get('/design/download', async function (req, res) {
       const { stdout, stderr } = await exec(command);
 
       if (type == "jpg") {
-        const command = "convert " + filenameBase + ".png " + filenameBase + ".jpg";
+        var resize = "";
+        if(specialSize == "twitter") {
+          resize = " -bordercolor '#" + background + "' -border 5%x15% -resize 1500x500\\> -size 1500x500 xc:'#" + background + "' +swap -gravity center -composite ";
+        } 
+        if(specialSize == "profile") {
+          resize = " -bordercolor '#" + background + "' -border 15%x15% -resize 512x512\\> -size 512x512 xc:'#" + background + "' +swap -gravity center -composite ";
+        } 
+        
+        const command = "convert " + filenameBase + ".png " + resize + filenameBase + ".jpg";
         console.log("Executung: " + command);
         const { stdout, stderr } = await exec(command);
       }
