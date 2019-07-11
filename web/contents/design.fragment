@@ -4,9 +4,27 @@
         <div class="innerinnerbox">
             
             <h1>Design</h1>
-            <p>Du möchtest dir etwas mit 'Queer all Year' gestalten oder bedrucken? Hier findest du die Daten in verschiedenen Formaten.</p>
+            <p>Du möchtest dir etwas mit 'Queer all Year' gestalten oder bedrucken?</p>
+            
+            <p>Hier kannst du dir Grafiken gestalten und in verschiedenen Formaten herunter laden. Wähle dazu als erstes <i>Format und Verwendungszweck</i> aus, denn abhängig von dieser Auswahl werden verschiedene Einstellungensmöglichkeiten erscheinen.</p>
 
             <form action="/design/download" id="person" target="_download">
+
+                <label for="type">Format und Verwendungszweck</label>  
+                <select name="type" id="formatselect"  onchange="queer.formatSelected();">
+                    <option value="pdf">pdf (z.B. zum Drucken)</option>
+                    <option value="trans">png (transparent)</option>
+                    <option value="png">png (farbiger Hintergrund)</option>
+                    <option value="shirt">png (für T-Shirt-Druck)</option>
+                    <option value="jpg">jpg (allgemeine Verwendung)</option>
+                    <option value="twitter">jpg (als Twitter-Header)</option>
+                    <option value="quad">jpg (als quadratisches Profilbild)</option>
+                    <option value="round">jpg (als rundes Profilbild)</option>
+                    <option value="svg">svg (allgemeine Verwendung)</option>
+                </select>
+                <br>
+
+
                 <label for="layout">Layout</label>  
                 <select name="layout" id="layoutselect" onchange="queer.layoutSelected();">
                     <option value="orig2">2 Zeilen gewellt</option>
@@ -16,24 +34,8 @@
                     <option value="vert3">3 Zeilen gerade</option>
                     <option value="block2">Blocksatz 2 Zeilen</option>
                     <option value="block3">Blocksatz 3 Zeilen</option>
+                    <option value="qay1">QAY</option>
                 </select>
-                <br>
-
-                <label for="domain">Domain (.de)</label>  
-                <select name="domain" id="domainselect" onchange="queer.domainSelected();">
-                    <option value="off">Off</option>
-                    <option value="light">Light</option>
-                    <option value="bold">Bold</option>
-                </select>
-                <br>
-
-
-                <label for="width">Breite in Pixeln</label> 
-                <input type="text" name="width" id="width" maxlength="10" value="1920">
-                <br>
-
-                <label for="withshadow">Schatten</label> 
-                <input type="checkbox" name="withshadow" id="withshadow" onchange="queer.flagSelected();">
                 <br>
 
                 <label for="flag">Flagge / Farben</label>  
@@ -42,19 +44,61 @@
                 </select>
                 <br>
 
-                <label for="type">Format</label>  
-                <select name="type">
-                    <option value="pdf">pdf (zum Drucken, kein Schatten)</option>
-                    <option value="png">png (transparenter Hintergrund)</option>
-                    <option value="jpg">jpg</option>
-                    <option value="twitter">jpg als Twitter-Header</option>
-                    <option value="profile">jpg als Profilbild (Kreis / Quadrat)</option>
-                    <option value="svg">svg (für's Web bzw. Inkscape)</option>
-                </select>
-                <br>
+                <div id="formDomain">
+                    <label for="domain">Domain-Endung (.de) anzeigen?</label>  
+                    <select name="domain" id="domainselect" onchange="queer.domainSelected();">
+                        <option value="off">Off</option>
+                        <option value="light">Light</option>
+                        <option value="bold">Bold</option>
+                    </select>
+                    <br>
+                </div>
 
-                <label for="background">Hintergrundfarbe (nur bei jpg)</label>  
-                <input type="color" id="background" name="background" value="#badbff"> 
+                <div id="formPixel">
+                    <label for="width">Breite in Pixeln</label> 
+                    <input type="text" name="widthPixel" id="widthPixel" maxlength="10" value="1920">
+                    <br>
+                </div>
+
+                <div id="formMm">
+                    <label for="width">Breite in mm (bei 200dpi)</label> 
+                    <input type="text" name="widthMm" id="widthMm" maxlength="10" value="200">
+                    <br>
+                </div>
+
+                <div id="formShadow">
+                    <label for="withshadow">Schatten</label> 
+                    <input type="checkbox" name="withshadow" id="withshadow" onchange="queer.shadowSelected();">
+                    <br>
+                </div>
+
+                <div id="formDither">
+                    <label for="dither">Dithering (Experimentelle Option für T-Shirt-Druck mit Schatten)</label>  
+                    <select name="dither">
+                        <option value="">aus (Transparenzverlauf im Schatten)</option>
+                        <option value="threshold">threshold</option>
+                        <option value="checks">checks</option>
+                        <option value="o2x2">o2x2</option>
+                        <option value="o3x3">o3x3</option>
+                        <option value="o4x4">o4x4</option>
+                        <option value="o8x8">o8x8</option>
+                        <option value="h4x4a">h4x4a</option>
+                        <option value="h6x6a">h6x6a</option>
+                        <option value="h8x8a">h8x8a</option>
+                        <option value="h4x4o">h4x4o</option>
+                        <option value="h6x6o">h6x6o</option>
+                        <option value="h8x8o">h8x8o</option>
+                        <option value="h16x16o">h16x16o</option>
+                    </select>
+                    <p>Dithering ist ein Verfahren, um z.B. den Farbverlauf im Schatten als Punktraster darzustellen. Beim Digitaldruck von T-Shirts kann das die Qualität verbessern. Leider kann Dithering nicht in der Vorschau angezeigt werden, sondern erst beim Download. Wer es genau wissen will: <a href="http://www.imagemagick.org/Usage/bugs/ordered-dither/">hier</a> sind die verschiedenen Arten von Dithering erklärt.</p>
+                    
+                    <br>
+                </div>
+
+                <div id="formBackground">
+                    <label for="background">Hintergrundfarbe (nur bei jpg)</label>  
+                    <input type="color" id="background" name="background" value="#badbff" onchange="queer.backgroundSelected();"> 
+                </div>
 
                 <input type="hidden" name="Q0" id="Q0">
                 <input type="hidden" name="U0" id="U0">

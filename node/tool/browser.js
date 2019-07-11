@@ -46,9 +46,11 @@ window.queer.initPreviewLogo = function() {
     flags.letters.forEach(letter => {
         $("#"+letter).attr("value", sessionStorage.getItem(letter) || "FFFFFF");
     });
+    window.queer.formatSelected();
     window.queer.flagSelected();
     window.queer.layoutSelected();
     window.queer.domainSelected();
+    window.queer.backgroundSelected();
     var gs = window.document.getElementsByTagName("g");
     for (let g of gs) {
         if(g.getAttribute("id").startsWith("letter")) {
@@ -113,6 +115,9 @@ window.queer.flagSelected = function () {
 window.queer.layoutSelected = function () {
     layoutName = $("#layoutselect :selected").val();
     lines = flags.linesInDesign(layoutName);
+
+    $("#formDomain").toggle(layoutName != "qay1");
+    
     
     if(lastLayout != layoutName) {
         lastLayout = layoutName;
@@ -123,7 +128,32 @@ window.queer.layoutSelected = function () {
             queer.initPreviewLogo();
         });
     }
-    
+}
+
+window.queer.shadowSelected = function () {
+    queer.formatSelected();
+    queer.flagSelected();
+}
+
+window.queer.formatSelected = function () {
+    formatName = $("#formatselect :selected").val();
+    shadow = $("#withshadow").is(":checked");
+    $("#formPixel").toggle(formatName != "shirt" && formatName != "twitter" && formatName != "quad" && formatName != "round" && formatName != "pdf");
+    $("#formMm").toggle(formatName == "shirt");
+    $("#formShadow").toggle(formatName != "pdf");
+    $("#formDither").toggle(formatName == "shirt" && shadow);
+    $("#formBackground").toggle(formatName == "jpg" || formatName == "twitter" || formatName == "quad" || formatName == "round" || formatName == "png" );
+    queer.backgroundSelected();
+}
+
+window.queer.backgroundSelected = function () {
+    backgroundColor = document.getElementById('background').value;
+    if(formatName == "jpg" || formatName == "twitter" || formatName == "quad" || formatName == "round" || formatName == "png") {
+        $("#previewlogo").attr("style", "background: " + backgroundColor + ";");
+    } else {
+        $("#previewlogo").attr("style", "background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAJ0lEQVQoz2NMTU1lwAZMTU2xijMxkAhGNRADWHCF9+nTp0dDiX4aAAT6BPBWhObUAAAAAElFTkSuQmCC);");
+    }
+
 }
 
 window.queer.domainSelected = function () {

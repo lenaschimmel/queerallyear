@@ -181,5 +181,6 @@ exports.allFlags = {
 
 exports.letters = ["Q0", "U0", "E0", "E1", "R0", "A0", "L0", "L1", "Y0", "E2", "A1", "R1", "P0", "D0", "E3"];
 
-exports.layouts = ["block2", "block3", "orig2", "orig3", "vert1", "vert2", "vert3"];
+exports.layouts = ["qay1", "block2", "block3", "orig2", "orig3", "vert1", "vert2", "vert3"];
 
+exports.ditherPatterns = ["threshold", "checks", "o2x2", "o3x3", "o4x4", "o8x8", "h4x4a", "h6x6a", "h8x8a", "h4x4o", "h6x6o", "h8x8o", "h16x16o"];

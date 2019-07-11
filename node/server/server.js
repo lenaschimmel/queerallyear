@@ -13,11 +13,11 @@ const GradientSvg = require('../tool/recolor.js');
 const flags = require('../tool/flags.js');
 
 const enabledPlugins = [
-  "cleanupAttrs", "removeDoctype", "removeXMLProcInst", "removeComments", "removeMetadata", "removeTitle", "removeDesc", 
-  "removeUselessDefs", "removeEditorsNSData", "removeEmptyAttrs", "removeHiddenElems", "removeEmptyText", 
-  "removeEmptyContainers", "cleanupEnableBackground", "convertStyleToAttrs", "convertColors", 
-  "convertTransform", "removeUnknownsAndDefaults", "removeNonInheritableGroupAttrs", "removeUselessStrokeAndFill", 
-  "removeUnusedNS", "cleanupNumericValues", "moveElemsAttrsToGroup", "moveGroupAttrsToElems", "collapseGroups", "mergePaths", 
+  "cleanupAttrs", "removeDoctype", "removeXMLProcInst", "removeComments", "removeMetadata", "removeTitle", "removeDesc",
+  "removeUselessDefs", "removeEditorsNSData", "removeEmptyAttrs", "removeHiddenElems", "removeEmptyText",
+  "removeEmptyContainers", "cleanupEnableBackground", "convertStyleToAttrs", "convertColors",
+  "convertTransform", "removeUnknownsAndDefaults", "removeNonInheritableGroupAttrs", "removeUselessStrokeAndFill",
+  "removeUnusedNS", "cleanupNumericValues", "moveElemsAttrsToGroup", "moveGroupAttrsToElems", "collapseGroups", "mergePaths",
   "sortAttrs", "removeDimensions"
 ];
 
@@ -44,7 +44,7 @@ const graphics = {};
 gradientsFuture = {};
 
 async function readSvg(filename, newId) {
-  graphics[newId] = async function() {
+  graphics[newId] = async function () {
     const filepath = resolve("../../web/img/" + filename + ".svg");
     const data = fs.readFileSync(filepath).toString();
     const optimized = await svgo.optimize(data, { path: filepath });
@@ -54,7 +54,7 @@ async function readSvg(filename, newId) {
 }
 
 flags.layouts.forEach(layout => {
-  readSvg("logo_"+layout+"_shadow", layout);
+  readSvg("logo_" + layout + "_shadow", layout);
   gradientsFuture[layout] = initSvg(layout);
 });
 
@@ -98,9 +98,9 @@ async function getPageOutput(page) {
       .replace("$CARDTITLE", page.cardtitle)
       .replace("$DESCRIPTION", page.description)
     + content
-      .replace("$SHADOW", (await graphics[defaultLogo]).replace(defaultLogo,"shadow"))
-      .replace("$MAINLOGO", (await graphics[defaultLogo]).replace(defaultLogo,"mainlogo"))
-      .replace("$PREVIEWLOGO", (await graphics[defaultLogo]).replace(defaultLogo,"previewlogo"))
+      .replace("$SHADOW", (await graphics[defaultLogo]).replace(defaultLogo, "shadow"))
+      .replace("$MAINLOGO", (await graphics[defaultLogo]).replace(defaultLogo, "mainlogo"))
+      .replace("$PREVIEWLOGO", (await graphics[defaultLogo]).replace(defaultLogo, "previewlogo"))
       .replace("$FLAGS", flagList())
     + fragment('foot');
   return output;
@@ -150,43 +150,66 @@ app.get('/design/download', async function (req, res) {
   var withshadow = req.query.withshadow;
   var layout = req.query.layout;
   var domain = req.query.domain;
-  var width = parseInt(req.query.width) || 1920;
-  var twitterSize = false;
+  var widthPixel = parseInt(req.query.widthPixel) || 1920;
+  var widthMm = parseInt(req.query.widthMm) || 200;
   var background = req.query.background || 'badbff';
-  if(background.substring(0,1) == "#") {
+  var dither = req.query.dither || '';
+  if (background.substring(0, 1) == "#") {
     background = background.substring(1);
   }
 
-  if (type == "twitter") {
-    type = "jpg";
-    specialSize = "twitter";
-    width = 1500;
+  realFormat = type;
+
+  switch (type) {
+    case "pdf":
+      withshadow = false;
+      break;
+    case "trans":
+      realFormat = "png";
+      break;
+    case "png":
+      break;
+    case "shirt":
+      realFormat = "png";
+      widthPixel = widthMm * 0.039 * 200;
+      break;
+    case "jpg":
+      break;
+    case "twitter":
+      realFormat = "jpg";
+      specialSize = "twitter";
+      widthPixel = 1500;
+      break;
+    case "quad":
+      realFormat = "jpg";
+      specialSize = "quad";
+      widthPixel = 512;
+      break;
+    case "round":
+      realFormat = "jpg";
+      specialSize = "round";
+      widthPixel = 512;
+      break;
+    case "svg":
+      break;
+
+    default:
+      break;
   }
 
-  if (type == "profile") {
-    type = "jpg";
-    specialSize = "profile";
-    width = 512;
-  }
-
-  if (type == "pdf" && withshadow) {
-    res.status(500).send("Sorry, pdf-Ausgabe funktioniert derzeit nicht mit aktivierten Schatten.");
-    return;
-  }
-
-  var prettyFileName = "QueerAllYear_" + layout + "_" + flag + "_domain" + domain + "_w" + width + (withshadow ? "_withshadow" : "") + "." + type;
+  var prettyFileName = "QueerAllYear_" + layout + "_" + flag + "_domain" + domain + "_w" + widthPixel + (withshadow ? "_withshadow" : "") + "." + realFormat;
 
 
-  console.log("Building " + flag + ", " + type + ", withShadow: " + withshadow + ", domain: " + domain);
+  console.log("Building " + prettyFileName);
 
   var gradients = await gradientsFuture[layout];
 
-  if(!gradients) {
+  if (!gradients) {
     res.status(500).send("Sorry, das layout " + layout + " existiert nicht.");
     return;
   }
 
-  if(flag == "Eigene Farbkombination") {
+  if (flag == "Eigene Farbkombination") {
     flags.letters.forEach(letter => {
       var color = "#" + (req.query[letter] || "FFFFFF");
       gradients.colorLetter(letter, color, false);
@@ -202,25 +225,25 @@ app.get('/design/download', async function (req, res) {
     res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Content-Disposition', 'attachment; filename="' + prettyFileName + '"');
     res.send(gradients.svgString());
-  } else if (type == "pdf" || type == "png" || type == "jpg") {
+  } else if (realFormat == "pdf" || realFormat == "png" || realFormat == "jpg") {
     try {
       const filenameBase = resolve("tmp/tmp" + Math.random().toString());
       fs.writeFileSync(filenameBase + ".svg", gradients.svgString());
       const inkscape = process.env.inkscape || "inkscape";
 
       extraParams = "";
-      typeForInksacpe = type;
+      typeForInksacpe = realFormat;
 
-      if (type == "png" || type == "jpg") {
-        if (width > 4096) {
+      if (realFormat == "png" || realFormat == "jpg") {
+        if (widthPixel > 4096) {
           res.status(500).send("Sorry, größer als 4096 ist nicht erlaubt.");
           return;
         }
-        if (type == "jpg") {
-          extraParams = " --export-width=" + width + " --export-background-opacity=1 --export-background=#" + background + " ";
+        if (realFormat == "jpg" || type == "png") { // type == png implies non-transparent
+          extraParams = " --export-width=" + widthPixel + " --export-background-opacity=1 --export-background=#" + background + " ";
           typeForInksacpe = "png";
         } else {
-          extraParams = " --export-width=" + width + " --export-background-opacity=0 ";
+          extraParams = " --export-width=" + widthPixel + " --export-background-opacity=0 ";
         }
       }
 
@@ -228,26 +251,37 @@ app.get('/design/download', async function (req, res) {
       console.log("Executung: " + command);
       const { stdout, stderr } = await exec(command);
 
-      if (type == "jpg") {
+      if (realFormat == "jpg") {
         var resize = "";
-        if(specialSize == "twitter") {
+        if (type == "twitter") {
           resize = " -bordercolor '#" + background + "' -border 5%x15% -resize 1500x500\\> -size 1500x500 xc:'#" + background + "' +swap -gravity center -composite ";
-        } 
-        if(specialSize == "profile") {
+        }
+        if (type == "quad") {
+          resize = " -bordercolor '#" + background + "' -border 2%x2% -resize 512x512\\> -size 512x512 xc:'#" + background + "' +swap -gravity center -composite ";
+        }
+        if (type == "round") {
           resize = " -bordercolor '#" + background + "' -border 15%x15% -resize 512x512\\> -size 512x512 xc:'#" + background + "' +swap -gravity center -composite ";
-        } 
-        
+        }
+
         const command = "convert " + filenameBase + ".png " + resize + filenameBase + ".jpg";
         console.log("Executung: " + command);
         const { stdout, stderr } = await exec(command);
       }
-      if (type == "pdf") res.setHeader('Content-Type', 'application/pdf');
-      if (type == "png") res.setHeader('Content-Type', 'image/png');
-      if (type == "jpg") res.setHeader('Content-Type', 'image/jpeg');
+
+      if (type == "shirt" && dither && dither.length > 0 && withshadow) {
+        const command = "convert " + filenameBase + ".png -channel A -ordered-dither " + dither + " " + filenameBase + ".png";
+        console.log("Executung: " + command);
+        const { stdout, stderr } = await exec(command);
+      }
+
+      if (realFormat == "pdf") res.setHeader('Content-Type', 'application/pdf');
+      if (realFormat == "png") res.setHeader('Content-Type', 'image/png');
+      if (realFormat == "jpg") res.setHeader('Content-Type', 'image/jpeg');
+      if (realFormat == "svg") res.setHeader('Content-Type', 'image/svg+xml');
       res.setHeader('Content-Disposition', 'attachment; filename="' + prettyFileName + '"');
-      res.sendFile(filenameBase + "." + type);
+      res.sendFile(filenameBase + "." + realFormat);
     } catch (e) {
-      res.status(500).send("Sorry, Fehler beim Erstellen der " + type + "-Datei! " + e.toString());
+      res.status(500).send("Sorry, Fehler beim Erstellen der " + realFormat + "-Datei! " + e.toString());
     }
   } else {
     res.status(500).send("Sorry, " + type + " ist kein gültiges Format.");

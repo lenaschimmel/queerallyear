@@ -151,8 +151,8 @@ method.colorLetterGradient = async function(gradient, targetColor, animate = fal
 }
 
 method.setDomainMode = function(mode) {
-    this.domainBold.setAttribute("style", (mode == "bold") ? "" : "display: none;");
-    this.domainLight.setAttribute("style", (mode == "light") ? "" : "display: none;");
+    if(this.domainBold)  this.domainBold.setAttribute("style", (mode == "bold") ? "" : "display: none;");
+    if(this.domainLight) this.domainLight.setAttribute("style", (mode == "light") ? "" : "display: none;");
 }
 
 function composeRanges(rangeArray) {
