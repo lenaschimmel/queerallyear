@@ -96,7 +96,7 @@
                 </div>
 
                 <div id="formBackground">
-                    <label for="background">Hintergrundfarbe (nur bei jpg)</label>  
+                    <label for="background">Hintergrundfarbe</label>  
                     <input type="color" id="background" name="background" value="#badbff" onchange="queer.backgroundSelected();"> 
                 </div>
 
