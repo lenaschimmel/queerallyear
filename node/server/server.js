@@ -78,7 +78,7 @@ function getNavi(activeName) {
 }
 
 function flagList() {
-  var list = "<option>Eigene Farbkombination</option>";
+  var list = "<option>Eigene Farbkombination</option><option disabled>──────────</option>";
   for (const key in flags.allFlags) {
     if (flags.allFlags.hasOwnProperty(key)) {
       var sel = (key == "Gay") ? " selected='selected'" : "";

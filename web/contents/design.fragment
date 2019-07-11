@@ -12,15 +12,18 @@
 
                 <label for="type">Format und Verwendungszweck</label>  
                 <select name="type" id="formatselect"  onchange="queer.formatSelected();">
-                    <option value="pdf">pdf (z.B. zum Drucken)</option>
+                    <option value="pdf">pdf</option>
+                    <option disabled>──────────</option>
                     <option value="trans">png (transparent)</option>
                     <option value="png">png (farbiger Hintergrund)</option>
                     <option value="shirt">png (für T-Shirt-Druck)</option>
+                    <option disabled>──────────</option>
                     <option value="jpg">jpg (allgemeine Verwendung)</option>
                     <option value="twitter">jpg (als Twitter-Header)</option>
                     <option value="quad">jpg (als quadratisches Profilbild)</option>
                     <option value="round">jpg (als rundes Profilbild)</option>
-                    <option value="svg">svg (allgemeine Verwendung)</option>
+                    <option disabled>──────────</option>
+                    <option value="svg">svg</option>
                 </select>
                 <br>
 
@@ -29,11 +32,14 @@
                 <select name="layout" id="layoutselect" onchange="queer.layoutSelected();">
                     <option value="orig2">2 Zeilen gewellt</option>
                     <option value="orig3">3 Zeilen gewellt</option>
+                    <option disabled>──────────</option>
                     <option value="vert1">1 Zeile gerade</option>
                     <option value="vert2">2 Zeilen gerade</option>
                     <option value="vert3">3 Zeilen gerade</option>
+                    <option disabled>──────────</option>
                     <option value="block2">Blocksatz 2 Zeilen</option>
                     <option value="block3">Blocksatz 3 Zeilen</option>
+                    <option disabled>──────────</option>
                     <option value="qay1">QAY</option>
                 </select>
                 <br>
@@ -76,15 +82,19 @@
                     <label for="dither">Dithering (Experimentelle Option für T-Shirt-Druck mit Schatten)</label>  
                     <select name="dither">
                         <option value="">aus (Transparenzverlauf im Schatten)</option>
+                        <option disabled>──────────</option>
                         <option value="threshold">threshold</option>
                         <option value="checks">checks</option>
+                        <option disabled>──────────</option>
                         <option value="o2x2">o2x2</option>
                         <option value="o3x3">o3x3</option>
                         <option value="o4x4">o4x4</option>
                         <option value="o8x8">o8x8</option>
+                        <option disabled>──────────</option>
                         <option value="h4x4a">h4x4a</option>
                         <option value="h6x6a">h6x6a</option>
                         <option value="h8x8a">h8x8a</option>
+                        <option disabled>──────────</option>
                         <option value="h4x4o">h4x4o</option>
                         <option value="h6x6o">h6x6o</option>
                         <option value="h8x8o">h8x8o</option>
