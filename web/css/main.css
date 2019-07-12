@@ -228,7 +228,7 @@ textarea {
 }
 .header .menu {
   clear: both;
-  max-height: 0;
+  height: 0;
   transition: max-height .2s ease-out;
 }
 
@@ -269,7 +269,7 @@ textarea {
   display: none;
 }
 .header .menu-btn:checked ~ .menu {
-  max-height: 260px;
+  height: auto;
 }
 .header .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
