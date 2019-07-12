@@ -6,7 +6,7 @@
             <h1>Design</h1>
             <p>Du möchtest dir etwas mit 'Queer all Year' gestalten oder bedrucken?</p>
             
-            <p>Hier kannst du dir Grafiken gestalten und in verschiedenen Formaten herunter laden. Wähle dazu als erstes <i>Format und Verwendungszweck</i> aus, denn abhängig von dieser Auswahl werden verschiedene Einstellungensmöglichkeiten erscheinen.</p>
+            <p>Hier kannst du dir Grafiken gestalten und in verschiedenen Formaten herunter laden. Wähle dazu als erstes <i>Format und Verwendungszweck</i> aus, denn abhängig von dieser Auswahl werden verschiedene Einstellungsmöglichkeiten erscheinen.</p>
 
             <form action="/design/download" id="person" target="_download">
 
