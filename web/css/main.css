@@ -285,7 +285,7 @@ textarea {
   top: 0;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1210px) {
   .header li {
     float: left;
   }
@@ -370,7 +370,6 @@ textarea {
 @media only screen and (min-width: 1050px) {
   label {
     display: inline-block;
-    width: 40%;
     text-align: right;
     margin-right: 1em;
   }
@@ -380,24 +379,6 @@ textarea {
   }
 }
   
-@media only screen and (max-width: 700px) {
-  h1 {
-    font-size: 1.2em;
-  }
-
-  .innerbox {
-    max-width: 100%;
-  }
-
-  .innerbox label {
-  display: block;
-    margin-top: 1em;
-  }
-  
-  input {
-    max-width: 100%;
-  }
-}
 
 button {
   display: block;
@@ -462,6 +443,81 @@ button {
   padding: 0.4em;
   background-color: #FFF7;
   margin: 3px;
+}
+
+.signaturesbox {
+  margin-top: 5em;
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+  padding: 20px;
+  background-color: #D2E8FF;
+}
+
+.signature h3 {
+    margin-top: 0;
+    font-size: 1em;
+    color: black;
+}
+
+.signature {
+  float: left;
+  background-color: white;
+  margin: 15px;
+  padding: 15px;
+  width: 220px;
+  height: 280px;
+  position: relative;
+}
+
+.signature span {
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+  background: white;
+  position: absolute;
+  bottom: 35px;
+  left: 35px;
+}
+
+.signature img {
+  max-width:160px;
+  max-height:160px;
+  width:auto;
+  height:auto;
+  border: 0;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  margin: auto;
+}
+
+a:hover .signature {
+  background-color: #badbff;
+}
+
+
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  .innerbox {
+    max-width: 100%;
+  }
+
+  .innerbox label {
+  display: block;
+    margin-top: 1em;
+  }
+  
+  input {
+    max-width: 100%;
+  }
+
+  .signaturesbox {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* ==========================================================================
