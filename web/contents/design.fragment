@@ -169,7 +169,7 @@
             <p>Egal, ob du den Druck selbst ausführst, oder ein Unternehmen damit beauftragst: ein paar Grundkenntnisse über die Druckverfahren brauchst du, um das richtige Motiv und Verfahren zu wählen.</p>
 
             <h2>Digitaldruck</h2>
-            <p>Beim Digitaldruck wird mit Druckdüsen direkt auf den Stoff gedruckt - so ähnlich wie ein Tintenstrahldrucker auf Papier druckt. Damit auch auf dunklen bzw. bunten Stoffen die Farben des Motivs perfekt aussehen, wird gewöhnlich zuerst eine weiße Schicht gruckt, und die Farben dann darauf. Die Farben werden während des Drucks aus Cyan, Magenta, Gelb und Schwarz gemischt, so dass letztlich alle Farben und Verläufe mischbar sind.</p>
+            <p>Beim Digitaldruck wird mit Druckdüsen direkt auf den Stoff gedruckt - so ähnlich wie ein Tintenstrahldrucker auf Papier druckt. Damit auch auf dunklen bzw. bunten Stoffen die Farben des Motivs perfekt aussehen, wird gewöhnlich zuerst eine weiße Schicht gedruckt, und die Farben dann darauf. Die Farben werden während des Drucks aus Cyan, Magenta, Gelb und Schwarz gemischt, so dass letztlich alle Farben und Verläufe mischbar sind.</p>
 
             <p>Dieses Verfahren kann fast jedes Motiv in sehr guter Qualität wiedergeben, und ist auch bei Einzelstücken rentabel. Dafür haben meist nur große Unternehmen die nötige Technik.</p>
 
@@ -180,10 +180,10 @@
             <ul>
                 <li><b>Kein Schatten:</b> Wird auf jeden Fall so aussehen wie in der Vorschau. Helle Buchstaben auf hellen Shirts sind aber evtl. schlecht lesbar, weil der Kontrast zu klein ist.</li>
                 <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Perfekt für weiße T-Shirts. Auf jeder anderen Stofffarbe wird der Schatten einen unschönen weißen Rand haben.</li>
-                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte auf jeder beliebigen Stofffarbe gut aussehen. Allerdings ist es schwer, die perfekte Rastergröße zu finden. Ist das Raster zu fein, tritt ggf. doch ein weißer Rand auf. Ist es zu grob, dann lenkt das Raster ggf. vom eigentlich Motiv ab. Noch haben wir keine Erfahrungswerte, was am besten aussieht.</li>
+                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte auf jeder beliebigen Stofffarbe gut aussehen. Allerdings ist es schwer, die perfekte Rastergröße zu finden. Ist das Raster zu fein, tritt ggf. doch ein weißer Rand auf. Ist es zu grob, dann lenkt das Raster ggf. vom eigentlich Motiv ab. Noch haben wir keine Erfahrungswerte, was am besten aussieht, aber ein Test-Shirt ist bereits in Auftrag gegeben.</li>
             </ul>
 
-            <p><b<>Diese Empfehlungen gelten für Digitaldruck beim Anbieter <i>Spreadshirt</i> - bei anderen Anbietern musst du ggf. anders vorgehen.</b></p>
+            <p><b>Diese Empfehlungen gelten für z.B. Digitaldruck beim Anbieter <i>Spreadshirt</i> - bei anderen Anbietern musst du ggf. anders vorgehen.</b></p>
 
             <h2>Flex- und Flockfolie</h2>
             <p>Diese Folien werden mit einem computergesteuerten Schneidplotter ausgeschnitten und dann mit einer Presse auf den Stoff aufgebracht.</p>
