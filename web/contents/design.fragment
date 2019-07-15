@@ -4,7 +4,9 @@
         <div class="innerinnerbox">
             
             <h1>Design</h1>
-            <p>Du möchtest dir etwas mit 'Queer all Year' gestalten oder bedrucken?</p>
+            <p>Du möchtest dir etwas mit 'Queer all Year' gestalten oder bedrucken?</p> 
+            
+            <p><b>Zu Textildruck findest du <a href="#druck">ganz unten</a> noch weitere wichtige Infos und Downloads.</b></p>
             
             <p>Hier kannst du dir Grafiken gestalten und in verschiedenen Formaten herunter laden. Wähle dazu als erstes <i>Format und Verwendungszweck</i> aus, denn abhängig von dieser Auswahl werden verschiedene Einstellungsmöglichkeiten erscheinen.</p>
 
@@ -155,6 +157,57 @@
         </div>
     </div>
 </div>
+
+<div class="pagebox">
+    <div class="innerbox">
+        <div class="innerinnerbox">
+            <h1><a name="druck">Hinweise zum Textildruck</h1>
+            <p>Beim Drucken auf Textilien gibt es verschiedene Methoden, die ihre Vor- und Nachteile haben.</p>
+
+            <p>Egal, ob du den Druck selbst ausführst, oder ein Unternehmen damit beauftragst: ein paar Grundkenntnisse über die Druckverfahren brauchst du, um das richtige Motiv und Verfahren zu wählen.</p>
+
+            <h2>Digitaldruck</h2>
+            <p>Beim Digitaldruck wird mit Druckdüsen direkt auf den Stoff gedruckt - so ähnlich wie ein Tintenstrahldrucker auf Papier druckt. Damit auch auf dunklen bzw. bunten Stoffen die Farben des Motivs perfekt aussehen, wird gewöhnlich zuerst eine weiße Schicht gruckt, und die Farben dann darauf. Die Farben werden während des Drucks aus Cyan, Magenta, Gelb und Schwarz gemischt, so dass letztlich alle Farben und Verläufe mischbar sind.</p>
+
+            <p>Dieses Verfahren kann fast jedes Motiv in sehr guter Qualität wiedergeben, und ist auch bei Einzelstücken rentabel. Dafür haben meist nur große Unternehmen die nötige Technik.</p>
+
+            <p>Die Motive aus diesem Konfigurator sind quasi für Digitaldruck optimiert. Das einzige Problem sind weiche Schatten - diese lassen sich zwar theoretisch mit Digitaldruck auch perfekt drucken, aber in der Praxis haben manche Hersteller damit Probleme und brauchen besondere Vorkehrungen, damit es funktioniert.</p>
+
+            <p>Die folgenden Empfehlungen gelten für Digitaldruck beim Anbieter <i>Spreadshirt</i> - bei anderen Anbietern musst du ggf. anders vorgehen.</p>
+
+            <p>Wenn du die Option "png (für T-Shirt-Druck)" auswählst, hast du daher verschiedene Optionen für den Schatten.</p>
+
+            <ul>
+                <li><b>Kein Schatten:</b> Wird auf jeden Fall so aussehen wie in der Vorschau. Helle Buchstaben auf hellen Shirts sind aber evtl. schlecht lesbar, weil der Kontrast zu klein ist.</li>
+                <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Perfekt für weiße T-Shirts. Auf jeder anderen Stofffarbe wird der Schatten einen unschönen weißen Rand haben.</li>
+                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte auf jeder beliebigen Stofffarbe gut aussehen. Allerdings ist es schwer, die perfekte Rastergröße zu finden. Ist das Raster zu fein, tritt ggf. doch ein weißer Rand auf. Ist es zu grob, dann lenkt das Raster ggf. vom eigentlich Motiv ab. Noch haben wir keine Erfahrungswerte, was am besten aussieht.</li>
+            </ul>
+
+            <h2>Flex- und Flockfolie</h2>
+            <p>Diese Folien werden mit einem computergesteuerten Schneidplotter ausgeschnitten und dann mit einer Presse auf den Stoff aufgebracht.</p>
+
+            <p>Das Verfahren ist perfekt für einfarbige Motive, bzw. Motive mit wenigen Farben, die jeweils rein vorkommen. Unser Logo mit seinen Farbverläufen und ggf. Schatten lässt sich damit prinzipiell nicht abbilden.</p>
+
+            <p>Du kannst aber diese <a href="/img/logo_orig2_mono.svg">einfarbige Variante als SVG</a> herunterladen und es damit versuchen. Sie ist absichtlich noch nicht 100% fertig aufbereitet, um direkt geplottet zu werden - denn jenachdem welche Buchstaben die gleiche Farbe erhalten sollen, braucht es mehr oder weniger Schnittlinien zwischen Buchstaben, etc. In jedem Fall muss also jemand mit Ahnung vom Plott-Verfahren die Grafik nachbearbeiten.</p>
+
+            <img src="/img/logo_orig2_mono.svg" width="80%">
+    
+            <h2>Siebdruck</h2>
+            <p>Für das Siebdruck-Verfahren werden zunächst Siebdruckplatten belichtet und entwickelt, durch die später die Farbe gepresst wird. Dabei muss je Farbe eine Platte angefertigt werden. Das lohnt sich erst bei einer größeren Anzahl gleichartiger Shirts (ca. 20 Stück) so richtig.</p>
+
+            <p>Auch wenn dieses Verfahren theoretisch beliebige Farben und Verläufe abbilden kann, ist das in der Praxis nicht immer möglich.</p>
+
+            <p>Siebdruck kannst du nicht nur von großen Firmen ausführen lassen - auch viele linke Gruppen, Jugendzentren, Do-it-Yourself-Werkstätten und Kollektive haben Ausrüstung für den Siebdruck. Allerdings haben diese oft nur die nötige Technik für einfarbige Motive oder welche mit sehr wenigen Farben. Es gelten also ähnliche Beschränkungen wie bei Flex- und Flockfolie.</p>
+
+            <h2>Transferfolie</h2>
+            <p>Es gibt Transferfolie, die du zuhause mit einem Tintenstrahl- oder Laserdrucker bedrucken kannst, um sie dann mit einem Bügeleisen auf den Stoff aufzubringen. Die Qualität ist nicht so gut wie bei den anderen Verfahren, und du kannst damit keinen Transparenzverlauf umsetzen (auch nicht mit Raster), wie er für den Schatten nötig wäre.</p>
+
+            <p>Wenn du die Schrift nicht von Hand ausschneidest, hast du außerdem ein weißes Rechteck um das Logo herum. Das fällt auf einem weißen T-Shirt weniger auf, ist aber trotzdem sichtbar.</p>
+
+        </div>
+    </div>
+</div>
+
 <script src="js/modules.js"></script>
 <script>
     queer.initPreviewLogo();
