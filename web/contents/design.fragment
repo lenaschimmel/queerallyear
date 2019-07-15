@@ -162,6 +162,8 @@
     <div class="innerbox">
         <div class="innerinnerbox">
             <h1><a name="druck">Hinweise zum Textildruck</h1>
+            <p>Wir bieten keinen eigenen T-Shirt-Shop an. Wenn du also ein Shirts (oder andere Kleidungsstücke oder Textilien) mit unserem Logo haben möchtest, musst du dich selbst um die Produktion kümmern. Im Folgenden möchten wir dir möglichst viele Hilfestellungen dazu geben.</p>
+
             <p>Beim Drucken auf Textilien gibt es verschiedene Methoden, die ihre Vor- und Nachteile haben.</p>
 
             <p>Egal, ob du den Druck selbst ausführst, oder ein Unternehmen damit beauftragst: ein paar Grundkenntnisse über die Druckverfahren brauchst du, um das richtige Motiv und Verfahren zu wählen.</p>
@@ -173,8 +175,6 @@
 
             <p>Die Motive aus diesem Konfigurator sind quasi für Digitaldruck optimiert. Das einzige Problem sind weiche Schatten - diese lassen sich zwar theoretisch mit Digitaldruck auch perfekt drucken, aber in der Praxis haben manche Hersteller damit Probleme und brauchen besondere Vorkehrungen, damit es funktioniert.</p>
 
-            <p>Die folgenden Empfehlungen gelten für Digitaldruck beim Anbieter <i>Spreadshirt</i> - bei anderen Anbietern musst du ggf. anders vorgehen.</p>
-
             <p>Wenn du die Option "png (für T-Shirt-Druck)" auswählst, hast du daher verschiedene Optionen für den Schatten.</p>
 
             <ul>
@@ -182,6 +182,8 @@
                 <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Perfekt für weiße T-Shirts. Auf jeder anderen Stofffarbe wird der Schatten einen unschönen weißen Rand haben.</li>
                 <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte auf jeder beliebigen Stofffarbe gut aussehen. Allerdings ist es schwer, die perfekte Rastergröße zu finden. Ist das Raster zu fein, tritt ggf. doch ein weißer Rand auf. Ist es zu grob, dann lenkt das Raster ggf. vom eigentlich Motiv ab. Noch haben wir keine Erfahrungswerte, was am besten aussieht.</li>
             </ul>
+
+            <p><b<>Diese Empfehlungen gelten für Digitaldruck beim Anbieter <i>Spreadshirt</i> - bei anderen Anbietern musst du ggf. anders vorgehen.</b></p>
 
             <h2>Flex- und Flockfolie</h2>
             <p>Diese Folien werden mit einem computergesteuerten Schneidplotter ausgeschnitten und dann mit einer Presse auf den Stoff aufgebracht.</p>

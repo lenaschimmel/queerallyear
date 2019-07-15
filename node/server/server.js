@@ -197,7 +197,13 @@ app.get('/design/download', async function (req, res) {
       break;
   }
 
-  var prettyFileName = "QueerAllYear_" + layout + "_" + flag + "_domain" + domain + "_w" + widthPixel + (withshadow ? "_withshadow" : "") + "." + realFormat;
+  var prettyFileName = "QueerAllYear_" + layout + "_" 
+                                       + flag + "_" 
+                                       + "domain" + domain 
+                                       + "_w" + widthPixel 
+                                       + (withshadow ? "_withshadow" : "") 
+                                       + (dither.length > 0 ? "_" + dither : "") 
+                                       + "." + realFormat;
 
 
   console.log("Building " + prettyFileName);
