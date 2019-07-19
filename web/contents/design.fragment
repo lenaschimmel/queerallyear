@@ -102,7 +102,9 @@
                         <option value="h8x8o">h8x8o</option>
                         <option value="h16x16o">h16x16o</option>
                     </select>
-                    <p>Dithering ist ein Verfahren, um z.B. den Farbverlauf im Schatten als Punktraster darzustellen. Beim Digitaldruck von T-Shirts kann das die Qualität verbessern. Leider kann Dithering nicht in der Vorschau angezeigt werden, sondern erst beim Download. Wer es genau wissen will: <a href="http://www.imagemagick.org/Usage/bugs/ordered-dither/">hier</a> sind die verschiedenen Arten von Dithering erklärt.</p>
+                    <p style="color:#990000;">Das Drucken von halbtransparenten Schatten auf Textilien ist ziemlich komplex, und gelingt nicht immer. Nur auf weißen Shirts gibt es sowas wie eine "Erfolgsgarantie". Wir raten daher, die Abschnitte <a href="#druck">weiter unten</a> aufmerksam zu lesen, und falls dir das alles zu kompliziert ist, eher auf den Schatten zu verzichten.</p>
+                    
+                    <p>Das Dithering ist nicht in der Vorschau sichtbar, sondern erst nach dem Download. Die Bedeutung der einzelnen Verfahren wie z.B. "h4x4a" ist <a href="http://www.imagemagick.org/Usage/bugs/ordered-dither/">hier</a> erklärt.</p>
                     
                     <br>
                 </div>
@@ -162,7 +164,7 @@
     <div class="innerbox">
         <div class="innerinnerbox">
             <h1><a name="druck">Hinweise zum Textildruck</h1>
-            <p>Wir bieten keinen eigenen T-Shirt-Shop an. Wenn du also ein Shirts (oder andere Kleidungsstücke oder Textilien) mit unserem Logo haben möchtest, musst du dich selbst um die Produktion kümmern. Im Folgenden möchten wir dir möglichst viele Hilfestellungen dazu geben.</p>
+            <p>Wir bieten keinen eigenen T-Shirt-Shop an. Wenn du also ein Shirt (oder andere Kleidungsstücke oder Textilien) mit unserem Logo haben möchtest, musst du dich selbst um die Produktion kümmern. Im Folgenden möchten wir dir möglichst viele Hilfestellungen dazu geben.</p>
 
             <p>Beim Drucken auf Textilien gibt es verschiedene Methoden, die ihre Vor- und Nachteile haben.</p>
 
@@ -173,17 +175,26 @@
 
             <p>Dieses Verfahren kann fast jedes Motiv in sehr guter Qualität wiedergeben, und ist auch bei Einzelstücken rentabel. Dafür haben meist nur große Unternehmen die nötige Technik.</p>
 
-            <p>Die Motive aus diesem Konfigurator sind quasi für Digitaldruck optimiert. Das einzige Problem sind weiche Schatten - diese lassen sich zwar theoretisch mit Digitaldruck auch perfekt drucken, aber in der Praxis haben manche Hersteller damit Probleme und brauchen besondere Vorkehrungen, damit es funktioniert.</p>
+            <p>Die Motive aus diesem Konfigurator sind quasi für Digitaldruck optimiert. Das einzige Problem sind weiche Schatten - diese lassen sich zwar theoretisch mit Digitaldruck auch perfekt drucken, aber in der Praxis haben manche Hersteller damit Probleme und brauchen besondere Vorkehrungen, damit es funktioniert. Insbesondere </p>
 
-            <p>Wenn du die Option "png (für T-Shirt-Druck)" auswählst, hast du daher verschiedene Optionen für den Schatten.</p>
+            <p>Für den Anbieter<i>Spreadshirt</i> liegen uns folgende Erfahrungswerte bzgl. Dithering / Rastern vor:</p>
 
             <ul>
-                <li><b>Kein Schatten:</b> Wird auf jeden Fall so aussehen wie in der Vorschau. Helle Buchstaben auf hellen Shirts sind aber evtl. schlecht lesbar, weil der Kontrast zu klein ist.</li>
-                <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Perfekt für weiße T-Shirts. Auf jeder anderen Stofffarbe wird der Schatten einen unschönen weißen Rand haben.</li>
-                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte auf jeder beliebigen Stofffarbe gut aussehen. Allerdings ist es schwer, die perfekte Rastergröße zu finden. Ist das Raster zu fein, tritt ggf. doch ein weißer Rand auf. Ist es zu grob, dann lenkt das Raster ggf. vom eigentlich Motiv ab. Noch haben wir keine Erfahrungswerte, was am besten aussieht, aber ein Test-Shirt ist bereits in Auftrag gegeben.</li>
+                <li><b>Gar Kein Schatten:</b> Wird auf jeden Fall so aussehen wie in der Vorschau. Helle Buchstaben auf hellen Shirts sind aber evtl. schlecht lesbar, weil der Kontrast zu klein ist.</li>
+                <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Laut der Herstellerangaben von _Spreadshirt_ sollte der Schatten einen unschönen weißen Rand haben - bei unserem Probeshirt war aber einfach gar kein Schatten und somit auch kein weißer Rand vorhanden.</li>
+                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte laut  _Spreadshirt_ auf jeder beliebigen Stofffarbe gut aussehen. Ein Testshirt auf dunkel-lila mit drei verschiedenen Rastergrößen hat uns gezeigt: keiner der Varianten ist perfekt. Bei allen sind ein paar weiße "Pixel" im Schatten sichtbar, obwohl dieser nur aus halbtransparentem Schwarz bestehen sollte. (Detailfotos des Test-Shirts <a href="https://twitter.com/LenaSchimmel/status/1152251326325284865">auf Twitter</a>)</li>
             </ul>
 
-            <p><b>Diese Empfehlungen gelten für z.B. Digitaldruck beim Anbieter <i>Spreadshirt</i> - bei anderen Anbietern musst du ggf. anders vorgehen.</b></p>
+            Daraus leiten wir folgende Empfehlungen für Bestellungen bei <i>Spreadshirt</i> ab:
+
+            <ul>
+                <li><b>Schwarzes Shirt:</b> In jedem Fall ganz ohne Schatten drucken.</li>
+                <li><b>Dunkles Shirt:</b> Starke Empfehlungen, ohne Schatten zu drucken. Wenn doch, dann am ehesten mit Dithering "h6x6o".</li>
+                <li><b>Relativ helles Shirt:</b> Ob Schatten oder nicht, ist Geschmackssache. Auf jeden Fall mit Dithering / Raster.</li>
+                <li><b>Weißes oder hellgraues Shirt:</b> Wenn weiße Buchstaben vorkommen, auf jeden fall mit Schatten. Ansonsten Geschmackssache. Auf jeden Fall mit Dithering / Raster. Auf weißen Shirts müsste jede Variante ganz ok aussehen.</li>
+            </ul>
+
+            <p>Bei anderen Herstellern kann das Ergebnis besser oder schlechter ausfallen, und andere Einstellungen benötigen.</p>
 
             <h2>Flex- und Flockfolie</h2>
             <p>Diese Folien werden mit einem computergesteuerten Schneidplotter ausgeschnitten und dann mit einer Presse auf den Stoff aufgebracht.</p>
