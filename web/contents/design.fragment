@@ -175,14 +175,14 @@
 
             <p>Dieses Verfahren kann fast jedes Motiv in sehr guter Qualität wiedergeben, und ist auch bei Einzelstücken rentabel. Dafür haben meist nur große Unternehmen die nötige Technik.</p>
 
-            <p>Die Motive aus diesem Konfigurator sind quasi für Digitaldruck optimiert. Das einzige Problem sind weiche Schatten - diese lassen sich zwar theoretisch mit Digitaldruck auch perfekt drucken, aber in der Praxis haben manche Hersteller damit Probleme und brauchen besondere Vorkehrungen, damit es funktioniert. Insbesondere </p>
+            <p>Die Motive aus diesem Konfigurator sind quasi für Digitaldruck optimiert. Das einzige Problem sind weiche Schatten - diese lassen sich zwar theoretisch mit Digitaldruck auch perfekt drucken, aber in der Praxis haben manche Hersteller damit Probleme und brauchen besondere Vorkehrungen, damit es funktioniert.</p>
 
-            <p>Für den Anbieter<i>Spreadshirt</i> liegen uns folgende Erfahrungswerte bzgl. Dithering / Rastern vor:</p>
+            <p>Für den Anbieter <i>Spreadshirt</i> liegen uns folgende Erfahrungswerte bzgl. Dithering / Rastern vor:</p>
 
             <ul>
                 <li><b>Gar Kein Schatten:</b> Wird auf jeden Fall so aussehen wie in der Vorschau. Helle Buchstaben auf hellen Shirts sind aber evtl. schlecht lesbar, weil der Kontrast zu klein ist.</li>
-                <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Laut der Herstellerangaben von _Spreadshirt_ sollte der Schatten einen unschönen weißen Rand haben - bei unserem Probeshirt war aber einfach gar kein Schatten und somit auch kein weißer Rand vorhanden.</li>
-                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte laut  _Spreadshirt_ auf jeder beliebigen Stofffarbe gut aussehen. Ein Testshirt auf dunkel-lila mit drei verschiedenen Rastergrößen hat uns gezeigt: keiner der Varianten ist perfekt. Bei allen sind ein paar weiße "Pixel" im Schatten sichtbar, obwohl dieser nur aus halbtransparentem Schwarz bestehen sollte. (Detailfotos des Test-Shirts <a href="https://twitter.com/LenaSchimmel/status/1152251326325284865">auf Twitter</a>)</li>
+                <li><b>Schatten an, Dithering aus (Transparenzverlauf im Schatten):</b> Laut der Herstellerangaben von <i>Spreadshirt</i> sollte der Schatten einen unschönen weißen Rand haben - bei unserem Probeshirt war aber einfach gar kein Schatten und somit auch kein weißer Rand vorhanden.</li>
+                <li><b>Schatten an, Dithering an:</b> Der Schatten wird gerastert, und sollte laut <i>Spreadshirt</i> auf jeder beliebigen Stofffarbe gut aussehen. Ein Testshirt auf dunkel-lila mit drei verschiedenen Rastergrößen hat uns gezeigt: keine der Varianten ist perfekt. Bei allen sind ein paar weiße "Pixel" im Schatten sichtbar, obwohl dieser nur aus halbtransparentem Schwarz bestehen sollte. (Detailfotos des Test-Shirts <a href="https://twitter.com/LenaSchimmel/status/1152251326325284865">auf Twitter</a>)</li>
             </ul>
 
             Daraus leiten wir folgende Empfehlungen für Bestellungen bei <i>Spreadshirt</i> ab:
@@ -191,7 +191,7 @@
                 <li><b>Schwarzes Shirt:</b> In jedem Fall ganz ohne Schatten drucken.</li>
                 <li><b>Dunkles Shirt:</b> Starke Empfehlungen, ohne Schatten zu drucken. Wenn doch, dann am ehesten mit Dithering "h6x6o".</li>
                 <li><b>Relativ helles Shirt:</b> Ob Schatten oder nicht, ist Geschmackssache. Auf jeden Fall mit Dithering / Raster.</li>
-                <li><b>Weißes oder hellgraues Shirt:</b> Wenn weiße Buchstaben vorkommen, auf jeden fall mit Schatten. Ansonsten Geschmackssache. Auf jeden Fall mit Dithering / Raster. Auf weißen Shirts müsste jede Variante ganz ok aussehen.</li>
+                <li><b>Weißes oder hellgraues Shirt:</b> Wenn weiße Buchstaben vorkommen, auf jeden Fall mit Schatten. Ansonsten Geschmackssache. Auf jeden Fall mit Dithering / Raster. Auf weißen Shirts müsste jede Variante ganz ok aussehen.</li>
             </ul>
 
             <p>Bei anderen Herstellern kann das Ergebnis besser oder schlechter ausfallen, und andere Einstellungen benötigen.</p>
