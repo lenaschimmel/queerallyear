@@ -63,9 +63,12 @@ window.queer.initPreviewLogo = function() {
 }
 
 window.queer.colorLetter = function(letter) {
-    $("#"+letter).attr("value", activeColor.substring(1));
-    sessionStorage.setItem(letter, activeColor.substring(1));
-    previewLogo.colorLetter(letter, activeColor);
+    flagName = $("#flagselect :selected").val();
+    if(flagName == "Eigene Farbkombination") {
+      $("#"+letter).attr("value", activeColor.substring(1));
+     sessionStorage.setItem(letter, activeColor.substring(1));
+     previewLogo.colorLetter(letter, activeColor);
+    }
 }
 
 window.queer.initArrow = function () {
