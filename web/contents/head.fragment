@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/lightbox.min.css"/>
 
   <meta name="theme-color" content="#fafafa">
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
