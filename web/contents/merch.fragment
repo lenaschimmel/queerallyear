@@ -2,9 +2,12 @@
     <div class="innerbox">
         <div class="innerinnerbox">
             <h1>Postkarten</h1>
+            <a href="img/merch/postkarte.jpg" data-lightbox="postkarte" data-title="Vorderseite der Postkarte"><img src="img/merch/thumb_postkarte.jpg" width="98%"></a>
             <p>Unsere Postkarte zeigt im Vordergrund ein großes Queer-all-Year-Logo in Regenbogenfarben, und im Hintergrund 252 mal "Queer all year" als Schriftzug. Auf den 1000 Postkarten, die wir drucken ließen, entspricht dies in Summe der Einwohnerzahl Braunschweigs.</p>
 
+
             <p>Davon sind 15 Schriftzüge in den Farben verschiedener Pride-Flags eingefärbt. Das kann man gern als Metapher für die queeren Menschen in Braunschweig sehen - aber stimmt der Anteil denn? Das war zumindest nicht unser Ziel, denn wir haben schlicht jede Flagge, die wir auf dieser Website zeigen, je einmal verwendet. Jede Flagge macht damit knapp 0,4% aus, und in Summe sind knapp 6% der Schriftzüge bunt. Wie viele Menschen tatsächlich queer sind, weiß aber niemand genau. Nehmen wir allein den Anteil bisexueller Menschen an der Bevölkerung, so finden sich leicht Studien, die ihn auf unter 1%, etwa 19% oder gar über 40% schätzen. Entsprechend schwer ist es, die Gesamtmenge abzuschätzen. Vermutlich müsste unsere Karte aber noch viel bunter sein, um wirklich die Gesellschaft abzubilden.</p>
+            <a href="img/merch/postkarte_closeup.jpg" data-lightbox="postkarte" data-title="Erklärungstext auf der Rückseite"><img src="img/merch/thumb_postkarte_closeup.jpg" width="98%"></a>
         </div>
     </div>
     <div class="innerbox">
@@ -17,6 +20,7 @@
                 <li>Länglich groß: Polyamor</li>
                 <li>Länglich klein: More Color Pride</li>
             </ul>
+            <a href="img/merch/alle.jpg" data-lightbox="sticker" data-title="Alle unsere Sticker im Größenvergleich mit der Postkarte"><img src="img/merch/thumb_alle.jpg" width="98%"></a>
         </div>
     </div>
     <div class="innerbox">
@@ -35,10 +39,11 @@
         <div class="innerinnerbox">
             <h1>Aufnäher, Taschen und andere Textilien</h1>
             
-            <img src="img/siebdruck/siebdruck_verlauf_3.jpg">
-            
+            <a href="img/siebdruck/siebdruck_verlauf_3.jpg" data-lightbox="siebdruck" data-title="Beispiel für einen Siebdruck-Farbverlauf auf schwarzem Stoff"><img src="img/siebdruck/thumb_siebdruck_verlauf_3.jpg" width="98%"></a>
+         
             <p>Wir haben schon ausprobiert, dass sich der Queer-all-Year-Schriftzug auch für <a href="/design.html#siebdruck">Siebdruck auf Textilien</a> eignet - mit etwas Geschick auch in mehrfarbig. Wir möchten damit Aufnäher aus einfachem Baumwollstoff bedrucken, und ggf. auch andere Textilien wie z.B. T-shirts oder Stofftaschen. Wenn du Aufnäher haben möchtest, <a href="mailto:kontakt@queerallyear.de">sag uns gerne Bescheid</a>, wieviele und welche Farben. Andere Textilien können wir aktuell nicht einfach auf Vorrat kaufen - wenn du also andere Textilien mit Siebdruck-Motiv haben möchtest (und nicht alleine drucken möchtest oder kannst), dann <a href="mailto:kontakt@queerallyear.de">melde dich</a> möglichst bald bei uns - du kannst dann ggf. deine eigenen Textilien zu einem gemeinsamen Termin mitbringen und mit uns zusammen bedrucken.</p>
         </div>
     </div>
    
 </div>
+<script src="js/lightbox.min.js"></script>
