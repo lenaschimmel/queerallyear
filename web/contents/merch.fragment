@@ -1,7 +1,12 @@
 <div class="pagebox">
     <div class="innerbox">
         <div class="innerinnerbox">
-            <h1>Postkarten</h1>
+            <p>Wir haben eure bisherigen Spenden genutzt, um einige <a href="#postkarten">Postkarten</a> und <a href="#sticker">Sticker</a> zu drucken, die du auf dem CSD oder auch <a href="#wo">schon davor erhalten</a> kannst. Außerdem haben wir mit Siebdruck experimentiert und möchten auch noch damit <a href="#textilien">bedruckte Textilien</a> anbieten.</p>
+        </div>
+    </div>
+    <div class="innerbox">
+        <div class="innerinnerbox">
+            <a name="postkarten"><h1>Postkarten</h1></a>
             <a href="img/merch/postkarte.jpg" data-lightbox="postkarte" data-title="Vorderseite der Postkarte"><img src="img/merch/thumb_postkarte.jpg" width="98%"></a>
             <p>Unsere Postkarte zeigt im Vordergrund ein großes Queer-all-Year-Logo in Regenbogenfarben, und im Hintergrund 252 mal "Queer all year" als Schriftzug. Auf den 1000 Postkarten, die wir drucken ließen, entspricht dies in Summe der Einwohnerzahl Braunschweigs.</p>
 
@@ -12,7 +17,7 @@
     </div>
     <div class="innerbox">
         <div class="innerinnerbox">
-            <h1>Sticker</h1>
+            <a name="sticker"><h1>Sticker</h1></a>
             <p>Wir haben ein paar verschiedene Sticker mit dem Queer-all-Year-Schriftzug drucken lassen, in verschiedenen Größen, Formen und Flaggen:</p>
              <ul>
                 <li>DIN A7: Regenbogen</li>
@@ -25,7 +30,7 @@
     </div>
     <div class="innerbox">
         <div class="innerinnerbox">
-            <h1>Wo bekomme ich die Postkarten und Sticker?</h1>
+            <a name="wo"><h1>Wo bekomme ich die Postkarten und Sticker?</h1></a>
             <p>Wenn du welche von unseren Postkarten oder Stickern haben möchtest, <a href="mailto:kontakt@queerallyear.de">melde dich</a> gerne bei uns - oder nimm dir welche mit von einem der Orte, an denen sie bisher ausliegen:</p>
             <ul>
                 <li>Stratum 0 - Hackerspace Braunschweig (Hamburger Straße 273A, 38114 Braunschweig)</li>
@@ -36,10 +41,10 @@
         </div>
     </div>
     <div class="innerbox">
-        <div class="innerinnerbox">
+        <a name="textilien"><div class="innerinnerbox"></a>
             <h1>Aufnäher, Taschen und andere Textilien</h1>
             
-            <a href="img/siebdruck/siebdruck_verlauf_3.jpg" data-lightbox="siebdruck" data-title="Beispiel für einen Siebdruck-Farbverlauf auf schwarzem Stoff"><img src="img/siebdruck/thumb_siebdruck_verlauf_3.jpg" width="98%"></a>
+            <a href="img/siebdruck/siebdruck_verlauf_3.jpg" data-lightbox="siebdruck" data-title="Beispiel für einen Siebdruck-Farbverlauf auf schwarzem Stoff"><img src="img/siebdruck/thumb_siebdruck_verlauf_3.jpg" class="imgthumb"></a>
          
             <p>Wir haben schon ausprobiert, dass sich der Queer-all-Year-Schriftzug auch für <a href="/design.html#siebdruck">Siebdruck auf Textilien</a> eignet - mit etwas Geschick auch in mehrfarbig. Wir möchten damit Aufnäher aus einfachem Baumwollstoff bedrucken, und ggf. auch andere Textilien wie z.B. T-shirts oder Stofftaschen. Wenn du Aufnäher haben möchtest, <a href="mailto:kontakt@queerallyear.de">sag uns gerne Bescheid</a>, wieviele und welche Farben. Andere Textilien können wir aktuell nicht einfach auf Vorrat kaufen - wenn du also andere Textilien mit Siebdruck-Motiv haben möchtest (und nicht alleine drucken möchtest oder kannst), dann <a href="mailto:kontakt@queerallyear.de">melde dich</a> möglichst bald bei uns - du kannst dann ggf. deine eigenen Textilien zu einem gemeinsamen Termin mitbringen und mit uns zusammen bedrucken.</p>
         </div>
