@@ -206,13 +206,26 @@
             <img src="/img/logo_orig2_mono.svg" width="80%">
     
             <h2>Siebdruck</h2>
-            <p><b>Wir haben kürzlich erste Versuche mit Siebdruck gemacht, die recht positiv verliefen. Die folgenden Abschnitte werden in Kürze überarbeitet.</b></p>
+            <p>Nachdem unsere Erfahrungen mit kommerziellen Anbietern für T-Shirts nicht ganz überzeugend waren, haben wir selbst ein paar Versuche mit Siebdruck gemacht. Für die meisten von uns war es der erste Kontakt mit diesem Handwerk, aber wir waren dennoch sehr schnell erfolgreich.</p>
 
-            <p>Für das Siebdruck-Verfahren werden zunächst Drucksiebe belichtet und entwickelt, durch die später die Farbe gepresst wird. Dabei muss je Farbe ein Sieb angefertigt werden. Das lohnt sich für kommerzielle Anbieter erst bei einer größeren Anzahl gleichartiger Shirts (ca. 20 Stück) so richtig. Wenn du privat siebdruckst, und viel Zeit hast, kann das durchaus auch schon bei einem Einzelstück ok sein.</p>
+            <p>Für das Siebdruck-Verfahren werden zunächst Drucksiebe belichtet und entwickelt, durch die später die Farbe gepresst wird. Das lohnt sich für kommerzielle Anbieter erst bei einer größeren Anzahl gleichartiger Shirts (ca. 20 Stück) so richtig. Wenn du privat siebdruckst, und viel Zeit hast, kann das durchaus auch schon bei einem Einzelstück ok sein.</p>
 
-            <p>Auch wenn dieses Verfahren theoretisch beliebige Farben und Verläufe abbilden kann, ist das in der Praxis nicht immer möglich.</p>
+          
+            <p>Zunächst haben wir die Variante ohne Raster und Verlauf getestet, die ursprünglich für den Schneidplotter entwickelt wurde. Das ging ohne Probleme.</p>
 
-            <p>Siebdruck kannst du nicht nur von großen Firmen ausführen lassen - auch viele linke Gruppen, Jugendzentren, Do-it-Yourself-Werkstätten und Kollektive haben Ausrüstung für den Siebdruck. Allerdings haben diese oft nur die nötige Technik für einfarbige Motive oder welche mit sehr wenigen Farben. Es gelten also ähnliche Beschränkungen wie bei Flex- und Flockfolie.</p>
+            <img src="img/siebdruck_ohne_raster.jpg">
+
+            <p>Eine Version mit groberer Rasterung funktionierte auch erstaunlich gut.</p>
+
+            <img src="img/siebdruck_mit_raster.jpg">
+
+            <p>Letztlich haben wir mehrere verschiedene Farben gleichzeitig auf das Sieb aufgebracht und in einem Durchgang verstrichen, um Motive mit Farbstreifen bzw. Farbverlauf zu erzeugen. Das war etwas anspruchsvoller, aber offenbar auch für uns Anfängerinnen zu schaffen.</p>
+
+            <img src="img/siebdruck_verlauf.jpg">
+
+            <p>Siebdruck kannst du nicht nur von großen Firmen ausführen lassen - auch viele linke Gruppen, Jugendzentren, Do-it-Yourself-Werkstätten und Kollektive haben Ausrüstung für den Siebdruck. Für den Fall, dass du selbst Siebdruck ausprobieren möchtest, kannst du hier unsere <a href="">Druckvorlage</a> herunterladen.</p>
+
+            <img src="img/siebdruck_vorlage.png">
 
             <h2>Transferfolie</h2>
             <p>Es gibt Transferfolie, die du zuhause mit einem Tintenstrahl- oder Laserdrucker bedrucken kannst, um sie dann mit einem Bügeleisen auf den Stoff aufzubringen. Die Qualität ist nicht so gut wie bei den anderen Verfahren, und du kannst damit keinen Transparenzverlauf umsetzen (auch nicht mit Raster), wie er für den Schatten nötig wäre.</p>

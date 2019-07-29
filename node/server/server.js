@@ -68,9 +68,9 @@ function getNavi(activeName) {
       if (!page.hidden) {
         var title = page.menutitle || page.title;
         if (page.name == activeName)
-          navi += '<li><a href="/' + page.name + '.html" class="active">' + title + '</a></li>';
+          navi += '<li><a href="/' + page.name + '.html" title="' + page.cardtitle + '" class="active">' + title + '</a></li>';
         else
-          navi += '<li><a href="/' + page.name + '.html">' + title + '</a></li>';
+          navi += '<li><a href="/' + page.name + '.html" title="' + page.cardtitle + '">' + title + '</a></li>';
       }
     }
   }
@@ -241,8 +241,8 @@ app.get('/design/download', async function (req, res) {
       typeForInksacpe = realFormat;
 
       if (realFormat == "png" || realFormat == "jpg") {
-        if (widthPixel > 4096) {
-          res.status(500).send("Sorry, größer als 4096 ist nicht erlaubt.");
+        if (widthPixel > 10000) {
+          res.status(500).send("Sorry, größer als 10000 ist nicht erlaubt.");
           return;
         }
         if (realFormat == "jpg" || type == "png") { // type == png implies non-transparent

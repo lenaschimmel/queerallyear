@@ -26,6 +26,13 @@ exports.pages = [
         "title" : "Unterstütze uns",
         "cardtitle" : "Wie kannst du Queer All Year unterstüzen?",
         "description" : "Sichtbar sein, Merch verteilen, die Erklärung unterzeichnen oder Geld beisteuern - auf viele verschiedene Weisen kannst du uns Support geben.",
+        "hidden" : true
+    },
+    {
+        "name" : "merch",
+        "title" : "Sticker, Postkarten, etc.",
+        "cardtitle" : "Sticker, Postkarten, Aufnäher und Taschen",
+        "description" : "Wir haben mit euren Spenden schöne Dinge gedruckt! Welche es gibt, und wie ihr sie erhalten könnt, steht hier.",
     },
     {
         "name" : "design",

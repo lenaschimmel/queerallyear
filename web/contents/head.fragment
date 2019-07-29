@@ -35,7 +35,7 @@
   <![endif]-->
 
   <header class="header">
-    <a href="/" class="logo"><img id="navilogo" style="width:13em;" src="img/navi.png" alt="Queer all year - Startseite"></a>
+    <a href="/" class="logo" title="Startseite"><img id="navilogo" style="width:13em;" src="img/navi.png" alt="Queer all year - Startseite"></a>
     <input class="menu-btn" type="checkbox" id="menu-btn" />
     <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
     <ul class="menu">
