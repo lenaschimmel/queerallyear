@@ -275,7 +275,7 @@ strong {
   display: none;
 }
 .header .menu-btn:checked ~ .menu {
-  max-height: 320px;
+  max-height: 380px;
 }
 .header .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;

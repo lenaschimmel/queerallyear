@@ -22,6 +22,13 @@ exports.pages = [
         "hidden" : false
     },
     {
+        "name" : "dialog",
+        "title" : "Dialog",
+        "cardtitle" : "Dialog zwischen Queer all Year und der CSD-Orga",
+        "description" : "Inzwischen gibt es einen Dialog zwischen uns und der CSD-Orga. Unsere Kritik ist auf offene Ohren gestoßen und wir planen weitere Gespräche. Mehr dazu veröffentlichen wir hier.",
+        "hidden" : false
+    },
+    {
         "name" : "support",
         "title" : "Unterstütze uns",
         "cardtitle" : "Wie kannst du Queer All Year unterstüzen?",
@@ -30,19 +37,19 @@ exports.pages = [
     },
     {
         "name" : "merch",
-        "title" : "Sticker, Postkarten, etc.",
+        "title" : "Sticker, Postkarten…",
         "cardtitle" : "Sticker, Postkarten, Aufnäher und Taschen",
         "description" : "Wir haben mit euren Spenden schöne Dinge gedruckt! Welche es gibt, und wie ihr sie erhalten könnt, steht hier.",
     },
     {
         "name" : "design",
-        "title" : "Dein Motiv gestalten",
+        "title" : "Motiv gestalten",
         "cardtitle" : "Druckvorlagen und Designs von 'Queer all year'",
         "description" : "Du möchtest dir etwas mit 'Queer all year' gestalten oder bedrucken? Hier findest du die Daten in verschiedenen Formaten."
     },
     {
         "name" : "impressum",
-        "title" : "Impressum / Datenschutz",
+        "title" : "Impressum",
         "cardtitle" : "Wer steckt hinter 'Queer all Year'?",
         "description" : "Lies unser Impressum und unsere Datenschutzerklärung.",
     },
