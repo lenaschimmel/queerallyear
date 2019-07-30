@@ -163,7 +163,7 @@
 <div class="pagebox">
     <div class="innerbox">
         <div class="innerinnerbox">
-            <h1><a name="druck">Hinweise zum Textildruck</h1>
+            <a name="druck" class="aaa"></a><h1>Hinweise zum Textildruck</h1>
             <p>Wir bieten keinen eigenen T-Shirt-Shop an. Wenn du also ein Shirt (oder andere Kleidungsstücke oder Textilien) mit unserem Logo haben möchtest, musst du dich selbst um die Produktion kümmern. Im Folgenden möchten wir dir möglichst viele Hilfestellungen dazu geben.</p>
 
             <p>Beim Drucken auf Textilien gibt es verschiedene Methoden, die ihre Vor- und Nachteile haben.</p>
@@ -205,7 +205,7 @@
 
             <img src="/img/logo_orig2_mono.svg" width="80%">
     
-            <a name="siebdruck"><h2>Siebdruck</h2></a>
+            <a name="siebdruck" class="aaa"></a><h2>Siebdruck</h2>
             <p>Nachdem unsere Erfahrungen mit kommerziellen Anbietern für T-Shirts nicht ganz überzeugend waren, haben wir selbst ein paar Versuche mit Siebdruck gemacht. Für die meisten von uns war es der erste Kontakt mit diesem Handwerk, aber wir waren dennoch sehr schnell erfolgreich.</p>
 
             <p>Für das Siebdruck-Verfahren werden zunächst Drucksiebe belichtet und entwickelt, durch die später die Farbe gepresst wird. Das lohnt sich für kommerzielle Anbieter erst bei einer größeren Anzahl gleichartiger Shirts (ca. 20 Stück) so richtig. Wenn du privat siebdruckst, und viel Zeit hast, kann das durchaus auch schon bei einem Einzelstück ok sein.</p>

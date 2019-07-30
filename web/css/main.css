@@ -377,6 +377,13 @@ strong {
   font-style: italic;
 }
 
+a.aaa {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
+
 @media only screen and (min-width: 1050px) {
   label {
     display: inline-block;
@@ -387,8 +394,7 @@ strong {
   input {
     display: inline-block;
   }
-}
-  
+} 
 
 button {
   display: block;
