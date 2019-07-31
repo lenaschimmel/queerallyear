@@ -384,6 +384,17 @@ a.aaa {
   visibility: hidden;
 }
 
+.sig_footnote {
+  font-size: 75%;
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  padding-left: auto;
+  padding-right: auto;
+  text-align: center;
+}
+
 @media only screen and (min-width: 1050px) {
   label {
     display: inline-block;
