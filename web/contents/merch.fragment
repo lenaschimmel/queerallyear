@@ -1,7 +1,12 @@
 <div class="pagebox">
     <div class="innerbox">
         <div class="innerinnerbox">
-            <p>Wir haben eure bisherigen Spenden genutzt, um einige <a href="#postkarten">Postkarten</a> und <a href="#sticker">Sticker</a> zu drucken, die du auf dem CSD oder auch <a href="#wo">schon davor erhalten</a> kannst. Außerdem haben wir mit Siebdruck experimentiert und möchten auch noch damit <a href="#textilien">bedruckte Textilien</a> anbieten.</p>
+            <p>Wir haben eure bisherigen (offline gesammelten) Spenden genutzt, um einige <a href="#postkarten">Postkarten</a> und <a href="#sticker">Sticker</a> zu drucken, die du auf dem CSD oder auch <a href="#wo">schon davor erhalten</a> kannst.</p>
+            
+            <a name="spenden" class="aaa"></a><h1>Spenden</h1>
+            <p>Das Geld hat dabei leider nur für eine begrenzte Menge von Stickermotiven gereicht. Dabei gibt es mindestens noch Interesse an Stickern mit den Inter-, Non-binary- und Aromantik-Flaggen, die wir bisher nicht umgesetzt haben. Außerdem haben wir mit Siebdruck experimentiert und möchten auch noch damit <a href="#textilien">bedruckte Textilien</a> anbieten, wozu wir nochmal einen Satz Farben kaufen müssten.</p>
+
+            <p><b>Um das zu ermöglichen, könnt ihr unter <a href="https://paypal.me/queerallyear" target="paypal">paypal.me/queerallyear</a> spenden.</b></p>
         </div>
     </div>
     <div class="innerbox">
@@ -26,6 +31,7 @@
                 <li>Länglich klein: More Color Pride</li>
             </ul>
             <a href="img/merch/alle.jpg" data-lightbox="sticker" data-title="Alle unsere Sticker im Größenvergleich mit der Postkarte"><img src="img/merch/thumb_alle.jpg" width="98%"></a>
+            <p>Weitere Motive können wir anfertigen, wenn wir ausreichende <a href="#spenden">Spenden</a> erhalten.</p>
         </div>
     </div>
     <div class="innerbox">
