@@ -1,5 +1,5 @@
 <div class="screenbox">
-    <img id="shadow" src="img/shadow/orig2.svg">
+    <img id="shadow" src="img/shadow/orig2.svg" role="text" alt="Queer all year Logo mit wechselnden Farben verschiedener Pride-Flags" title="Queer all year Logo" aria-label="Kwier oll jier Logo mit wechselnden Farben verschiedener Preid-Flägs">
     $MAINLOGO
     <div id="identity">(Gay)</div>
     <div id="arrow"><a href="#" onclick="queer.scrollDown(); return false;">⇣</a></div>
@@ -7,7 +7,8 @@
   <div class="screenbox">
     <div class="innerbox">
       <div class="innerinnerbox">
-        <h1 id="firstHeading">Wir sind nicht nur Gay for one Day,<br>wir sind Queer all Year!</h1>
+        <h1 id="firstHeading"><span role="text" aria-label="Wir sind nicht nur Gäi for won däi, wir sind kwir oll jier!">Wir sind nicht nur Gay* for one Day,<br> wir sind Queer all Year!</span></h1>
+        
         <p>
           Das Sommerlochfestival bzw. der Braunschweiger <acronym title="Christopher Street Day">CSD</acronym> findet
           jedes Jahr unter

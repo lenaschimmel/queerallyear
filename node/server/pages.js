@@ -17,7 +17,7 @@ exports.pages = [
     {
         "name" : "signatures",
         "title" : "Unterzeichner_innen",
-        "cardtitle" : "Organiationen, die die Botschaft von #QueerAllYear unterstützen.",
+        "cardtitle" : "Organisationen, die die Botschaft von #QueerAllYear unterstützen.",
         "description" : "Verschiedene queere Initiativen aus Braunschweig und darüber hinaus haben ausdrücklich ihrer Unterstützung von #QueerAllYear zugesagt. Hier findest du eine Liste.",
         "hidden" : false
     },
