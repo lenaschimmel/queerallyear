@@ -25,7 +25,7 @@ exports.pages = [
         "name" : "dialog",
         "title" : "Dialog",
         "cardtitle" : "Dialog zwischen Queer all Year und der CSD-Orga",
-        "description" : "Inzwischen gibt es einen Dialog zwischen uns und der CSD-Orga. Unsere Kritik ist auf offene Ohren gestoßen und wir planen weitere Gespräche. Mehr dazu veröffentlichen wir hier.",
+        "description" : "Unsere Kritik ist auf offene Ohren gestoßen. Beim CSD wird es ein Bühnengespräch um 16:45 Uhr geben. Mehr dazu findet ihr wir hier.",
         "hidden" : false
     },
     {
