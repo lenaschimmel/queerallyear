@@ -136,6 +136,10 @@ async function initSvg(svgId) {
   return new GradientSvg(dom.window.document.getElementById(svgId), dom.window.document, dom);
 }
 
+app.get('/index.php', async function (req, res) {
+  res.redirect("/");
+});
+
 app.get('/img/shadow/:layout.svg', async function (req, res) {
   var gradients = await gradientsFuture[req.params.layout];
   gradients.setShadowMode("only");
