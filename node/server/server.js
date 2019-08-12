@@ -137,7 +137,7 @@ async function initSvg(svgId) {
 }
 
 app.get('/index.php', async function (req, res) {
-  res.redirect("/");
+  res.redirect("http://queerallyear.de/");
 });
 
 app.get('/img/shadow/:layout.svg', async function (req, res) {
