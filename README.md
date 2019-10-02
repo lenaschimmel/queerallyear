@@ -1,6 +1,32 @@
 [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
 
 # Queer all year
+<img width="50%" src="https://github.com/lenaschimmel/queerallyear/blob/master/web/img/navi.png?raw=true" alt="Animated logo on the home page"/>
+
+## Description
+This is the website [queerallyear.de](http://queerallyear.de), which was launchend in the summer of 2019 to offer a critical comment to the motto of the Brunswick pride parade, which was "Gay for one day".
+
+The website is completely German, and so the development notes are as well.
+
+## Technical details
+The site runs on NodeJS and comes with a custom HTTP server. It has a very simple templating system.
+
+The most complex part is the handling of SVG graphics for the logo, which serves several purposes:
+
+* Randomized animation on the home page
+* Life preview in the image configurator
+* Generate SVG, PNG, PDF and JPG downloads from the confiurator
+* Create modified SVGs via command line interface
+* Create variants for embedding in several sub-pages at startup
+
+To make those features possible without code duplication, several chungs of JavaScript have to be executable both server-side on NodeJS and client-side within the browser. We use [browserify](https://www.npmjs.com/package/browserify) to execute node-style code in the browser, and [jsdom](https://www.npmjs.com/package/jsdom) to let code run on NodeJS which needs to access a DOM (with much less overhead than [phantomjs](https://www.npmjs.com/package/phantom) or [puppeteer](https://github.com/GoogleChrome/puppeteer))
+
+## Screenshots
+<img width="50%" src="https://github.com/lenaschimmel/queerallyear/blob/master/doc/logo_animation.gif?raw=true" alt="Animated logo on the home page"/>
+<img width="50%" src="https://github.com/lenaschimmel/queerallyear/blob/master/doc/designer.png?raw=true" alt="Screenshot of the logo configurator"/>
+
+## Development notes (German, partly outdated)
+
 Dies ist eine Kampagne für mehr Vielfalt und weniger Regenbogenkapitalismus beim Braunschweiger CSD 2019.
 
 Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werden wird. Bisherige Ideen:
@@ -23,14 +49,14 @@ Weder technisch noch inhaltlich ist so richtig klar, was das letztlich mal werde
  * [ ] Evtl. auf Uberspace umziehen (Siehe https://wiki.uberspace.de/development:nodejs )
  * [x] Mailadresse: kontakt@queerallyear.de
  * [ ] Geld-Sammel-Plattform (Paypal)
- * [ ] Liste von Unterzeichner_innen
- * [ ] Bekanntmachen - Tweets, Unterstützer_orgs etc.
- * [ ] Noch bessere Navigationsleiste (Burger Menu, siehe https://media.kulturbanause.de/2014/04/navigation/slider/responsive-navigation-slider-target.html#nav-closed )
+ * [x] Liste von Unterzeichner_innen
+ * [x] Bekanntmachen - Tweets, Unterstützer_orgs etc.
+ * [x] Noch bessere Navigationsleiste (Burger Menu, siehe https://media.kulturbanause.de/2014/04/navigation/slider/responsive-navigation-slider-target.html#nav-closed )
  * [ ] Spreadshirt, node  module sprd-design-upload
- * [ ] Fertiger Merch (z.B. Sticker) die wir designen, in Druck geben und verbreiten
+ * [x] Fertiger Merch (z.B. Sticker) die wir designen, in Druck geben und verbreiten
  * [ ] Zielsetzung schärfen
- * [ ] Flyer designen
- * [ ] Übersicht über Druckkosten
+ * [x] ~Flyer designen~ Postkarte
+ * [x] Übersicht über Druckkosten
  * [ ] Identitäten erklären?
  * [ ] Performance auf alten Handys (evtl. Mobilbrowser whitelisten)
   

@@ -8,7 +8,8 @@
             "type": "node",
             "request": "launch",
             "name": "Node server",
-            "program": "${workspaceFolder}/node/server/server.js"
+            "program": "${workspaceFolder}/node/server/server.js",
+            "cwd": "${workspaceFolder}/node/server"
         }
     ]
 }
